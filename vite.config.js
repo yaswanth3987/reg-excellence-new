@@ -5,25 +5,24 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Split chunks for better caching
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          icons: ['lucide-react'],
+        // Vite 8 / rolldown requires manualChunks as a function
+        manualChunks(id) {
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router-dom')) {
+            return 'vendor';
+          }
+          if (id.includes('node_modules/lucide-react')) {
+            return 'icons';
+          }
         },
       },
     },
-    // Minify CSS
     cssMinify: true,
-    // Inline small assets as base64
     assetsInlineLimit: 4096,
-    // Enable source maps for debugging (disable in production)
     sourcemap: false,
-    // Chunk size warning limit
     chunkSizeWarningLimit: 600,
   },
-  // Optimise dependencies
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'lucide-react'],
   },

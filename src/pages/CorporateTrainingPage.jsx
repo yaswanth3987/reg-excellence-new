@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Globe, Microscope, Shield, TrendingUp, Building2, Award, CheckCircle, ArrowRight, Users } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 function useFadeIn() {
   const ref = useRef();
@@ -57,6 +58,10 @@ const stats = [
 
 export default function CorporateTrainingPage() {
   const ref = useFadeIn();
+  useSEO({
+    title: 'Corporate Pharmaceutical Training | GCC Regulatory Affairs & GMP | Reg Excellence UK',
+    description: 'Bespoke corporate pharmaceutical training programmes: GCC regulatory affairs, CMC, GMP compliance, market access and business development. UK-based expert trainers delivering across GCC.',
+  });
 
   return (
     <div ref={ref}>

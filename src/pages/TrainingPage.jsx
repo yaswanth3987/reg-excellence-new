@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { GraduationCap, Users, FileCheck, TrendingUp, ArrowRight, CheckCircle, Building2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 function useFadeIn() {
   const ref = useRef();
@@ -82,6 +83,10 @@ const programs = [
 export default function TrainingPage() {
   const ref = useFadeIn();
   const navigate = useNavigate();
+  useSEO({
+    title: 'Regulatory Affairs Training & Mentoring | GCC Masterclass | Reg Excellence UK',
+    description: 'GCC regulatory affairs training, career mentoring, CV review and business development programs for pharmacists and pharmaceutical professionals. UK-based expert-led courses.',
+  });
 
   return (
     <div ref={ref}>

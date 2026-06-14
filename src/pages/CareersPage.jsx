@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Users, Briefcase, GraduationCap, Globe, ArrowRight, CheckCircle, Star } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 function useFadeIn() {
   const ref = useRef();
@@ -47,6 +48,10 @@ const values = [
 
 export default function CareersPage() {
   const ref = useFadeIn();
+  useSEO({
+    title: 'Pharmaceutical Careers | GCC Regulatory Affairs Jobs | Reg Excellence UK',
+    description: 'Join Reg Excellence — career opportunities in GCC regulatory affairs, pharmaceutical consulting and regulatory training. Work with a leading UK-based pharmaceutical regulatory expert.',
+  });
 
   return (
     <div ref={ref}>

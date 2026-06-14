@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Globe, TrendingUp, Briefcase, BookOpen, ArrowRight, Rss, Search } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 function useFadeIn() {
   const ref = useRef();
@@ -76,6 +77,10 @@ export default function InsightsPage() {
   const ref = useFadeIn();
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState(ALL_CATS);
+  useSEO({
+    title: 'GCC Regulatory Affairs Insights & Articles | Reg Excellence UK',
+    description: 'Expert GCC regulatory updates, pharmaceutical career advice, business development strategies and market access insights. Stay informed with Reg Excellence.',
+  });
 
   const tabs = [ALL_CATS, ...categories.map(c => c.category)];
 

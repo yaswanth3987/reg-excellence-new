@@ -1,5 +1,6 @@
 import { Globe, FileText, TrendingUp, Microscope, Building2, Shield, Award, CheckCircle, ArrowRight, Layers } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import useSEO from '../hooks/useSEO';
 
 function useFadeIn() {
   const ref = useRef();
@@ -60,6 +61,10 @@ const services = [
 
 export default function ServicesPage() {
   const ref = useFadeIn();
+  useSEO({
+    title: 'Regulatory Affairs Services | GCC Product Registration & Market Access | Reg Excellence UK',
+    description: 'Specialist GCC regulatory affairs services: product registration, MHRA, EMA, CMC dossier preparation, lifecycle management, market access and business development. UK-based pharmaceutical consultancy.',
+  });
 
   return (
     <div ref={ref}>
