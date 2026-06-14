@@ -22,7 +22,7 @@ export default function Footer() {
                 />
               </div>
             </div>
-            <p>Expert GCC Regulatory Affairs and Business Development consulting for pharmaceutical companies across GCC and global markets.</p>
+            <p>UK-based pharmaceutical regulatory affairs and business development consulting for GCC and global pharmaceutical companies.</p>
             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
                 <Mail size={14} style={{ color: '#C8382A' }} />
@@ -30,11 +30,11 @@ export default function Footer() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
                 <Phone size={14} style={{ color: '#C8382A' }} />
-                +971 50 000 0000
+                +44 (0) 000 000 0000
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
                 <MapPin size={14} style={{ color: '#C8382A' }} />
-                Dubai, UAE
+                United Kingdom
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Reg Excellence. All rights reserved.</p>
           <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.3)' }}>
-            Dr. Anwar Hussain Mohammed PhD | GCC Regulatory Affairs Expert
+            Dr. Anwar Hussain Mohammed PhD | GCC &amp; International Regulatory Affairs Expert | UK
           </p>
         </div>
       </div>

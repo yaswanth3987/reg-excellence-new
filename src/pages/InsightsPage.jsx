@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { Globe, TrendingUp, Briefcase, BookOpen, ArrowRight, Rss } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Globe, TrendingUp, Briefcase, BookOpen, ArrowRight, Rss, Search } from 'lucide-react';
 
 function useFadeIn() {
   const ref = useRef();
@@ -70,8 +70,24 @@ const categories = [
   },
 ];
 
+const ALL_CATS = 'All';
+
 export default function InsightsPage() {
   const ref = useFadeIn();
+  const [search, setSearch] = useState('');
+  const [activeCategory, setActiveCategory] = useState(ALL_CATS);
+
+  const tabs = [ALL_CATS, ...categories.map(c => c.category)];
+
+  const filtered = categories
+    .filter(cat => activeCategory === ALL_CATS || cat.category === activeCategory)
+    .map(cat => ({
+      ...cat,
+      articles: cat.articles.filter(a =>
+        a.toLowerCase().includes(search.toLowerCase())
+      ),
+    }))
+    .filter(cat => cat.articles.length > 0);
 
   return (
     <div ref={ref}>
@@ -80,52 +96,97 @@ export default function InsightsPage() {
         <div className="container">
           <span className="section-label">Insights</span>
           <h1 className="section-title" style={{ marginBottom: '16px' }}>
-            Expert Insights & Articles
+            Expert Insights &amp; Articles
           </h1>
           <p className="section-subtitle">
             Stay up to date with GCC regulatory news, career advice, and pharmaceutical
             business development strategies from Dr. Anwar Hussain Mohammed PhD.
           </p>
+          {/* Search Bar */}
+          <div className="insights-search-wrap">
+            <div className="insights-search-box">
+              <Search size={18} className="insights-search-icon" />
+              <input
+                id="insights-search"
+                type="text"
+                placeholder="Search articles..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                className="insights-search-input"
+                aria-label="Search articles"
+              />
+              {search && (
+                <button className="insights-search-clear" onClick={() => setSearch('')} aria-label="Clear search">✕</button>
+              )}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Articles */}
-      <section className="insights-section">
+      {/* Filter Tabs */}
+      <div className="insights-tabs-bar">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '64px' }} className="fade-in">
-            <span className="section-label">Browse Topics</span>
-            <h2 className="section-title">Articles & Resources</h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Practical knowledge and expert perspectives on GCC regulatory affairs,
-              career development and pharmaceutical business.
-            </p>
-          </div>
-          <div className="insights-grid">
-            {categories.map((cat, i) => (
-              <div key={i} className="insight-card fade-in">
-                <div className="insight-card-header">
-                  <div className="insight-card-header-icon">{cat.icon}</div>
-                  <div>
-                    <div className="insight-card-category">{cat.category}</div>
-                    <div className="insight-card-header-title">{cat.title}</div>
-                  </div>
-                </div>
-                <div className="insight-card-body">
-                  <ul className="insight-articles">
-                    {cat.articles.map((a, j) => (
-                      <li key={j} onClick={() => { window.location.href = '/#contact'; }}>
-                        {a}
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="btn-teal" style={{ marginTop: '16px', fontSize: '13px', padding: '10px 20px' }}
-                    onClick={() => { window.location.href = '/#contact'; }}>
-                    Get Notified of New Articles <ArrowRight size={14} />
-                  </button>
-                </div>
-              </div>
+          <div className="insights-tabs">
+            {tabs.map(tab => (
+              <button
+                key={tab}
+                className={`insights-tab${activeCategory === tab ? ' active' : ''}`}
+                onClick={() => setActiveCategory(tab)}
+              >
+                {tab}
+              </button>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Articles Grid */}
+      <section className="insights-section">
+        <div className="container">
+          {filtered.length === 0 ? (
+            <div className="insights-empty fade-in">
+              <div style={{ fontSize: '48px', marginBottom: '16px' }}>🔍</div>
+              <h3>No articles found</h3>
+              <p>Try a different search term or category.</p>
+              <button className="btn-primary" style={{ marginTop: '20px' }} onClick={() => { setSearch(''); setActiveCategory(ALL_CATS); }}>
+                Clear Filters
+              </button>
+            </div>
+          ) : (
+            <div className="insights-grid">
+              {filtered.map((cat, i) => (
+                <div key={i} className="insight-card fade-in">
+                  <div className="insight-card-header">
+                    <div className="insight-card-header-icon">{cat.icon}</div>
+                    <div>
+                      <div className="insight-card-category">{cat.category}</div>
+                      <div className="insight-card-header-title">{cat.title}</div>
+                    </div>
+                  </div>
+                  <div className="insight-card-body">
+                    <ul className="insight-articles">
+                      {cat.articles.map((a, j) => (
+                        <li key={j} onClick={() => { window.location.href = '/#contact'; }}>
+                          {search ? (
+                            <span dangerouslySetInnerHTML={{
+                              __html: a.replace(
+                                new RegExp(`(${search})`, 'gi'),
+                                '<mark class="insight-highlight">$1</mark>'
+                              )
+                            }} />
+                          ) : a}
+                        </li>
+                      ))}
+                    </ul>
+                    <button className="btn-teal" style={{ marginTop: '16px', fontSize: '13px', padding: '10px 20px' }}
+                      onClick={() => { window.location.href = '/#contact'; }}>
+                      Get Notified of New Articles <ArrowRight size={14} />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

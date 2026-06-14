@@ -52,6 +52,7 @@ const stats = [
   { value: '100+', label: 'Professionals Trained' },
   { value: '10+', label: 'GCC Markets Covered' },
   { value: '5', label: 'Training Modules Available' },
+  { value: '100%', label: 'Bespoke Programmes' },
 ];
 
 export default function CorporateTrainingPage() {

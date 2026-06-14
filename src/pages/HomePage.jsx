@@ -40,15 +40,15 @@ function Hero() {
         <div className="hero-text">
           <div className="hero-badge">
             <span className="hero-badge-dot" />
-            GCC Regulatory Experts
+            GCC &amp; International Regulatory Experts | UK
           </div>
           <h1 className="hero-title">
             Navigating <span className="gold">Regulatory</span><br />
             Excellence in GCC
           </h1>
           <p className="hero-subtitle">
-            Deep pharmaceutical industry expertise in regulatory affairs,
-            market access, and business development across GCC and global markets.
+            UK-based pharmaceutical regulatory affairs consulting across GCC, MHRA, EMA
+            and global markets — expert guidance for product registration, market access and business development.
           </p>
           <div className="hero-cta-row">
             <button className="btn-primary" onClick={scrollToContact}>
@@ -121,7 +121,7 @@ function ClientsPartners() {
         <div className="clients-marquee">
           {doubled.map((c, i) => (
             <div key={i} className="client-logo-card">
-              <img src={c.src} alt={c.alt} className="client-logo-img" />
+              <img src={c.src} alt={c.alt} className="client-logo-img" loading="lazy" decoding="async" />
             </div>
           ))}
         </div>
@@ -139,9 +139,11 @@ function About() {
         <div className="about-inner">
           <div className="about-image-wrap fade-in">
             <img
-              src="/static/media/service44.04757d660c03f751677e.jpeg"
+              src="/service44.jpg"
               alt="Pharmaceutical laboratory"
               className="about-image"
+              loading="lazy"
+              decoding="async"
               onError={(e) => {
                 e.target.style.background = 'linear-gradient(135deg,#0b5c5e,#127a7d)';
                 e.target.style.minHeight = '500px';
@@ -202,6 +204,8 @@ function Founder() {
                 src="/founder.png"
                 alt="Dr. Anwar Hussain Mohammed PhD"
                 className="founder-image"
+                loading="lazy"
+                decoding="async"
               />
               <div className="founder-gold-accent" />
             </div>
@@ -230,6 +234,53 @@ function Founder() {
               Book a Consultation <ArrowRight size={16} />
             </button>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── STATS COUNTER ──────────────────────────────────────────────────────
+function StatsCounter() {
+  const stats = [
+    { value: 50, suffix: '+', label: 'Products Registered', icon: '📋' },
+    { value: 8,  suffix: '+', label: 'GCC & Global Markets', icon: '🌍' },
+    { value: 100, suffix: '+', label: 'Professionals Trained', icon: '🎓' },
+    { value: 10, suffix: '+', label: 'Therapeutic Areas', icon: '🔬' },
+  ];
+  const refs = stats.map(() => useRef(null));
+  useEffect(() => {
+    refs.forEach((ref, idx) => {
+      const el = ref.current;
+      if (!el) return;
+      const observer = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        const target = stats[idx].value;
+        const duration = 1800;
+        const step = Math.ceil(target / (duration / 16));
+        let current = 0;
+        const tick = () => {
+          current = Math.min(current + step, target);
+          el.textContent = current + stats[idx].suffix;
+          if (current < target) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }, { threshold: 0.4 });
+      observer.observe(el);
+    });
+  }, []);
+  return (
+    <section className="stats-counter">
+      <div className="container">
+        <div className="stats-counter-grid">
+          {stats.map((s, i) => (
+            <div key={i} className="stats-counter-card">
+              <div className="stats-counter-icon">{s.icon}</div>
+              <div className="stats-counter-value" ref={refs[i]}>0{s.suffix}</div>
+              <div className="stats-counter-label">{s.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -613,6 +664,7 @@ export default function HomePage() {
       <ClientsPartners />
       <About />
       <Founder />
+      <StatsCounter />
       <ServicesSection />
       <TherapeuticAreas />
       <Agencies />
