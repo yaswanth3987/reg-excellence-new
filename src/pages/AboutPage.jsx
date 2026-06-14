@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { CheckCircle, ArrowRight, Globe, Shield, Award, TrendingUp, Users, Microscope } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 
 function useFadeIn() {
@@ -34,10 +35,18 @@ const milestones = [
 
 export default function AboutPage() {
   const ref = useFadeIn();
+  const navigate = useNavigate();
   useSEO({
     title: 'About Reg Excellence | UK-Based GCC Regulatory Affairs Consultancy',
     description: 'Learn about Reg Excellence — a UK-based pharmaceutical regulatory affairs consultancy led by Dr. Anwar Hussain Mohammed PhD. Our mission, values, and expertise in GCC regulatory affairs.',
   });
+
+  const goToContact = () => {
+    navigate('/');
+    setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }, 80);
+  };
 
   return (
     <div ref={ref}>
@@ -54,7 +63,7 @@ export default function AboutPage() {
             with confidence, speed, and precision. Based in <strong style={{ color: '#FFB3AA' }}>Altrincham, United Kingdom</strong>.
           </p>
           <div style={{ marginTop: '36px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button className="btn-primary" onClick={() => { window.location.href = '/#contact'; }}>
+            <button className="btn-primary" onClick={goToContact}>
               Book a Consultation <ArrowRight size={16} />
             </button>
             <a href="/services" className="btn-outline">Our Services</a>
@@ -105,7 +114,7 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-              <button className="btn-primary" onClick={() => { window.location.href = '/#contact'; }}>
+              <button className="btn-primary" onClick={goToContact}>
                 Work With Us <ArrowRight size={16} />
               </button>
             </div>
@@ -151,7 +160,7 @@ export default function AboutPage() {
                   <span key={i} style={{ background: 'rgba(200,56,42,0.2)', border: '1px solid rgba(200,56,42,0.4)', color: '#FFB3AA', fontSize: '12px', fontWeight: 600, padding: '5px 12px', borderRadius: '100px', letterSpacing: '0.5px' }}>{t}</span>
                 ))}
               </div>
-              <button className="btn-primary" onClick={() => { window.location.href = '/#contact'; }}>
+              <button className="btn-primary" onClick={goToContact}>
                 Book a Consultation <ArrowRight size={16} />
               </button>
             </div>
@@ -214,7 +223,7 @@ export default function AboutPage() {
               <h2>Ready to work with us?</h2>
               <p>Book a consultation with Dr. Anwar Hussain Mohammed PhD today.</p>
             </div>
-            <button className="btn-teal" onClick={() => { window.location.href = '/#contact'; }}>
+            <button className="btn-teal" onClick={goToContact}>
               Book a Consultation <ArrowRight size={16} />
             </button>
           </div>
