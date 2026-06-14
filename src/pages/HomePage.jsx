@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+﻿import { useEffect, useRef, useState } from 'react';
 import {
   Globe, FileText, TrendingUp, Microscope, Building2,
   Shield, Award, CheckCircle, ArrowRight, Phone, Mail,
@@ -25,7 +25,7 @@ function scrollToContact() {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 }
 
-// ─── HERO ───────────────────────────────────────────────────────────────
+// â”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function Hero() {
   return (
     <section className="hero">
@@ -48,7 +48,7 @@ function Hero() {
           </h1>
           <p className="hero-subtitle">
             UK-based pharmaceutical regulatory affairs consulting across GCC, MHRA, EMA
-            and global markets — expert guidance for product registration, market access and business development.
+            and global markets â€” expert guidance for product registration, market access and business development.
           </p>
           <div className="hero-cta-row">
             <button className="btn-primary" onClick={scrollToContact}>
@@ -95,12 +95,12 @@ function Hero() {
   );
 }
 
-// ─── CLIENTS & PARTNERS ─────────────────────────────────────────────────
+// â”€â”€â”€ CLIENTS & PARTNERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function ClientsPartners() {
   const clients = [
     { src: '/clients/pfizer.png', alt: 'Pfizer' },
     { src: '/clients/astrazeneca.png', alt: 'AstraZeneca' },
-    { src: '/clients/ablynx.png', alt: 'Ablynx — A Sanofi Company' },
+    { src: '/clients/ablynx.png', alt: 'Ablynx â€” A Sanofi Company' },
     { src: '/clients/teva.png', alt: 'Teva Pharmaceuticals' },
     { src: '/clients/qlife.jpg', alt: 'QLife Pharma' },
   ];
@@ -130,7 +130,7 @@ function ClientsPartners() {
   );
 }
 
-// ─── ABOUT ──────────────────────────────────────────────────────────────
+// â”€â”€â”€ ABOUT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function About() {
   const ref = useFadeIn();
   return (
@@ -186,7 +186,7 @@ function About() {
   );
 }
 
-// ─── FOUNDER ────────────────────────────────────────────────────────────
+// â”€â”€â”€ FOUNDER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function Founder() {
   const ref = useFadeIn();
   const tags = [
@@ -204,7 +204,7 @@ function Founder() {
     <section className="founder" ref={ref}>
       <div className="container">
         <div className="founder-inner">
-          {/* Left — Image + Badge */}
+          {/* Left â€” Image + Badge */}
           <div className="founder-image-wrap fade-in">
             <div className="founder-image-frame">
               <img
@@ -226,7 +226,7 @@ function Founder() {
             </div>
           </div>
 
-          {/* Right — Text */}
+          {/* Right â€” Text */}
           <div className="founder-text fade-in">
             <span className="section-label">Meet Our Founder</span>
             <h2 className="section-title">Dr. Anwar Hussain<br />Mohammed PhD</h2>
@@ -268,14 +268,14 @@ function Founder() {
   );
 }
 
-// ─── STATS COUNTER ──────────────────────────────────────────────────────
+// â”€â”€â”€ STATS COUNTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function StatsCounter() {
   const stats = [
-    { value: 25, suffix: '+', label: 'Years Experience', icon: '🏆' },
-    { value: 50, suffix: '+', label: 'Products Registered', icon: '📋' },
-    { value: 8,  suffix: '+', label: 'GCC & Global Markets', icon: '🌍' },
-    { value: 100, suffix: '+', label: 'Professionals Trained', icon: '🎓' },
-    { value: 10, suffix: '+', label: 'Therapeutic Areas', icon: '🔬' },
+    { value: 25, suffix: '+', label: 'Years Experience', icon: 'ðŸ†' },
+    { value: 50, suffix: '+', label: 'Products Registered', icon: 'ðŸ“‹' },
+    { value: 8,  suffix: '+', label: 'GCC & Global Markets', icon: 'ðŸŒ' },
+    { value: 100, suffix: '+', label: 'Professionals Trained', icon: 'ðŸŽ“' },
+    { value: 10, suffix: '+', label: 'Therapeutic Areas', icon: 'ðŸ”¬' },
   ];
   const refs = stats.map(() => useRef(null));
   useEffect(() => {
@@ -316,7 +316,7 @@ function StatsCounter() {
   );
 }
 
-// ─── SERVICES ───────────────────────────────────────────────────────────
+// â”€â”€â”€ SERVICES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function ServicesSection() {
   const ref = useFadeIn();
   const services = [
@@ -352,7 +352,7 @@ function ServicesSection() {
   );
 }
 
-// ─── THERAPEUTIC AREAS ──────────────────────────────────────────────────
+// â”€â”€â”€ THERAPEUTIC AREAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function TherapeuticAreas() {
   const ref = useFadeIn();
   const areas = [
@@ -379,7 +379,7 @@ function TherapeuticAreas() {
   );
 }
 
-// ─── COUNTRIES WE HELP WITH ─────────────────────────────────────────────
+// â”€â”€â”€ COUNTRIES WE HELP WITH â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function Agencies() {
   const ref = useFadeIn();
   const countries = [
@@ -418,7 +418,7 @@ function Agencies() {
   );
 }
 
-// ─── TESTIMONIALS ───────────────────────────────────────────────────────
+// â”€â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function Testimonials() {
   const ref = useFadeIn();
   const testimonials = [
@@ -456,7 +456,7 @@ function Testimonials() {
             <div key={i} className="testimonial-card fade-in">
               <div className="testimonial-quote-icon">"</div>
               <div className="testimonial-stars">
-                {[...Array(5)].map((_, j) => <span key={j} className="star">★</span>)}
+                {[...Array(5)].map((_, j) => <span key={j} className="star">â˜…</span>)}
               </div>
               <p className="testimonial-text">{t.text}</p>
               <div className="testimonial-author">
@@ -474,7 +474,7 @@ function Testimonials() {
   );
 }
 
-// ─── LEAD CAPTURE ───────────────────────────────────────────────────────
+// â”€â”€â”€ LEAD CAPTURE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function LeadCapture() {
   const ref = useFadeIn();
   const [form, setForm] = useState({ name: '', email: '' });
@@ -496,14 +496,14 @@ function LeadCapture() {
             <span className="section-label">Free Resource</span>
             <h2 className="section-title">Get Your Free Career Guide</h2>
             <p>
-              Download our comprehensive PDF guide — written by Dr. Anwar Hussain Mohammed PhD —
+              Download our comprehensive PDF guide â€” written by Dr. Anwar Hussain Mohammed PhD â€”
               on how to build a successful career in GCC Regulatory Affairs.
             </p>
             <div className="lead-capture-pdf">
-              <div className="lead-capture-pdf-icon">📄</div>
+              <div className="lead-capture-pdf-icon">ðŸ“„</div>
               <div className="lead-capture-pdf-info">
                 <strong>"Guide to Building a Career in GCC Regulatory Affairs"</strong>
-                <span>Free PDF • Expert insights from a seasoned professional</span>
+                <span>Free PDF â€¢ Expert insights from a seasoned professional</span>
               </div>
             </div>
             <div style={{ marginTop: '20px', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
@@ -518,7 +518,7 @@ function LeadCapture() {
           <div className="lead-capture-form-card fade-in">
             {submitted ? (
               <div className="form-success">
-                <div style={{ fontSize: '48px', marginBottom: '16px' }}>🎉</div>
+                <div style={{ fontSize: '48px', marginBottom: '16px' }}>ðŸŽ‰</div>
                 <h3 style={{ color: 'var(--gold)', marginBottom: '8px' }}>Thank you, {form.name}!</h3>
                 <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px' }}>
                   Your free guide is on its way to {form.email}. Check your inbox shortly.
@@ -565,10 +565,13 @@ function LeadCapture() {
   );
 }
 
-// ─── CONTACT ────────────────────────────────────────────────────────────
+// â”€â”€â”€ CONTACT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function Contact() {
   const ref = useFadeIn();
-  const [form, setForm] = useState({ name: '', email: '', company: '', service: '', message: '' });
+  const [form, setForm] = useState({
+    firstName: '', lastName: '', email: '', phone: '',
+    position: '', department: '', company: '', country: '', message: '',
+  });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
@@ -577,20 +580,23 @@ function Contact() {
     setSubmitted(true);
   };
 
+  const set = (field) => (e) => setForm({ ...form, [field]: e.target.value });
+
   return (
     <section className="contact" id="contact" ref={ref}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '64px' }} className="fade-in">
           <span className="section-label">Get In Touch</span>
-          <h2 className="section-title">Book a Consultation</h2>
+          <h2 className="section-title">Submit a Request</h2>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
             Ready to navigate GCC regulatory requirements with confidence?
-            Schedule a consultation with Dr. Anwar Hussain Mohammed PhD today.
+            Contact Dr. Anwar Hussain Mohammed PhD and the team today.
           </p>
         </div>
         <div className="contact-inner">
+          {/* Left â€” Contact Info + Map */}
           <div className="fade-in">
-            <h3 className="contact-info-title">Contact Information</h3>
+            <h3 className="contact-info-title">Contact Us</h3>
             <p className="contact-info-sub">
               Reach out directly or fill in the form and we'll get back to you within 24 hours.
             </p>
@@ -598,15 +604,21 @@ function Contact() {
               <div className="contact-detail-icon"><Mail size={20} /></div>
               <div>
                 <div className="contact-detail-label">Email</div>
-                <div className="contact-detail-value">info@regexcellence.com</div>
+                <div className="contact-detail-value">
+                  <a href="mailto:admin@regexcellence.co.uk" style={{ color: 'var(--primary)', textDecoration: 'none' }}>
+                    admin@regexcellence.co.uk
+                  </a>
+                </div>
               </div>
             </div>
             <div className="contact-detail">
               <div className="contact-detail-icon"><Phone size={20} /></div>
               <div>
-                <div className="contact-detail-label">Phone / WhatsApp</div>
+                <div className="contact-detail-label">Mobile / WhatsApp</div>
                 <div className="contact-detail-value">
-                  <a href="tel:+44000000000" style={{ color: 'inherit', textDecoration: 'none' }}>+44 (0) 000 000 0000</a>
+                  <a href="tel:+447587570977" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    +44 7587 570977
+                  </a>
                 </div>
               </div>
             </div>
@@ -619,19 +631,10 @@ function Contact() {
                     href="https://www.google.com/maps/place/3+Aimson+Rd+W,+Timperley,+Altrincham+WA15+7XP,+UK/@53.3978943,-2.3153038,17z"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ color: 'var(--primary)', textDecoration: 'none', lineHeight: 1.5, display: 'block' }}
+                    style={{ color: 'var(--primary)', textDecoration: 'none', lineHeight: 1.6, display: 'block' }}
                   >
-                    3 Aimson Rd W, Timperley<br />Altrincham, WA15 7XP<br />United Kingdom
+                    3 Aimson Road West, Timperley<br />Altrincham, WA15 7XP<br />Manchester, United Kingdom
                   </a>
-                </div>
-              </div>
-            </div>
-            <div className="contact-detail">
-              <div className="contact-detail-icon"><BookOpen size={20} /></div>
-              <div>
-                <div className="contact-detail-label">Calendly</div>
-                <div className="contact-detail-value" style={{ color: 'var(--primary)', cursor: 'pointer' }}>
-                  Schedule via Calendly (coming soon)
                 </div>
               </div>
             </div>
@@ -650,12 +653,13 @@ function Contact() {
             </div>
           </div>
 
+          {/* Right â€” Form */}
           <div className="fade-in">
             <div className="contact-form">
               {submitted ? (
-                <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-                  <div style={{ fontSize: '48px', marginBottom: '16px' }}>✅</div>
-                  <h3 style={{ color: 'var(--primary-dark)', marginBottom: '8px' }}>Message Sent!</h3>
+                <div style={{ textAlign: 'center', padding: '60px 20px' }}>
+                  <div style={{ fontSize: '56px', marginBottom: '16px' }}>âœ…</div>
+                  <h3 style={{ color: 'var(--primary-dark)', marginBottom: '8px', fontFamily: 'Playfair Display', fontSize: '24px' }}>Request Sent!</h3>
                   <p style={{ color: 'var(--text-secondary)' }}>
                     Thank you for reaching out. We'll respond within 24 hours.
                   </p>
@@ -663,41 +667,65 @@ function Contact() {
               ) : (
                 <form onSubmit={handleSubmit}>
                   <h3 style={{ fontFamily: 'Inter', fontSize: '20px', fontWeight: 700, color: 'var(--primary-dark)', marginBottom: '24px' }}>
-                    Send Us a Message
+                    Submit a Request
                   </h3>
+                  {/* First Name / Last Name */}
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                     <div className="form-group">
-                      <label>Full Name *</label>
-                      <input type="text" placeholder="Your name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} required />
+                      <label>First Name *</label>
+                      <input type="text" placeholder="First Name" value={form.firstName} onChange={set('firstName')} required />
                     </div>
                     <div className="form-group">
-                      <label>Email *</label>
-                      <input type="email" placeholder="your@email.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required />
+                      <label>Last Name *</label>
+                      <input type="text" placeholder="Last Name" value={form.lastName} onChange={set('lastName')} required />
                     </div>
                   </div>
-                  <div className="form-group">
-                    <label>Company / Organisation</label>
-                    <input type="text" placeholder="Your company" value={form.company} onChange={e => setForm({ ...form, company: e.target.value })} />
+                  {/* Email / Contact Number */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <div className="form-group">
+                      <label>Email *</label>
+                      <input type="email" placeholder="Email" value={form.email} onChange={set('email')} required />
+                    </div>
+                    <div className="form-group">
+                      <label>Contact Number</label>
+                      <input type="tel" placeholder="Contact Number" value={form.phone} onChange={set('phone')} />
+                    </div>
                   </div>
-                  <div className="form-group">
-                    <label>Service of Interest</label>
-                    <select value={form.service} onChange={e => setForm({ ...form, service: e.target.value })} style={{ backgroundColor: '#fff', color: '#1a2e2e' }}>
-                      <option value="">Select a service...</option>
-                      <option>GCC Regulatory Submissions</option>
-                      <option>Product Registration</option>
-                      <option>Market Access Strategy</option>
-                      <option>CMC & Dossier Preparation</option>
-                      <option>Career Mentoring</option>
-                      <option>Corporate Training</option>
-                      <option>Other</option>
-                    </select>
+                  {/* Position / Department */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <div className="form-group">
+                      <label>Position</label>
+                      <input type="text" placeholder="Position" value={form.position} onChange={set('position')} />
+                    </div>
+                    <div className="form-group">
+                      <label>Department</label>
+                      <input type="text" placeholder="Department" value={form.department} onChange={set('department')} />
+                    </div>
                   </div>
+                  {/* Company / Country */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <div className="form-group">
+                      <label>Company Name</label>
+                      <input type="text" placeholder="Company Name" value={form.company} onChange={set('company')} />
+                    </div>
+                    <div className="form-group">
+                      <label>Country</label>
+                      <input type="text" placeholder="Country" value={form.country} onChange={set('country')} />
+                    </div>
+                  </div>
+                  {/* Project Requirements */}
                   <div className="form-group">
-                    <label>Message *</label>
-                    <textarea placeholder="Tell us about your regulatory challenge..." value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} required />
+                    <label>Project Requirements *</label>
+                    <textarea
+                      placeholder="Tell us about your regulatory challenge or project requirements..."
+                      value={form.message}
+                      onChange={set('message')}
+                      required
+                      style={{ minHeight: '120px' }}
+                    />
                   </div>
                   <button type="submit" className="btn-teal" style={{ width: '100%', justifyContent: 'center' }}>
-                    Send Message <ArrowRight size={16} />
+                    Send <ArrowRight size={16} />
                   </button>
                 </form>
               )}
@@ -709,7 +737,8 @@ function Contact() {
   );
 }
 
-// ─── HOME PAGE ──────────────────────────────────────────────────────────
+// â”€â”€â”€ HOME PAGE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€â”€ HOME PAGE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export default function HomePage() {
   return (
     <>

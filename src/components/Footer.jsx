@@ -26,7 +26,9 @@ export default function Footer() {
             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
                 <Mail size={14} style={{ color: '#C8382A' }} />
-                info@regexcellence.com
+                <a href="mailto:admin@regexcellence.co.uk" style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }}>
+                  admin@regexcellence.co.uk
+                </a>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
                 <Phone size={14} style={{ color: '#C8382A' }} />
