@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Globe, FileText, TrendingUp, Microscope, Building2,
   Shield, Award, CheckCircle, ArrowRight, Phone, Mail,
@@ -40,7 +40,7 @@ function Hero() {
         <div className="hero-text">
           <div className="hero-badge">
             <span className="hero-badge-dot" />
-            GCC &amp; International Regulatory Experts | UK
+            25+ Years Experience | GCC &amp; International Regulatory Experts | UK
           </div>
           <h1 className="hero-title">
             Navigating <span className="gold">Regulatory</span><br />
@@ -59,7 +59,10 @@ function Hero() {
             </a>
           </div>
           <div className="hero-stats">
-
+            <div>
+              <div className="hero-stat-value">25+</div>
+              <div className="hero-stat-label">Years Experience</div>
+            </div>
             <div>
               <div className="hero-stat-value">50+</div>
               <div className="hero-stat-label">Products Registered</div>
@@ -186,7 +189,7 @@ function About() {
   );
 }
 
-// â”€â”€â”€ FOUNDER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ——————————————————————————————————————————————————————————————————————————————————————————
 function Founder() {
   const ref = useFadeIn();
   const tags = [
@@ -215,13 +218,13 @@ function Founder() {
                 decoding="async"
               />
               <div className="founder-gold-accent" />
-            </div>
-            {/* Experience Badge */}
-            <div className="founder-badge">
-              <Award size={18} className="founder-badge-icon" />
-              <div className="founder-badge-text">
-                <span className="founder-badge-value">25+</span>
-                <span className="founder-badge-label">Years Experience</span>
+              {/* Experience Badge — overlapping bottom-right corner */}
+              <div className="founder-badge">
+                <Award size={18} className="founder-badge-icon" />
+                <div className="founder-badge-text">
+                  <span className="founder-badge-value">25+</span>
+                  <span className="founder-badge-label">Years Experience</span>
+                </div>
               </div>
             </div>
           </div>

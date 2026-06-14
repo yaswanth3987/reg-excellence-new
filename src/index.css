@@ -723,30 +723,92 @@ img {
 }
 .founder-image-wrap {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 .founder-image-frame {
   position: relative;
   width: 340px;
-  height: 400px;
+  height: 420px;
+  flex-shrink: 0;
 }
 .founder-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   border-radius: var(--radius-lg);
-  border: 4px solid rgba(200,56,42,0.4);
+  border: 3px solid rgba(200,56,42,0.45);
+  display: block;
 }
 .founder-gold-accent {
   position: absolute;
-  bottom: -16px;
-  left: -16px;
+  bottom: -14px;
+  left: -14px;
   width: 100%;
   height: 100%;
   border: 2px solid var(--primary);
   border-radius: var(--radius-lg);
-  opacity: 0.5;
+  opacity: 0.45;
+  pointer-events: none;
 }
+
+/* Experience Badge — overlapping bottom-right of image */
+.founder-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, rgba(158,43,31,0.92) 0%, rgba(100,20,14,0.96) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(200,56,42,0.5);
+  border-radius: 16px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+}
+.founder-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(200,56,42,0.4), inset 0 1px 0 rgba(255,255,255,0.12);
+}
+.founder-badge-icon {
+  color: #FFB3AA;
+  flex-shrink: 0;
+}
+.founder-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.founder-badge-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+.founder-badge-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,179,170,0.85);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .founder-inner { grid-template-columns: 1fr; gap: 48px; }
+  .founder-image-frame { width: 280px; height: 340px; margin: 0 auto; }
+  .founder-badge { right: -8px; bottom: -16px; padding: 10px 14px; }
+  .founder-badge-value { font-size: 17px; }
+  .founder-stats-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .founder-stat-value { font-size: 17px; }
+}
+
 .founder-text .section-label {
   color: #FFB3AA;
 }
