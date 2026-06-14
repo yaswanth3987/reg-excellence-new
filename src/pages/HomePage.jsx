@@ -194,10 +194,17 @@ function Founder() {
     'Oncology', 'Rare Diseases', 'Market Access', 'Lifecycle Management',
     'Business Development', 'Product Registration',
   ];
+  const founderStats = [
+    { value: '25+', label: 'Years\nExperience' },
+    { value: 'GCC &\nGlobal', label: 'Market\nExpertise' },
+    { value: '100s', label: 'Regulatory\nSubmissions' },
+    { value: 'PhD', label: 'Pharmaceutical\nLeadership' },
+  ];
   return (
     <section className="founder" ref={ref}>
       <div className="container">
         <div className="founder-inner">
+          {/* Left — Image + Badge */}
           <div className="founder-image-wrap fade-in">
             <div className="founder-image-frame">
               <img
@@ -209,16 +216,26 @@ function Founder() {
               />
               <div className="founder-gold-accent" />
             </div>
+            {/* Experience Badge */}
+            <div className="founder-badge">
+              <Award size={18} className="founder-badge-icon" />
+              <div className="founder-badge-text">
+                <span className="founder-badge-value">25+</span>
+                <span className="founder-badge-label">Years Experience</span>
+              </div>
+            </div>
           </div>
+
+          {/* Right — Text */}
           <div className="founder-text fade-in">
             <span className="section-label">Meet Our Founder</span>
             <h2 className="section-title">Dr. Anwar Hussain<br />Mohammed PhD</h2>
             <p className="founder-bio">
-              Dr. Anwar Hussain Mohammed PhD, is a Regulatory Affairs and Business Development
-              professional with extensive experience in
-              the pharmaceutical industry. He has deep expertise in GCC and global regulatory
+              Dr. Anwar Hussain Mohammed PhD is a Regulatory Affairs and Business Development
+              professional with over <strong style={{ color: '#FFB3AA' }}>25 years of experience</strong> in
+              the pharmaceutical industry. He has extensive expertise in GCC and global regulatory
               submissions, product registrations, lifecycle management, market access, CMC,
-              biologics, vaccines, oncology and rare diseases.
+              biologics, vaccines, oncology, and rare diseases.
             </p>
             <p className="founder-bio" style={{ marginBottom: '24px' }}>
               His career spans leading multinational pharmaceutical companies where he has
@@ -230,6 +247,17 @@ function Founder() {
                 <span key={i} className="founder-tag">{tag}</span>
               ))}
             </div>
+
+            {/* Founder Stats Row */}
+            <div className="founder-stats-row">
+              {founderStats.map((s, i) => (
+                <div key={i} className="founder-stat-card">
+                  <div className="founder-stat-value">{s.value}</div>
+                  <div className="founder-stat-label">{s.label}</div>
+                </div>
+              ))}
+            </div>
+
             <button className="btn-primary" onClick={scrollToContact}>
               Book a Consultation <ArrowRight size={16} />
             </button>
