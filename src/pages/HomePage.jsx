@@ -271,6 +271,7 @@ function Founder() {
 // ─── STATS COUNTER ──────────────────────────────────────────────────────
 function StatsCounter() {
   const stats = [
+    { value: 25, suffix: '+', label: 'Years Experience', icon: '🏆' },
     { value: 50, suffix: '+', label: 'Products Registered', icon: '📋' },
     { value: 8,  suffix: '+', label: 'GCC & Global Markets', icon: '🌍' },
     { value: 100, suffix: '+', label: 'Professionals Trained', icon: '🎓' },
@@ -604,14 +605,25 @@ function Contact() {
               <div className="contact-detail-icon"><Phone size={20} /></div>
               <div>
                 <div className="contact-detail-label">Phone / WhatsApp</div>
-                <div className="contact-detail-value">+971 50 000 0000</div>
+                <div className="contact-detail-value">
+                  <a href="tel:+44000000000" style={{ color: 'inherit', textDecoration: 'none' }}>+44 (0) 000 000 0000</a>
+                </div>
               </div>
             </div>
             <div className="contact-detail">
               <div className="contact-detail-icon"><MapPin size={20} /></div>
               <div>
-                <div className="contact-detail-label">Location</div>
-                <div className="contact-detail-value">Dubai, United Arab Emirates</div>
+                <div className="contact-detail-label">Office Location</div>
+                <div className="contact-detail-value">
+                  <a
+                    href="https://www.google.com/maps/place/3+Aimson+Rd+W,+Timperley,+Altrincham+WA15+7XP,+UK/@53.3978943,-2.3153038,17z"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'var(--primary)', textDecoration: 'none', lineHeight: 1.5, display: 'block' }}
+                  >
+                    3 Aimson Rd W, Timperley<br />Altrincham, WA15 7XP<br />United Kingdom
+                  </a>
+                </div>
               </div>
             </div>
             <div className="contact-detail">
@@ -622,6 +634,19 @@ function Contact() {
                   Schedule via Calendly (coming soon)
                 </div>
               </div>
+            </div>
+            {/* Google Maps embed */}
+            <div style={{ marginTop: '28px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--gray-200)' }}>
+              <iframe
+                title="Reg Excellence Office Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.0!2d-2.3175765!3d53.3978943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bace39fe31a95%3A0xbbc960b040961bdf!2s3%20Aimson%20Rd%20W%2C%20Timperley%2C%20Altrincham%20WA15%207XP%2C%20UK!5e0!3m2!1sen!2suk!4v1718300000000"
+                width="100%"
+                height="220"
+                style={{ border: 0, display: 'block' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 

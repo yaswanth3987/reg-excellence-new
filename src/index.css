@@ -1042,7 +1042,13 @@ img {
   text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .stats-counter-grid { grid-template-columns: repeat(3, 1fr); }
+  .stats-counter-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .stats-counter-card:nth-child(3n) { border-right: none; }
+  .stats-counter-value { font-size: 44px; }
+}
+@media (max-width: 600px) {
   .stats-counter-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-counter-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .stats-counter-card:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.07); }

@@ -42,6 +42,7 @@ export default function Navbar() {
 
           <ul className="navbar-links">
             <li><Link to="/" className={isActive('/')}>Home</Link></li>
+            <li><Link to="/about" className={isActive('/about')}>About</Link></li>
             <li><Link to="/services" className={isActive('/services')}>Services</Link></li>
             <li><Link to="/training" className={isActive('/training')}>Training & Mentoring</Link></li>
             <li><Link to="/insights" className={isActive('/insights')}>Insights</Link></li>
@@ -68,6 +69,7 @@ export default function Navbar() {
 
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         <Link to="/" className={isActive('/')}>Home</Link>
+        <Link to="/about">About</Link>
         <Link to="/services">Services</Link>
         <Link to="/training">Training & Mentoring</Link>
         <Link to="/insights">Insights</Link>

@@ -32,9 +32,16 @@ export default function Footer() {
                 <Phone size={14} style={{ color: '#C8382A' }} />
                 +44 (0) 000 000 0000
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
-                <MapPin size={14} style={{ color: '#C8382A' }} />
-                United Kingdom
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
+                <MapPin size={14} style={{ color: '#C8382A', flexShrink: 0, marginTop: '2px' }} />
+                <a
+                  href="https://www.google.com/maps/place/3+Aimson+Rd+W,+Timperley,+Altrincham+WA15+7XP,+UK/@53.3978943,-2.3153038,17z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'none', lineHeight: 1.6 }}
+                >
+                  3 Aimson Rd W, Timperley<br />Altrincham, WA15 7XP, UK
+                </a>
               </div>
             </div>
           </div>
