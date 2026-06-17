@@ -88,7 +88,7 @@ export default function CorporateTrainingPage() {
       {/* Stats Bar */}
       <div style={{ background: 'var(--gold)', padding: '40px 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '24px', textAlign: 'center' }}>
+          <div className="corporate-stats-grid">
             {stats.map((s, i) => (
               <div key={i}>
                 <div style={{ fontFamily: 'Playfair Display', fontSize: '40px', fontWeight: 700, color: 'var(--primary-dark)' }}>{s.value}</div>
@@ -102,7 +102,7 @@ export default function CorporateTrainingPage() {
       {/* Why choose us */}
       <section style={{ padding: '100px 0', background: 'var(--white)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+          <div className="corporate-inner">
             <div className="fade-in">
               <span className="section-label">Why Choose Us</span>
               <h2 className="section-title">Training Built on Real-World Expertise</h2>
@@ -190,7 +190,7 @@ export default function CorporateTrainingPage() {
             <span className="section-label">Process</span>
             <h2 className="section-title">How It Works</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '24px' }} className="fade-in">
+          <div className="corporate-steps-grid fade-in">
             {[
               { step: '01', title: 'Initial Consultation', desc: 'We discuss your team\'s needs, current knowledge gaps and training objectives.' },
               { step: '02', title: 'Programme Design', desc: 'A tailored training programme is designed around your products, markets and team.' },

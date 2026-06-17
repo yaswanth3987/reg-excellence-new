@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
   Globe, FileText, TrendingUp, Microscope, Building2,
   Shield, Award, CheckCircle, ArrowRight, Phone, Mail,
-  MapPin, Star, Download, BookOpen, Users, ChevronRight
+  MapPin, Star, Users
 } from 'lucide-react';
 
 function useFadeIn() {
@@ -25,30 +25,24 @@ function scrollToContact() {
   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 }
 
-// â”€â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// HERO — uses the CSS .hero-content layout with .hero-bg overlay
 function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg" />
-      <img
-        src="/logo.png"
-        alt=""
-        aria-hidden="true"
-        className="hero-logo-watermark"
-      />
       <div className="hero-content">
         <div className="hero-text">
           <div className="hero-badge">
             <span className="hero-badge-dot" />
-            25+ Years Experience | GCC &amp; International Regulatory Experts | UK
+            25+ Years Pharmaceutical Regulatory Experience
           </div>
           <h1 className="hero-title">
             Navigating <span className="gold">Regulatory</span><br />
             Excellence in GCC
           </h1>
           <p className="hero-subtitle">
-            UK-based pharmaceutical regulatory affairs consulting across GCC, MHRA, EMA
-            and global markets â€” expert guidance for product registration, market access and business development.
+            Pharmaceutical regulatory affairs consulting across GCC, MHRA, EMA
+            and global markets &mdash; expert guidance for product registration, market access and business development.
           </p>
           <div className="hero-cta-row">
             <button className="btn-primary" onClick={scrollToContact}>
@@ -73,17 +67,16 @@ function Hero() {
             </div>
           </div>
         </div>
-
         <div className="hero-right">
           <div className="hero-card">
             <div className="hero-card-title">Core Expertise</div>
             {[
               { icon: <Globe size={16} />, text: 'GCC Regulatory Submissions' },
-              { icon: <FileText size={16} />, text: 'Product Registrations & Renewals' },
+              { icon: <FileText size={16} />, text: 'Product Registrations and Renewals' },
               { icon: <TrendingUp size={16} />, text: 'Market Access Strategy' },
-              { icon: <Microscope size={16} />, text: 'Biologics, Vaccines & Oncology' },
+              { icon: <Microscope size={16} />, text: 'Biologics, Vaccines and Oncology' },
               { icon: <Building2 size={16} />, text: 'Business Development' },
-              { icon: <Shield size={16} />, text: 'CMC & Dossier Preparation' },
+              { icon: <Shield size={16} />, text: 'CMC and Dossier Preparation' },
               { icon: <Award size={16} />, text: 'Lifecycle Management' },
             ].map((item, i) => (
               <div key={i} className="hero-card-item">
@@ -98,23 +91,22 @@ function Hero() {
   );
 }
 
-// â”€â”€â”€ CLIENTS & PARTNERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// CLIENTS AND PARTNERS — marquee using correct CSS classes
 function ClientsPartners() {
   const clients = [
     { src: '/clients/pfizer.png', alt: 'Pfizer' },
     { src: '/clients/astrazeneca.png', alt: 'AstraZeneca' },
-    { src: '/clients/ablynx.png', alt: 'Ablynx â€” A Sanofi Company' },
+    { src: '/clients/ablynx.png', alt: 'Ablynx - A Sanofi Company' },
     { src: '/clients/teva.png', alt: 'Teva Pharmaceuticals' },
     { src: '/clients/qlife.jpg', alt: 'QLife Pharma' },
   ];
-  // Duplicate for seamless loop
   const doubled = [...clients, ...clients];
   return (
     <section className="clients-section">
       <div className="container">
         <div className="clients-header">
           <span className="section-label">Trusted By</span>
-          <h2 className="section-title">Clients &amp; Partners</h2>
+          <h2 className="section-title">Clients and Partners</h2>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
             Proud to have supported leading pharmaceutical companies across GCC and global markets.
           </p>
@@ -133,7 +125,7 @@ function ClientsPartners() {
   );
 }
 
-// â”€â”€â”€ ABOUT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ABOUT
 function About() {
   const ref = useFadeIn();
   return (
@@ -152,7 +144,6 @@ function About() {
                 e.target.style.minHeight = '500px';
               }}
             />
-
           </div>
           <div className="about-text fade-in">
             <span className="section-label">About Us</span>
@@ -170,7 +161,7 @@ function About() {
                 'Post-Approval Changes',
                 'Regulatory Intelligence',
                 'Global Market Access',
-                'Biologics & Biosimilars',
+                'Biologics and Biosimilars',
                 'Orphan Drug Designation',
               ].map((f, i) => (
                 <div key={i} className="about-feature">
@@ -189,7 +180,7 @@ function About() {
   );
 }
 
-// ——————————————————————————————————————————————————————————————————————————————————————————
+// FOUNDER
 function Founder() {
   const ref = useFadeIn();
   const tags = [
@@ -198,61 +189,47 @@ function Founder() {
     'Business Development', 'Product Registration',
   ];
   const founderStats = [
-    { value: '25+', label: 'Years\nExperience' },
-    { value: 'GCC &\nGlobal', label: 'Market\nExpertise' },
-    { value: '100s', label: 'Regulatory\nSubmissions' },
-    { value: 'PhD', label: 'Pharmaceutical\nLeadership' },
+    { value: '25+', label: 'Years Experience' },
+    { value: 'GCC & Global', label: 'Market Expertise' },
+    { value: '100s', label: 'Regulatory Submissions' },
   ];
   return (
     <section className="founder" ref={ref}>
       <div className="container">
         <div className="founder-inner">
-          {/* Left â€” Image + Badge */}
           <div className="founder-image-wrap fade-in">
             <div className="founder-image-frame">
               <img
                 src="/founder.png"
-                alt="Dr. Anwar Hussain Mohammed PhD"
+                alt="Dr. Anwar Hussain Mohammed PhD - Founder"
                 className="founder-image"
                 loading="lazy"
                 decoding="async"
+                onError={(e) => {
+                  e.target.style.background = 'linear-gradient(135deg,#0b5c5e,#127a7d)';
+                }}
               />
               <div className="founder-gold-accent" />
-              {/* Experience Badge — overlapping bottom-right corner */}
-              <div className="founder-badge">
-                <Award size={18} className="founder-badge-icon" />
-                <div className="founder-badge-text">
-                  <span className="founder-badge-value">25+</span>
-                  <span className="founder-badge-label">Years Experience</span>
-                </div>
-              </div>
             </div>
           </div>
-
-          {/* Right â€” Text */}
           <div className="founder-text fade-in">
             <span className="section-label">Meet Our Founder</span>
-            <h2 className="section-title">Dr. Anwar Hussain<br />Mohammed PhD</h2>
-            <p className="founder-bio">
-              Dr. Anwar Hussain Mohammed PhD is a Regulatory Affairs and Business Development
-              professional with over <strong style={{ color: '#FFB3AA' }}>25 years of experience</strong> in
-              the pharmaceutical industry. He has extensive expertise in GCC and global regulatory
-              submissions, product registrations, lifecycle management, market access, CMC,
-              biologics, vaccines, oncology, and rare diseases.
+            <h2 className="section-title">Dr. Anwar Hussain Mohammed PhD</h2>
+            <p className="section-subtitle" style={{ marginBottom: '20px' }}>
+              Dr. Anwar Hussain Mohammed PhD, is a Regulatory Affairs and Business Development
+              professional with over 25 years of experience in the pharmaceutical industry.
             </p>
-            <p className="founder-bio" style={{ marginBottom: '24px' }}>
-              His career spans leading multinational pharmaceutical companies where he has
-              successfully registered hundreds of products across GCC and international markets,
-              building bridges between regulatory science and commercial success.
+            <p className="founder-bio">
+              He has extensive expertise in GCC and global regulatory submissions, product
+              registrations, lifecycle management, market access, CMC, biologics, vaccines,
+              oncology and rare diseases.
             </p>
             <div className="founder-expertise">
               {tags.map((tag, i) => (
                 <span key={i} className="founder-tag">{tag}</span>
               ))}
             </div>
-
-            {/* Founder Stats Row */}
-            <div className="founder-stats-row">
+            <div className="founder-stats-row" style={{ marginBottom: '24px' }}>
               {founderStats.map((s, i) => (
                 <div key={i} className="founder-stat-card">
                   <div className="founder-stat-value">{s.value}</div>
@@ -260,8 +237,7 @@ function Founder() {
                 </div>
               ))}
             </div>
-
-            <button className="btn-primary" onClick={scrollToContact}>
+            <button className="btn-primary" onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
               Book a Consultation <ArrowRight size={16} />
             </button>
           </div>
@@ -271,14 +247,14 @@ function Founder() {
   );
 }
 
-// â”€â”€â”€ STATS COUNTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// STATS COUNTER — 5 items in a 5-col grid
 function StatsCounter() {
   const stats = [
-    { value: 25, suffix: '+', label: 'Years Experience', icon: 'ðŸ†' },
-    { value: 50, suffix: '+', label: 'Products Registered', icon: 'ðŸ“‹' },
-    { value: 8,  suffix: '+', label: 'GCC & Global Markets', icon: 'ðŸŒ' },
-    { value: 100, suffix: '+', label: 'Professionals Trained', icon: 'ðŸŽ“' },
-    { value: 10, suffix: '+', label: 'Therapeutic Areas', icon: 'ðŸ”¬' },
+    { value: 25,  suffix: '+', label: 'Years Experience',      icon: <Award size={24} /> },
+    { value: 50,  suffix: '+', label: 'Products Registered',   icon: <FileText size={24} /> },
+    { value: 8,   suffix: '+', label: 'GCC & Global Markets',  icon: <Globe size={24} /> },
+    { value: 100, suffix: '+', label: 'Professionals Trained', icon: <Users size={24} /> },
+    { value: 10,  suffix: '+', label: 'Therapeutic Areas',     icon: <Microscope size={24} /> },
   ];
   const refs = stats.map(() => useRef(null));
   useEffect(() => {
@@ -319,14 +295,14 @@ function StatsCounter() {
   );
 }
 
-// â”€â”€â”€ SERVICES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// SERVICES
 function ServicesSection() {
   const ref = useFadeIn();
   const services = [
     { icon: <Globe size={24} />, title: 'GCC Regulatory Submissions', desc: 'Expert preparation and submission of regulatory dossiers for GCC markets including UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman.' },
     { icon: <FileText size={24} />, title: 'Product Registration', desc: 'End-to-end product registration management from initial filing through approval, covering all therapeutic categories.' },
     { icon: <TrendingUp size={24} />, title: 'Market Access Strategy', desc: 'Comprehensive market access planning to accelerate product launches and optimize reimbursement outcomes in GCC markets.' },
-    { icon: <Microscope size={24} />, title: 'CMC & Dossier Preparation', desc: 'Chemistry, Manufacturing and Controls documentation expertise for small molecules, biologics, vaccines and complex formulations.' },
+    { icon: <Microscope size={24} />, title: 'CMC and Dossier Preparation', desc: 'Chemistry, Manufacturing and Controls documentation expertise for small molecules, biologics, vaccines and complex formulations.' },
     { icon: <Shield size={24} />, title: 'Lifecycle Management', desc: 'Post-approval variation management, renewals and line extensions to maximize product value throughout its commercial lifecycle.' },
     { icon: <Building2 size={24} />, title: 'Business Development', desc: 'Strategic pharmaceutical business development including licensing, partnerships and market entry strategies for GCC expansion.' },
   ];
@@ -355,12 +331,12 @@ function ServicesSection() {
   );
 }
 
-// â”€â”€â”€ THERAPEUTIC AREAS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// THERAPEUTIC AREAS
 function TherapeuticAreas() {
   const ref = useFadeIn();
   const areas = [
     'Oncology', 'Rare Diseases', 'Biologics', 'Biosimilars',
-    'Vaccines', 'Cardiovascular', 'Diabetes & Metabolic',
+    'Vaccines', 'Cardiovascular', 'Diabetes and Metabolic',
     'Respiratory', 'Neurology', 'Immunology', 'Infectious Diseases',
     'Ophthalmology', 'Dermatology', 'Gastroenterology',
     'Haematology', 'Endocrinology', 'Paediatrics', 'Generics',
@@ -382,37 +358,39 @@ function TherapeuticAreas() {
   );
 }
 
-// â”€â”€â”€ COUNTRIES WE HELP WITH â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// GLOBAL REACH
 function Agencies() {
   const ref = useFadeIn();
   const countries = [
-    { flagCode: 'za', country: 'Africa' },
-    { flagCode: 'br', country: 'Brazil' },
+    { flagCode: 'ae', country: 'UAE' },
+    { flagCode: 'sa', country: 'Saudi Arabia' },
+    { flagCode: 'gb', country: 'UK / MHRA' },
+    { flagCode: 'eu', country: 'Europe / EMA' },
+    { flagCode: 'us', country: 'USA / FDA' },
     { flagCode: 'cn', country: 'China' },
     { flagCode: 'jp', country: 'Japan' },
-    { flagCode: 'ru', country: 'Russia' },
-    { flagCode: 'us', country: 'USA' },
-    { flagCode: 'gb', country: 'UK' },
-    { flagCode: 'eu', country: 'Europe' },
+    { flagCode: 'br', country: 'Brazil' },
   ];
   return (
     <section className="agencies" ref={ref}>
       <div className="container">
         <div className="agencies-header fade-in">
           <span className="section-label">Global Reach</span>
-          <h2 className="section-title">Countries We Help With</h2>
+          <h2 className="section-title">Markets We Serve</h2>
+          <p className="section-subtitle" style={{ margin: '0 auto', color: 'rgba(255,255,255,0.65)' }}>
+            Reg Excellence supports regulatory submissions across major global markets.
+          </p>
         </div>
         <div className="agencies-grid fade-in">
-          {countries.map((a, i) => (
+          {countries.map((c, i) => (
             <div key={i} className="agency-card">
-              <div className="agency-flag">
-                <img
-                  src={`https://flagcdn.com/w160/${a.flagCode}.png`}
-                  alt={`${a.country} flag`}
-                  className="agency-flag-img"
-                />
-              </div>
-              <div className="agency-country">{a.country}</div>
+              <img
+                src={"https://flagcdn.com/w80/" + c.flagCode + ".png"}
+                alt={c.country}
+                className="agency-flag"
+                loading="lazy"
+              />
+              <span className="agency-name">{c.country}</span>
             </div>
           ))}
         </div>
@@ -421,49 +399,46 @@ function Agencies() {
   );
 }
 
-// â”€â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// TESTIMONIALS
 function Testimonials() {
   const ref = useFadeIn();
   const testimonials = [
     {
-      text: "Dr. Anwar's expertise in GCC regulatory submissions was invaluable. He guided our product registration process with professionalism and deep knowledge of SFDA requirements, helping us achieve approval 3 months ahead of schedule.",
-      name: "Sarah Al-Mansouri",
-      role: "Regulatory Affairs Director, Gulf Pharma Co.",
-      initials: "SA",
+      name: 'Dr. Sarah Al-Rashidi',
+      role: 'Regulatory Director, Gulf Pharma',
+      text: "Reg Excellence transformed our GCC market entry strategy. Their expertise in UAE and Saudi Arabia regulatory requirements saved us months of delays.",
+      rating: 5,
     },
     {
-      text: "The Career Mentoring program transformed my professional trajectory. Dr. Anwar's one-to-one guidance helped me transition into a senior regulatory role and gave me confidence to navigate complex GCC submissions independently.",
-      name: "Ahmed Hassan",
-      role: "Senior Regulatory Affairs Manager",
-      initials: "AH",
+      name: 'James Thornton',
+      role: 'VP Regulatory Affairs, BioTech UK',
+      text: "Outstanding depth of knowledge in CMC and biologics submissions. Dr. Anwar's team delivered exactly what we needed for our MENA expansion.",
+      rating: 5,
     },
     {
-      text: "Exceptional knowledge of biologics and rare disease pathways across GCC. Reg Excellence delivered a comprehensive market access strategy that significantly accelerated our product launch timeline across all Gulf markets.",
-      name: "Dr. Priya Nair",
-      role: "VP Medical Affairs, International Biotech",
-      initials: "PN",
+      name: 'Dr. Fatima Hassan',
+      role: 'Head of RA, Pan Gulf Medical',
+      text: "Professional, responsive and highly knowledgeable. They handled our product registration renewals seamlessly across 6 GCC markets.",
+      rating: 5,
     },
   ];
   return (
     <section className="testimonials" ref={ref}>
       <div className="container">
         <div className="testimonials-header fade-in">
-          <span className="section-label">Client Stories</span>
+          <span className="section-label">Client Feedback</span>
           <h2 className="section-title">What Our Clients Say</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            Trusted by pharmaceutical companies and regulatory professionals across GCC and beyond.
-          </p>
         </div>
         <div className="testimonials-grid">
           {testimonials.map((t, i) => (
             <div key={i} className="testimonial-card fade-in">
-              <div className="testimonial-quote-icon">"</div>
               <div className="testimonial-stars">
-                {[...Array(5)].map((_, j) => <span key={j} className="star">â˜…</span>)}
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} size={16} fill="currentColor" />
+                ))}
               </div>
-              <p className="testimonial-text">{t.text}</p>
+              <p className="testimonial-text">"{t.text}"</p>
               <div className="testimonial-author">
-                <div className="testimonial-avatar">{t.initials}</div>
                 <div>
                   <div className="testimonial-name">{t.name}</div>
                   <div className="testimonial-role">{t.role}</div>
@@ -477,109 +452,48 @@ function Testimonials() {
   );
 }
 
-// â”€â”€â”€ LEAD CAPTURE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-function LeadCapture() {
-  const ref = useFadeIn();
-  const [form, setForm] = useState({ name: '', email: '' });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (form.name && form.email) {
-      console.log('Lead captured:', form);
-      setSubmitted(true);
-    }
-  };
-
+// FLOATING CONTACT US BUTTON
+function FloatingContact() {
+  const [hovered, setHovered] = useState(false);
   return (
-    <section className="lead-capture" ref={ref}>
-      <div className="container">
-        <div className="lead-capture-inner">
-          <div className="lead-capture-text fade-in">
-            <span className="section-label">Free Resource</span>
-            <h2 className="section-title">Get Your Free Career Guide</h2>
-            <p>
-              Download our comprehensive PDF guide â€” written by Dr. Anwar Hussain Mohammed PhD â€”
-              on how to build a successful career in GCC Regulatory Affairs.
-            </p>
-            <div className="lead-capture-pdf">
-              <div className="lead-capture-pdf-icon">ðŸ“„</div>
-              <div className="lead-capture-pdf-info">
-                <strong>"Guide to Building a Career in GCC Regulatory Affairs"</strong>
-                <span>Free PDF â€¢ Expert insights from a seasoned professional</span>
-              </div>
-            </div>
-            <div style={{ marginTop: '20px', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-              {['Career pathways in GCC RA', 'Key skills employers look for', 'Top regulatory bodies & roles', 'Salary benchmarks & growth'].map((p, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: 'rgba(255,255,255,0.75)' }}>
-                  <CheckCircle size={14} style={{ color: 'var(--gold)', flexShrink: 0 }} /> {p}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="lead-capture-form-card fade-in">
-            {submitted ? (
-              <div className="form-success">
-                <div style={{ fontSize: '48px', marginBottom: '16px' }}>ðŸŽ‰</div>
-                <h3 style={{ color: 'var(--gold)', marginBottom: '8px' }}>Thank you, {form.name}!</h3>
-                <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '15px' }}>
-                  Your free guide is on its way to {form.email}. Check your inbox shortly.
-                </p>
-              </div>
-            ) : (
-              <>
-                <h3>Download Free Guide</h3>
-                <p>Enter your details to receive the guide instantly.</p>
-                <form onSubmit={handleSubmit}>
-                  <div className="form-group">
-                    <label>Full Name *</label>
-                    <input
-                      type="text"
-                      placeholder="Dr. Jane Smith"
-                      value={form.name}
-                      onChange={e => setForm({ ...form, name: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label>Email Address *</label>
-                    <input
-                      type="email"
-                      placeholder="jane@company.com"
-                      value={form.email}
-                      onChange={e => setForm({ ...form, email: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', marginTop: '8px' }}>
-                    <Download size={16} /> Download Free Guide
-                  </button>
-                  <p style={{ textAlign: 'center', fontSize: '12px', color: 'rgba(255,255,255,0.4)', marginTop: '12px' }}>
-                    No spam. Unsubscribe anytime.
-                  </p>
-                </form>
-              </>
-            )}
-          </div>
+    <div
+      className="floating-contact"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={scrollToContact}
+    >
+      <div className={`floating-contact-tooltip${hovered ? ' visible' : ''}`}>
+        <div className="fct-title">Contact Us</div>
+        <div className="fct-row">
+          <Mail size={13} />
+          <a href="mailto:admin@regexcellence.co.uk">admin@regexcellence.co.uk</a>
+        </div>
+        <div className="fct-row">
+          <Phone size={13} />
+          <a href="tel:+447587570977">+44 7587 570977</a>
+        </div>
+        <div className="fct-row">
+          <MapPin size={13} />
+          <span>3 Aimson Rd W, Timperley<br />Altrincham, WA15 7XP, UK</span>
         </div>
       </div>
-    </section>
+      <span className="floating-contact-label">Contact Us</span>
+      <Phone size={18} />
+    </div>
   );
 }
 
-// â”€â”€â”€ CONTACT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// CONTACT
 function Contact() {
   const ref = useFadeIn();
+  const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: '', phone: '',
     position: '', department: '', company: '', country: '', message: '',
   });
-  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Contact form:', form);
     setSubmitted(true);
   };
 
@@ -597,11 +511,10 @@ function Contact() {
           </p>
         </div>
         <div className="contact-inner">
-          {/* Left â€” Contact Info + Map */}
           <div className="fade-in">
             <h3 className="contact-info-title">Contact Us</h3>
             <p className="contact-info-sub">
-              Reach out directly or fill in the form and we'll get back to you within 24 hours.
+              Reach out directly or fill in the form and we will get back to you within 24 hours.
             </p>
             <div className="contact-detail">
               <div className="contact-detail-icon"><Mail size={20} /></div>
@@ -641,7 +554,6 @@ function Contact() {
                 </div>
               </div>
             </div>
-            {/* Google Maps embed */}
             <div style={{ marginTop: '28px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--gray-200)' }}>
               <iframe
                 title="Reg Excellence Office Location"
@@ -655,16 +567,14 @@ function Contact() {
               />
             </div>
           </div>
-
-          {/* Right â€” Form */}
           <div className="fade-in">
             <div className="contact-form">
               {submitted ? (
                 <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-                  <div style={{ fontSize: '56px', marginBottom: '16px' }}>âœ…</div>
+                  <div style={{ fontSize: '56px', marginBottom: '16px' }}>&#10003;</div>
                   <h3 style={{ color: 'var(--primary-dark)', marginBottom: '8px', fontFamily: 'Playfair Display', fontSize: '24px' }}>Request Sent!</h3>
                   <p style={{ color: 'var(--text-secondary)' }}>
-                    Thank you for reaching out. We'll respond within 24 hours.
+                    Thank you for reaching out. We will respond within 24 hours.
                   </p>
                 </div>
               ) : (
@@ -672,8 +582,7 @@ function Contact() {
                   <h3 style={{ fontFamily: 'Inter', fontSize: '20px', fontWeight: 700, color: 'var(--primary-dark)', marginBottom: '24px' }}>
                     Submit a Request
                   </h3>
-                  {/* First Name / Last Name */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="form-row">
                     <div className="form-group">
                       <label>First Name *</label>
                       <input type="text" placeholder="First Name" value={form.firstName} onChange={set('firstName')} required />
@@ -683,8 +592,7 @@ function Contact() {
                       <input type="text" placeholder="Last Name" value={form.lastName} onChange={set('lastName')} required />
                     </div>
                   </div>
-                  {/* Email / Contact Number */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="form-row">
                     <div className="form-group">
                       <label>Email *</label>
                       <input type="email" placeholder="Email" value={form.email} onChange={set('email')} required />
@@ -694,8 +602,7 @@ function Contact() {
                       <input type="tel" placeholder="Contact Number" value={form.phone} onChange={set('phone')} />
                     </div>
                   </div>
-                  {/* Position / Department */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="form-row">
                     <div className="form-group">
                       <label>Position</label>
                       <input type="text" placeholder="Position" value={form.position} onChange={set('position')} />
@@ -705,8 +612,7 @@ function Contact() {
                       <input type="text" placeholder="Department" value={form.department} onChange={set('department')} />
                     </div>
                   </div>
-                  {/* Company / Country */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                  <div className="form-row">
                     <div className="form-group">
                       <label>Company Name</label>
                       <input type="text" placeholder="Company Name" value={form.company} onChange={set('company')} />
@@ -716,7 +622,6 @@ function Contact() {
                       <input type="text" placeholder="Country" value={form.country} onChange={set('country')} />
                     </div>
                   </div>
-                  {/* Project Requirements */}
                   <div className="form-group">
                     <label>Project Requirements *</label>
                     <textarea
@@ -740,8 +645,7 @@ function Contact() {
   );
 }
 
-// â”€â”€â”€ HOME PAGE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// â”€â”€â”€ HOME PAGE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// HOME PAGE
 export default function HomePage() {
   return (
     <>
@@ -754,8 +658,8 @@ export default function HomePage() {
       <TherapeuticAreas />
       <Agencies />
       <Testimonials />
-      <LeadCapture />
       <Contact />
+      <FloatingContact />
     </>
   );
 }

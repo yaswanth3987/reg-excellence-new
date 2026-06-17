@@ -29,6 +29,8 @@ function NotFound() {
   );
 }
 
+import GoToTop from './components/GoToTop';
+
 function AppInner() {
   return (
     <>
@@ -47,6 +49,7 @@ function AppInner() {
         </Routes>
       </main>
       <Footer />
+      <GoToTop />
     </>
   );
 }

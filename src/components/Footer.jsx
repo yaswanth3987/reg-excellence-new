@@ -7,21 +7,11 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-              <div style={{
-                background: '#ffffff',
-                borderRadius: '10px',
-                padding: '8px 14px',
-                display: 'inline-flex',
-                alignItems: 'center',
-              }}>
-                <img
-                  src="/logo.png"
-                  alt="Reg Excellence Logo"
-                  style={{ height: '52px', width: 'auto', objectFit: 'contain', display: 'block' }}
-                />
+            <Link to="/" className="footer-logo-link">
+              <div className="footer-logo-container">
+                <img src="/logo.png" alt="Reg Excellence Logo" />
               </div>
-            </div>
+            </Link>
             <p>UK-based pharmaceutical regulatory affairs and business development consulting for GCC and global pharmaceutical companies.</p>
             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
@@ -32,7 +22,7 @@ export default function Footer() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
                 <Phone size={14} style={{ color: '#C8382A' }} />
-                +44 (0) 000 000 0000
+                <a href="tel:+447587570977" style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }}>+44 7587 570977</a>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
                 <MapPin size={14} style={{ color: '#C8382A', flexShrink: 0, marginTop: '2px' }} />

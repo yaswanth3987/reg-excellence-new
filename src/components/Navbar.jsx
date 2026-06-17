@@ -32,12 +32,10 @@ export default function Navbar() {
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : 'transparent'}`}>
         <div className="navbar-inner">
-          <Link to="/" className="navbar-logo">
-            <img
-              src="/logo.png"
-              alt="Reg Excellence Logo"
-              style={{ height: '52px', width: 'auto', objectFit: 'contain', display: 'block' }}
-            />
+          <Link to="/" className="navbar-logo-premium">
+            <div className="navbar-brand-container">
+              <img src="/logo.png" alt="Reg Excellence Logo" />
+            </div>
           </Link>
 
           <ul className="navbar-links">

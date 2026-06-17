@@ -85,7 +85,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section style={{ padding: '100px 0', background: 'var(--white)' }}>
         <div className="container">
-          <div className="services-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+          <div className="services-grid">
             {services.map((s, i) => (
               <div key={i} className="service-card fade-in" style={{ padding: '40px' }}>
                 <div className="service-icon">{s.icon}</div>

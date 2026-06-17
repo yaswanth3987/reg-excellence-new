@@ -74,7 +74,7 @@ export default function AboutPage() {
       {/* Who We Are */}
       <section style={{ padding: '100px 0', background: 'var(--white)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }} className="about-page-inner">
+          <div className="about-page-inner split">
             <div className="fade-in">
               <img
                 src="/service44.jpg"
@@ -125,7 +125,7 @@ export default function AboutPage() {
       {/* Founder Spotlight */}
       <section style={{ padding: '100px 0', background: 'linear-gradient(135deg, #111111 0%, #1e1e1e 50%, #2a2a2a 100%)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '80px', alignItems: 'center' }} className="about-page-inner">
+          <div className="about-page-inner split-founder">
             <div className="fade-in" style={{ display: 'flex', justifyContent: 'center' }}>
               <div style={{ position: 'relative', width: '300px' }}>
                 <img
@@ -178,7 +178,7 @@ export default function AboutPage() {
               The principles that guide every engagement and define how we deliver for our clients.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="about-values-grid">
+          <div className="about-values-grid">
             {values.map((v, i) => (
               <div key={i} className="fade-in" style={{
                 background: 'var(--white)', borderRadius: '16px', padding: '32px 28px',
@@ -203,7 +203,7 @@ export default function AboutPage() {
             <span className="section-label">Our Story</span>
             <h2 className="section-title">Our Journey</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }} className="about-timeline-grid">
+          <div className="about-timeline-grid">
             {milestones.map((m, i) => (
               <div key={i} className="fade-in" style={{ textAlign: 'center', padding: '32px 20px', background: 'var(--gray-50)', borderRadius: '16px', border: '1px solid var(--gray-200)', position: 'relative' }}>
                 <div style={{ fontFamily: 'Playfair Display', fontSize: '13px', fontWeight: 700, color: 'var(--primary)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>{m.year}</div>
