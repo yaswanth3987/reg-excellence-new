@@ -43,9 +43,9 @@ export default function Navbar() {
           </ul>
 
           <div className="navbar-cta">
-            <Link to="/consultation" className="navbar-book-btn" onClick={handleBookConsultation}>
+            <a href="/#contact" className="navbar-book-btn" onClick={handleBookConsultation}>
               Book a Consultation
-            </Link>
+            </a>
             <button
               className="navbar-hamburger"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -67,9 +67,9 @@ export default function Navbar() {
         <Link to="/insights">Insights</Link>
         <Link to="/corporate-training">Corporate Training</Link>
         <Link to="/careers">Careers</Link>
-        <Link to="/consultation" className="mobile-book-btn" onClick={handleBookConsultation}>
+        <a href="/#contact" className="mobile-book-btn" onClick={handleBookConsultation}>
           Book a Consultation
-        </Link>
+        </a>
       </div>
     </>
   );

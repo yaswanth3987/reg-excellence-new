@@ -1,5 +1,13 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Send, CheckCircle, AlertCircle, Loader2, Lock, ShieldCheck, Target, Clock, User, Mail, Building2, PenLine } from 'lucide-react';
+
+// ─── EmailJS Configuration ────────────────────────────────────────────────────
+// Replace these three values with your own from https://emailjs.com
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || 'YOUR_PUBLIC_KEY';
+// ─────────────────────────────────────────────────────────────────────────────
 
 export default function ConsultationForm() {
   const [formData, setFormData] = useState({
@@ -10,21 +18,20 @@ export default function ConsultationForm() {
     message: ''
   });
 
-  const [status, setStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
+  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
   const [errorMessage, setErrorMessage] = useState('');
   const [validationErrors, setValidationErrors] = useState({});
 
   const validateForm = () => {
     const errors = {};
     if (!formData.firstName.trim()) errors.firstName = 'First name is required';
-    if (!formData.lastName.trim()) errors.lastName = 'Last name is required';
+    if (!formData.lastName.trim())  errors.lastName  = 'Last name is required';
     if (!formData.email.trim()) {
       errors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       errors.email = 'Invalid email format';
     }
     if (!formData.company.trim()) errors.company = 'Company is required';
-    
     if (!formData.message.trim()) {
       errors.message = 'Project details are required';
     } else if (formData.message.trim().length < 20) {
@@ -32,18 +39,13 @@ export default function ConsultationForm() {
     } else if (formData.message.length > 1000) {
       errors.message = 'Message must not exceed 1000 characters';
     }
-
     setValidationErrors(errors);
     return Object.keys(errors).length === 0;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-    // Clear validation error when user types
+    setFormData(prev => ({ ...prev, [name]: value }));
     if (validationErrors[name]) {
       setValidationErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -52,44 +54,46 @@ export default function ConsultationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage('');
-    
     if (!validateForm()) return;
 
     setStatus('submitting');
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    // Template variables — these must match the variable names in your EmailJS template
+    const templateParams = {
+      first_name:   formData.firstName,
+      last_name:    formData.lastName,
+      from_name:    `${formData.firstName} ${formData.lastName}`,
+      from_email:   formData.email,
+      company:      formData.company,
+      message:      formData.message,
+      reply_to:     formData.email,
+      to_name:      'Reg Excellence Team',
+    };
 
-      if (!response.ok) {
-        throw new Error('Failed to submit enquiry');
-      }
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
 
       setStatus('success');
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        company: '',
-        message: ''
-      });
+      setFormData({ firstName: '', lastName: '', email: '', company: '', message: '' });
       setValidationErrors({});
     } catch (error) {
-      console.error('Submission error:', error);
+      console.error('EmailJS error:', error);
       setStatus('error');
-      setErrorMessage('Something went wrong while submitting your enquiry. Please try again or email us directly.');
+      setErrorMessage(
+        'Something went wrong while sending your enquiry. Please try again or email us directly at admin@regexcellence.co.uk'
+      );
     }
   };
 
   return (
     <div className="consultation-section" id="contact">
       <div className="consultation-container">
-        
+
         <div className="consultation-header">
           <span className="consultation-label">GET IN TOUCH</span>
           <h1 className="consultation-title">Speak to a Regulatory<br/>Affairs Consultant</h1>
@@ -114,7 +118,7 @@ export default function ConsultationForm() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="consultation-form" noValidate>
-              
+
               {status === 'error' && (
                 <div className="consultation-error-message">
                   <AlertCircle size={20} color="#C8382A" />
@@ -218,8 +222,8 @@ export default function ConsultationForm() {
                 </div>
               </div>
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="btn-primary"
                 style={{ marginTop: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', padding: '14px', fontSize: '16px', fontWeight: 'bold' }}
                 disabled={status === 'submitting'}
@@ -263,7 +267,7 @@ export default function ConsultationForm() {
               <div style={{ color: '#C8382A' }}><Clock size={28} /></div>
               <div>
                 <h4 style={{ fontFamily: 'Inter', fontSize: '14px', fontWeight: 'bold', margin: '0 0 4px', color: '#fff' }}>Timely Response</h4>
-                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', lineHeight: 1.5, margin: 0 }}>We typically respond within 24 hours</p>
+                <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', lineHeight: 1.5, margin: 0 }}>We typically respond within 2 hours</p>
               </div>
             </div>
           </div>

@@ -1,10 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import {
   Globe, FileText, TrendingUp, Microscope, Building2,
   Shield, Award, CheckCircle, ArrowRight, Phone, Mail,
-  MapPin, Star, Users
+  MapPin, Star, Users, Loader2
 } from 'lucide-react';
 import ConsultationForm from '../components/ConsultationForm';
+
+// ─── EmailJS Configuration ────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || 'YOUR_PUBLIC_KEY';
+// ─────────────────────────────────────────────────────────────────────────────
 
 function useFadeIn() {
   const ref = useRef();
@@ -486,15 +493,47 @@ function FloatingContact() {
 // CONTACT
 function Contact() {
   const ref = useFadeIn();
-  const [submitted, setSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
+  const [submitError, setSubmitError] = useState('');
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: '', phone: '',
     position: '', department: '', company: '', country: '', message: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitError('');
+    setSubmitStatus('submitting');
+
+    const templateParams = {
+      first_name:  form.firstName,
+      last_name:   form.lastName,
+      from_name:   `${form.firstName} ${form.lastName}`,
+      from_email:  form.email,
+      phone:       form.phone,
+      position:    form.position,
+      department:  form.department,
+      company:     form.company,
+      country:     form.country,
+      message:     form.message,
+      reply_to:    form.email,
+      to_name:     'Reg Excellence Team',
+    };
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+      setSubmitStatus('success');
+      setForm({ firstName: '', lastName: '', email: '', phone: '', position: '', department: '', company: '', country: '', message: '' });
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setSubmitStatus('error');
+      setSubmitError('Something went wrong. Please try again or email admin@regexcellence.co.uk directly.');
+    }
   };
 
   const set = (field) => (e) => setForm({ ...form, [field]: e.target.value });
@@ -514,7 +553,7 @@ function Contact() {
           <div className="fade-in">
             <h3 className="contact-info-title">Contact Us</h3>
             <p className="contact-info-sub">
-              Reach out directly or fill in the form and we will get back to you within 24 hours.
+              Reach out directly or fill in the form and we will get back to you within 2 hours.
             </p>
             <div className="contact-detail">
               <div className="contact-detail-icon"><Mail size={20} /></div>
@@ -569,12 +608,12 @@ function Contact() {
           </div>
           <div className="fade-in">
             <div className="contact-form">
-              {submitted ? (
+              {submitStatus === 'success' ? (
                 <div style={{ textAlign: 'center', padding: '60px 20px' }}>
                   <div style={{ fontSize: '56px', marginBottom: '16px' }}>&#10003;</div>
                   <h3 style={{ color: 'var(--primary-dark)', marginBottom: '8px', fontFamily: 'Playfair Display', fontSize: '24px' }}>Request Sent!</h3>
                   <p style={{ color: 'var(--text-secondary)' }}>
-                    Thank you for reaching out. We will respond within 24 hours.
+                    Thank you for reaching out. We will respond within 2 hours.
                   </p>
                 </div>
               ) : (
@@ -582,44 +621,51 @@ function Contact() {
                   <h3 style={{ fontFamily: 'Inter', fontSize: '20px', fontWeight: 700, color: 'var(--primary-dark)', marginBottom: '24px' }}>
                     Submit a Request
                   </h3>
+
+                  {submitStatus === 'error' && (
+                    <div style={{ background: '#fff0f0', border: '1px solid #C8382A', borderRadius: '8px', padding: '12px 16px', marginBottom: '20px', color: '#C8382A', fontSize: '14px' }}>
+                      {submitError}
+                    </div>
+                  )}
+
                   <div className="form-row">
                     <div className="form-group">
                       <label>First Name *</label>
-                      <input type="text" placeholder="First Name" value={form.firstName} onChange={set('firstName')} required />
+                      <input type="text" placeholder="First Name" value={form.firstName} onChange={set('firstName')} required disabled={submitStatus === 'submitting'} />
                     </div>
                     <div className="form-group">
                       <label>Last Name *</label>
-                      <input type="text" placeholder="Last Name" value={form.lastName} onChange={set('lastName')} required />
+                      <input type="text" placeholder="Last Name" value={form.lastName} onChange={set('lastName')} required disabled={submitStatus === 'submitting'} />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="form-group">
                       <label>Email *</label>
-                      <input type="email" placeholder="Email" value={form.email} onChange={set('email')} required />
+                      <input type="email" placeholder="Email" value={form.email} onChange={set('email')} required disabled={submitStatus === 'submitting'} />
                     </div>
                     <div className="form-group">
                       <label>Contact Number</label>
-                      <input type="tel" placeholder="Contact Number" value={form.phone} onChange={set('phone')} />
+                      <input type="tel" placeholder="Contact Number" value={form.phone} onChange={set('phone')} disabled={submitStatus === 'submitting'} />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="form-group">
                       <label>Position</label>
-                      <input type="text" placeholder="Position" value={form.position} onChange={set('position')} />
+                      <input type="text" placeholder="Position" value={form.position} onChange={set('position')} disabled={submitStatus === 'submitting'} />
                     </div>
                     <div className="form-group">
                       <label>Department</label>
-                      <input type="text" placeholder="Department" value={form.department} onChange={set('department')} />
+                      <input type="text" placeholder="Department" value={form.department} onChange={set('department')} disabled={submitStatus === 'submitting'} />
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="form-group">
                       <label>Company Name</label>
-                      <input type="text" placeholder="Company Name" value={form.company} onChange={set('company')} />
+                      <input type="text" placeholder="Company Name" value={form.company} onChange={set('company')} disabled={submitStatus === 'submitting'} />
                     </div>
                     <div className="form-group">
                       <label>Country</label>
-                      <input type="text" placeholder="Country" value={form.country} onChange={set('country')} />
+                      <input type="text" placeholder="Country" value={form.country} onChange={set('country')} disabled={submitStatus === 'submitting'} />
                     </div>
                   </div>
                   <div className="form-group">
@@ -629,11 +675,16 @@ function Contact() {
                       value={form.message}
                       onChange={set('message')}
                       required
+                      disabled={submitStatus === 'submitting'}
                       style={{ minHeight: '120px' }}
                     />
                   </div>
-                  <button type="submit" className="btn-teal" style={{ width: '100%', justifyContent: 'center' }}>
-                    Send <ArrowRight size={16} />
+                  <button type="submit" className="btn-teal" style={{ width: '100%', justifyContent: 'center' }} disabled={submitStatus === 'submitting'}>
+                    {submitStatus === 'submitting' ? (
+                      <><Loader2 size={16} className="spinner" /> Sending...</>
+                    ) : (
+                      <>Send <ArrowRight size={16} /></>
+                    )}
                   </button>
                 </form>
               )}
