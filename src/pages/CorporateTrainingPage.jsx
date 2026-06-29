@@ -60,7 +60,7 @@ export default function CorporateTrainingPage() {
   const ref = useFadeIn();
   useSEO({
     title: 'Corporate Pharmaceutical Training | GCC Regulatory Affairs & GMP | Reg Excellence UK',
-    description: 'Bespoke corporate pharmaceutical training programmes: GCC regulatory affairs, CMC, GMP compliance, market access and business development. UK-based expert trainers delivering across GCC.',
+    description: 'Bespoke corporate pharmaceutical training programmes: GCC regulatory affairs, CMC, GMP compliance, market access and business development. Expert trainers delivering across GCC.',
   });
 
   return (

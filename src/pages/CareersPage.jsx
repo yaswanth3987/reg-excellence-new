@@ -50,7 +50,7 @@ export default function CareersPage() {
   const ref = useFadeIn();
   useSEO({
     title: 'Pharmaceutical Careers | GCC Regulatory Affairs Jobs | Reg Excellence UK',
-    description: 'Join Reg Excellence — career opportunities in GCC regulatory affairs, pharmaceutical consulting and regulatory training. Work with a leading UK-based pharmaceutical regulatory expert.',
+    description: 'Join Reg Excellence — career opportunities in GCC regulatory affairs, pharmaceutical consulting and regulatory training. Work with a leading pharmaceutical regulatory expert.',
   });
 
   return (

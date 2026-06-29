@@ -4,6 +4,7 @@ import {
   Shield, Award, CheckCircle, ArrowRight, Phone, Mail,
   MapPin, Star, Users
 } from 'lucide-react';
+import ConsultationForm from '../components/ConsultationForm';
 
 function useFadeIn() {
   const ref = useRef();
@@ -362,14 +363,13 @@ function TherapeuticAreas() {
 function Agencies() {
   const ref = useFadeIn();
   const countries = [
-    { flagCode: 'ae', country: 'UAE' },
-    { flagCode: 'sa', country: 'Saudi Arabia' },
-    { flagCode: 'gb', country: 'UK / MHRA' },
-    { flagCode: 'eu', country: 'Europe / EMA' },
-    { flagCode: 'us', country: 'USA / FDA' },
-    { flagCode: 'cn', country: 'China' },
-    { flagCode: 'jp', country: 'Japan' },
-    { flagCode: 'br', country: 'Brazil' },
+    { flagCode: 'us', country: 'US FDA' },
+    { flagCode: 'jp', country: 'PMDA (Japan)' },
+    { flagCode: 'gb', country: 'HA (Health Authority)' },
+    { flagCode: 'br', country: 'ANVISA (Brazil)' },
+    { flagCode: 'eu', country: 'EMA (Europe)' },
+    { flagCode: 'sa', country: 'KSA / SFDA' },
+    { flagCode: 'ae', country: 'UAE / MOHAP' },
   ];
   return (
     <section className="agencies" ref={ref}>
@@ -658,7 +658,7 @@ export default function HomePage() {
       <TherapeuticAreas />
       <Agencies />
       <Testimonials />
-      <Contact />
+      <ConsultationForm />
       <FloatingContact />
     </>
   );

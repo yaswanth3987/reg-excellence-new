@@ -18,13 +18,7 @@ export default function Navbar() {
 
   const isActive = (path) => location.pathname === path ? 'active' : '';
 
-  const scrollToContact = (e) => {
-    e.preventDefault();
-    if (location.pathname === '/') {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = '/#contact';
-    }
+  const handleBookConsultation = () => {
     setMenuOpen(false);
   };
 
@@ -49,9 +43,9 @@ export default function Navbar() {
           </ul>
 
           <div className="navbar-cta">
-            <button className="navbar-book-btn" onClick={scrollToContact}>
+            <Link to="/consultation" className="navbar-book-btn" onClick={handleBookConsultation}>
               Book a Consultation
-            </button>
+            </Link>
             <button
               className="navbar-hamburger"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -73,9 +67,9 @@ export default function Navbar() {
         <Link to="/insights">Insights</Link>
         <Link to="/corporate-training">Corporate Training</Link>
         <Link to="/careers">Careers</Link>
-        <a href="/#contact" className="mobile-book-btn" onClick={scrollToContact}>
+        <Link to="/consultation" className="mobile-book-btn" onClick={handleBookConsultation}>
           Book a Consultation
-        </a>
+        </Link>
       </div>
     </>
   );

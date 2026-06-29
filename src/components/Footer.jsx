@@ -12,7 +12,7 @@ export default function Footer() {
                 <img src="/logo.png" alt="Reg Excellence Logo" />
               </div>
             </Link>
-            <p>UK-based pharmaceutical regulatory affairs and business development consulting for GCC and global pharmaceutical companies.</p>
+            <p>Pharmaceutical regulatory affairs and business development consulting for GCC and global pharmaceutical companies.</p>
             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255,255,255,0.55)' }}>
                 <Mail size={14} style={{ color: '#C8382A' }} />

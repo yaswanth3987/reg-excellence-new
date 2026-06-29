@@ -21,13 +21,13 @@ const programs = [
   {
     icon: <GraduationCap size={28} />,
     title: 'GCC Regulatory Affairs Masterclass',
-    desc: 'Learn regulatory pathways, submissions, approvals and lifecycle management in GCC markets.',
+    desc: 'Learn regulatory pathways, submissions, approvals and lifecycle management across global and GCC markets.',
     features: [
-      'GCC regulatory frameworks & guidelines',
-      'CTD/eCTD dossier preparation',
-      'SFDA, MOHAP, MOH submission processes',
+      'US FDA, EMA, PMDA & HA regulatory frameworks',
+      'ANVISA (Brazil) submission requirements',
+      'KSA (SFDA) & UAE (MOHAP) dossier processes',
+      'CTD/eCTD dossier preparation & submission',
       'Post-approval variation management',
-      'Regulatory strategy & planning',
       'Case studies & real-world examples',
     ],
     tag: 'Most Popular',
@@ -85,7 +85,7 @@ export default function TrainingPage() {
   const navigate = useNavigate();
   useSEO({
     title: 'Regulatory Affairs Training & Mentoring | GCC Masterclass | Reg Excellence UK',
-    description: 'GCC regulatory affairs training, career mentoring, CV review and business development programs for pharmacists and pharmaceutical professionals. UK-based expert-led courses.',
+    description: 'GCC regulatory affairs training, career mentoring, CV review and business development programs for pharmacists and pharmaceutical professionals. Expert-led courses.',
   });
 
   return (

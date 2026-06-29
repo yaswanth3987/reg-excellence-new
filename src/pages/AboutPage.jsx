@@ -38,7 +38,7 @@ export default function AboutPage() {
   const navigate = useNavigate();
   useSEO({
     title: 'About Reg Excellence | UK-Based GCC Regulatory Affairs Consultancy',
-    description: 'Learn about Reg Excellence — a UK-based pharmaceutical regulatory affairs consultancy led by Dr. Anwar Hussain Mohammed PhD. Our mission, values, and expertise in GCC regulatory affairs.',
+    description: 'Learn about Reg Excellence — a pharmaceutical regulatory affairs consultancy led by Dr. Anwar Hussain Mohammed PhD. Our mission, values, and expertise in GCC regulatory affairs.',
   });
 
   const goToContact = () => {
@@ -58,7 +58,7 @@ export default function AboutPage() {
             About Reg Excellence
           </h1>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            A UK-based pharmaceutical regulatory affairs consultancy dedicated to helping
+            A pharmaceutical regulatory affairs consultancy dedicated to helping
             global pharmaceutical companies navigate GCC and international regulatory landscapes
             with confidence, speed, and precision. Based in <strong style={{ color: '#FFB3AA' }}>Altrincham, United Kingdom</strong>.
           </p>
@@ -92,7 +92,7 @@ export default function AboutPage() {
               <span className="section-label">Who We Are</span>
               <h2 className="section-title">Your Trusted Regulatory Partner</h2>
               <p className="section-subtitle" style={{ marginBottom: '28px' }}>
-                Reg Excellence is a specialist UK-based pharmaceutical regulatory affairs consultancy
+                Reg Excellence is a specialist pharmaceutical regulatory affairs consultancy
                 providing expert guidance to pharmaceutical companies seeking to register, commercialise,
                 and grow their products across GCC and global markets.
               </p>

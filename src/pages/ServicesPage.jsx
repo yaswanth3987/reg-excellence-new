@@ -18,9 +18,9 @@ function useFadeIn() {
 
 const services = [
   {
-    icon: <Globe size={28} />, title: 'GCC Regulatory Submissions',
-    desc: 'Expert preparation and management of regulatory dossiers for all GCC markets.',
-    features: ['UAE MOHAP submissions', 'SFDA (Saudi Arabia)', 'Kuwait, Qatar, Bahrain, Oman', 'CTD/eCTD format expertise'],
+    icon: <Globe size={28} />, title: 'Global Regulatory Submissions',
+    desc: 'Expert preparation and management of regulatory dossiers for GCC and global markets.',
+    features: ['US FDA submissions', 'PMDA (Japan) & EMA (Europe)', 'HA & ANVISA (Brazil) dossiers', 'KSA (SFDA) & UAE (MOHAP) submissions'],
   },
   {
     icon: <FileText size={28} />, title: 'Product Registration',
@@ -63,7 +63,7 @@ export default function ServicesPage() {
   const ref = useFadeIn();
   useSEO({
     title: 'Regulatory Affairs Services | GCC Product Registration & Market Access | Reg Excellence UK',
-    description: 'Specialist GCC regulatory affairs services: product registration, MHRA, EMA, CMC dossier preparation, lifecycle management, market access and business development. UK-based pharmaceutical consultancy.',
+    description: 'Specialist GCC regulatory affairs services: product registration, MHRA, EMA, CMC dossier preparation, lifecycle management, market access and business development. Expert pharmaceutical consultancy.',
   });
 
   return (

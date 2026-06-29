@@ -9,6 +9,7 @@ import TrainingPage from './pages/TrainingPage';
 import InsightsPage from './pages/InsightsPage';
 import CorporateTrainingPage from './pages/CorporateTrainingPage';
 import CareersPage from './pages/CareersPage';
+import ConsultationPage from './pages/ConsultationPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -45,6 +46,7 @@ function AppInner() {
           <Route path="/insights" element={<InsightsPage />} />
           <Route path="/corporate-training" element={<CorporateTrainingPage />} />
           <Route path="/careers" element={<CareersPage />} />
+          <Route path="/consultation" element={<ConsultationPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
