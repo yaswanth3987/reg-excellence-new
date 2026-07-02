@@ -1,4 +1,4 @@
-import { Globe, FileText, TrendingUp, Microscope, Building2, Shield, Award, CheckCircle, ArrowRight, Layers } from 'lucide-react';
+import { Globe, FileText, TrendingUp, Microscope, Building2, Shield, Award, CheckCircle, ArrowRight, Layers, FlaskConical, ClipboardCheck } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import useSEO from '../hooks/useSEO';
 
@@ -57,6 +57,16 @@ const services = [
     desc: 'Continuous monitoring of GCC regulatory changes and competitive landscape analysis.',
     features: ['Regulatory landscape mapping', 'Competitor tracking', 'Policy analysis', 'Strategic advisory'],
   },
+  {
+    icon: <FlaskConical size={28} />, title: 'Active Pharmaceutical Ingredients (API)',
+    desc: 'Preparation and management of master files and foreign manufacturer accreditations.',
+    features: ['Preparation of Drug Master File (DMF)', 'ASMF, CEP, AF, Master File (MF)', 'AFM (Accreditation of Foreign Manufacturer)'],
+  },
+  {
+    icon: <ClipboardCheck size={28} />, title: 'GMP Audits & QMS',
+    desc: 'Comprehensive quality management services including site inspections and QMS training.',
+    features: ['GMP audits (site inspections)', 'Mock-Inspections', 'QMS implementation', 'QMS training'],
+  },
 ];
 
 export default function ServicesPage() {
@@ -112,7 +122,7 @@ export default function ServicesPage() {
               <h2>Ready to get started?</h2>
               <p>Book a consultation with Dr. Anwar Hussain Mohammed PhD today.</p>
             </div>
-            <button className="btn-teal" onClick={() => { window.location.href = '/#contact'; }}>
+            <button className="btn-teal" onClick={() => { window.location.href = '/consultation'; }}>
               Book a Consultation <ArrowRight size={16} />
             </button>
           </div>

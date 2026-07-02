@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Globe, Microscope, Shield, TrendingUp, Building2, Award, CheckCircle, ArrowRight, Users } from 'lucide-react';
+import { Globe, Microscope, Shield, TrendingUp, Building2, CheckCircle, ArrowRight, Users } from 'lucide-react';
 import useSEO from '../hooks/useSEO';
 
 function useFadeIn() {
@@ -77,7 +77,7 @@ export default function CorporateTrainingPage() {
             in GCC regulatory affairs, compliance, and business development.
           </p>
           <div style={{ marginTop: '36px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button className="btn-primary" onClick={() => { window.location.href = '/#contact'; }}>
+            <button className="btn-primary" onClick={() => { window.location.href = '/consultation'; }}>
               Request a Proposal <ArrowRight size={16} />
             </button>
             <a href="/training" className="btn-outline">View Individual Training</a>
@@ -124,7 +124,7 @@ export default function CorporateTrainingPage() {
                 </div>
               ))}
               <div style={{ marginTop: '32px' }}>
-                <button className="btn-primary" onClick={() => { window.location.href = '/#contact'; }}>
+                <button className="btn-primary" onClick={() => { window.location.href = '/consultation'; }}>
                   Request a Proposal <ArrowRight size={16} />
                 </button>
               </div>
@@ -215,7 +215,7 @@ export default function CorporateTrainingPage() {
               <h2>Ready to train your team?</h2>
               <p>Get in touch to discuss a bespoke corporate training programme.</p>
             </div>
-            <button className="btn-teal" onClick={() => { window.location.href = '/#contact'; }}>
+            <button className="btn-teal" onClick={() => { window.location.href = '/consultation'; }}>
               Book a Consultation <ArrowRight size={16} />
             </button>
           </div>

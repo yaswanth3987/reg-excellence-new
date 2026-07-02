@@ -60,12 +60,16 @@ export default function ConsultationForm() {
 
     // Template variables — these must match the variable names in your EmailJS template
     const templateParams = {
+      // Standard EmailJS "Contact Us" template variables
+      name:         `${formData.firstName} ${formData.lastName}`,
+      email:        formData.email,
+      message:      formData.message,
+      // Additional custom variables
       first_name:   formData.firstName,
       last_name:    formData.lastName,
       from_name:    `${formData.firstName} ${formData.lastName}`,
       from_email:   formData.email,
       company:      formData.company,
-      message:      formData.message,
       reply_to:     formData.email,
       to_name:      'Reg Excellence Team',
     };

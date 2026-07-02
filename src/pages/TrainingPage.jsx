@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { GraduationCap, Users, FileCheck, TrendingUp, ArrowRight, CheckCircle, Building2 } from 'lucide-react';
+import { GraduationCap, Users, FileCheck, TrendingUp, ArrowRight, Building2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 
@@ -131,7 +131,7 @@ export default function TrainingPage() {
                 <ul className="training-card-features">
                   {p.features.map((f, j) => <li key={j}>{f}</li>)}
                 </ul>
-                <button className="btn-primary" onClick={() => { window.location.href = '/#contact'; }}>
+                <button className="btn-primary" onClick={() => { window.location.href = '/consultation'; }}>
                   Enquire Now <ArrowRight size={16} />
                 </button>
               </div>
@@ -177,7 +177,7 @@ export default function TrainingPage() {
               <h2>Ready to start your training journey?</h2>
               <p>Contact us to discuss which program is right for you.</p>
             </div>
-            <button className="btn-teal" onClick={() => { window.location.href = '/#contact'; }}>
+            <button className="btn-teal" onClick={() => { window.location.href = '/consultation'; }}>
               Book a Consultation <ArrowRight size={16} />
             </button>
           </div>

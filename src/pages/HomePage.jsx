@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import {
   Globe, FileText, TrendingUp, Microscope, Building2,
   Shield, Award, CheckCircle, ArrowRight, Phone, Mail,
-  MapPin, Star, Users, Loader2
+  MapPin, Star, Users, Loader2, FlaskConical, ClipboardCheck
 } from 'lucide-react';
 import ConsultationForm from '../components/ConsultationForm';
 
@@ -30,7 +30,7 @@ function useFadeIn() {
 }
 
 function scrollToContact() {
-  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  window.location.href = '/consultation';
 }
 
 // HERO — uses the CSS .hero-content layout with .hero-bg overlay
@@ -208,7 +208,7 @@ function Founder() {
           <div className="founder-image-wrap fade-in">
             <div className="founder-image-frame">
               <img
-                src="/founder.png"
+                src="/founder.jpg"
                 alt="Dr. Anwar Hussain Mohammed PhD - Founder"
                 className="founder-image"
                 loading="lazy"
@@ -245,7 +245,7 @@ function Founder() {
                 </div>
               ))}
             </div>
-            <button className="btn-primary" onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>
+            <button className="btn-primary" onClick={() => { window.location.href = '/consultation'; }}>
               Book a Consultation <ArrowRight size={16} />
             </button>
           </div>
@@ -313,6 +313,8 @@ function ServicesSection() {
     { icon: <Microscope size={24} />, title: 'CMC and Dossier Preparation', desc: 'Chemistry, Manufacturing and Controls documentation expertise for small molecules, biologics, vaccines and complex formulations.' },
     { icon: <Shield size={24} />, title: 'Lifecycle Management', desc: 'Post-approval variation management, renewals and line extensions to maximize product value throughout its commercial lifecycle.' },
     { icon: <Building2 size={24} />, title: 'Business Development', desc: 'Strategic pharmaceutical business development including licensing, partnerships and market entry strategies for GCC expansion.' },
+    { icon: <FlaskConical size={24} />, title: 'Active Pharmaceutical Ingredients (API)', desc: 'Preparation of DMF, ASMF, CEP, AF, MF, and Accreditation of Foreign Manufacturer (AFM).' },
+    { icon: <ClipboardCheck size={24} />, title: 'GMP Audits & QMS', desc: 'Comprehensive services for GMP audits, mock-inspections, QMS implementation and QMS training.' },
   ];
   return (
     <section className="services" ref={ref}>
@@ -506,6 +508,11 @@ function Contact() {
     setSubmitStatus('submitting');
 
     const templateParams = {
+      // Standard EmailJS "Contact Us" template variables
+      name:        `${form.firstName} ${form.lastName}`,
+      email:       form.email,
+      message:     form.message,
+      // Additional custom variables
       first_name:  form.firstName,
       last_name:   form.lastName,
       from_name:   `${form.firstName} ${form.lastName}`,
@@ -515,7 +522,6 @@ function Contact() {
       department:  form.department,
       company:     form.company,
       country:     form.country,
-      message:     form.message,
       reply_to:    form.email,
       to_name:     'Reg Excellence Team',
     };

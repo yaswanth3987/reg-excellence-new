@@ -13,6 +13,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMenuOpen(false);
   }, [location]);
 
@@ -43,7 +44,7 @@ export default function Navbar() {
           </ul>
 
           <div className="navbar-cta">
-            <a href="/#contact" className="navbar-book-btn" onClick={handleBookConsultation}>
+            <a href="/consultation" className="navbar-book-btn" onClick={handleBookConsultation}>
               Book a Consultation
             </a>
             <button
@@ -67,7 +68,7 @@ export default function Navbar() {
         <Link to="/insights">Insights</Link>
         <Link to="/corporate-training">Corporate Training</Link>
         <Link to="/careers">Careers</Link>
-        <a href="/#contact" className="mobile-book-btn" onClick={handleBookConsultation}>
+        <a href="/consultation" className="mobile-book-btn" onClick={handleBookConsultation}>
           Book a Consultation
         </a>
       </div>

@@ -171,7 +171,7 @@ export default function InsightsPage() {
                   <div className="insight-card-body">
                     <ul className="insight-articles">
                       {cat.articles.map((a, j) => (
-                        <li key={j} onClick={() => { window.location.href = '/#contact'; }}>
+                        <li key={j} onClick={() => { window.location.href = '/consultation'; }}>
                           {search ? (
                             <span dangerouslySetInnerHTML={{
                               __html: a.replace(
@@ -184,7 +184,7 @@ export default function InsightsPage() {
                       ))}
                     </ul>
                     <button className="btn-teal" style={{ marginTop: '16px', fontSize: '13px', padding: '10px 20px' }}
-                      onClick={() => { window.location.href = '/#contact'; }}>
+                      onClick={() => { window.location.href = '/consultation'; }}>
                       Get Notified of New Articles <ArrowRight size={14} />
                     </button>
                   </div>
@@ -236,7 +236,7 @@ export default function InsightsPage() {
               <h2>Have a regulatory question?</h2>
               <p>Book a consultation with our expert for personalised guidance.</p>
             </div>
-            <button className="btn-teal" onClick={() => { window.location.href = '/#contact'; }}>
+            <button className="btn-teal" onClick={() => { window.location.href = '/consultation'; }}>
               Book a Consultation <ArrowRight size={16} />
             </button>
           </div>

@@ -94,7 +94,7 @@ export default function CareersPage() {
                 </div>
               ))}
               <div style={{ marginTop: '32px' }}>
-                <button className="btn-primary" onClick={() => { window.location.href = '/#contact'; }}>
+                <button className="btn-primary" onClick={() => { window.location.href = '/consultation'; }}>
                   Get In Touch <ArrowRight size={16} />
                 </button>
               </div>
@@ -142,7 +142,7 @@ export default function CareersPage() {
                 <button
                   className="btn-teal"
                   style={{ fontSize: '13px', padding: '10px 20px' }}
-                  onClick={() => { window.location.href = '/#contact'; }}
+                  onClick={() => { window.location.href = '/consultation'; }}
                 >
                   Apply Now <ArrowRight size={14} />
                 </button>
@@ -171,7 +171,7 @@ export default function CareersPage() {
                 Send us your CV and a brief introduction — we'd love to hear from you.
               </p>
             </div>
-            <button className="btn-primary" onClick={() => { window.location.href = '/#contact'; }}>
+            <button className="btn-primary" onClick={() => { window.location.href = '/consultation'; }}>
               Send Your CV <ArrowRight size={16} />
             </button>
           </div>

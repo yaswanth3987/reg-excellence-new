@@ -854,6 +854,9 @@ img {
   color: var(--white);
   margin-bottom: 24px;
 }
+.founder-text .section-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+}
 .founder-bio {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -2479,7 +2482,7 @@ img {
 
 /* ============ CONSULTATION FORM ============ */
 .consultation-section {
-  padding: 40px 0;
+  padding: 132px 0 80px;
   background: radial-gradient(circle at top, #1A1A1A 0%, #111111 100%);
   color: #fff;
   position: relative;

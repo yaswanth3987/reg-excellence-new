@@ -42,10 +42,7 @@ export default function AboutPage() {
   });
 
   const goToContact = () => {
-    navigate('/');
-    setTimeout(() => {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-    }, 80);
+    navigate('/consultation');
   };
 
   return (
@@ -129,7 +126,7 @@ export default function AboutPage() {
             <div className="fade-in" style={{ display: 'flex', justifyContent: 'center' }}>
               <div style={{ position: 'relative', width: '300px' }}>
                 <img
-                  src="/founder.png"
+                  src="/founder.jpg"
                   alt="Dr. Anwar Hussain Mohammed PhD"
                   style={{ width: '100%', height: '360px', objectFit: 'cover', borderRadius: '16px', border: '3px solid rgba(200,56,42,0.4)', display: 'block' }}
                   loading="lazy"
