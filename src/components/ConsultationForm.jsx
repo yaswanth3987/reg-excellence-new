@@ -95,7 +95,7 @@ export default function ConsultationForm() {
   };
 
   return (
-    <div className="consultation-section" id="contact">
+    <div className="consultation-section" id="contact" style={{ scrollMarginTop: '80px' }}>
       <div className="consultation-container">
 
         <div className="consultation-header">

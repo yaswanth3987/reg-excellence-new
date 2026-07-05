@@ -8,9 +8,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="footer-logo-link">
-              <div className="footer-logo-container">
-                <img src="/logo.png" alt="Reg Excellence Logo" />
-              </div>
+              <img src="/logo.png" alt="Reg Excellence Logo" />
             </Link>
             <p>Pharmaceutical regulatory affairs and business development consulting for GCC and global pharmaceutical companies.</p>
             <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>

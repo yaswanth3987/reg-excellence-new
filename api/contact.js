@@ -1,4 +1,4 @@
-/* eslint-env node */
+/* global process */
 import { Resend } from 'resend';
 
 // Initialize Resend with the API key from environment variables

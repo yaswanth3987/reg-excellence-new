@@ -1,17 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
 import {
   Globe, FileText, TrendingUp, Microscope, Building2,
   Shield, Award, CheckCircle, ArrowRight, Phone, Mail,
-  MapPin, Star, Users, Loader2, FlaskConical, ClipboardCheck
+  MapPin, Star, Users, FlaskConical, ClipboardCheck
 } from 'lucide-react';
 import ConsultationForm from '../components/ConsultationForm';
-
-// ─── EmailJS Configuration ────────────────────────────────────────────────────
-const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || 'YOUR_PUBLIC_KEY';
-// ─────────────────────────────────────────────────────────────────────────────
 
 function useFadeIn() {
   const ref = useRef();
@@ -30,7 +23,12 @@ function useFadeIn() {
 }
 
 function scrollToContact() {
-  window.location.href = '/consultation';
+  const el = document.getElementById('contact');
+  if (el) {
+    const navbarHeight = document.querySelector('.re-navbar')?.offsetHeight || 84;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
 }
 
 // HERO — uses the CSS .hero-content layout with .hero-bg overlay
@@ -188,44 +186,52 @@ function About() {
   );
 }
 
-// FOUNDER
+// TEAM (Founder + Operations Director)
 function Founder() {
   const ref = useFadeIn();
-  const tags = [
+
+  const founderTags = [
     'GCC Regulatory Affairs', 'CMC', 'Biologics', 'Vaccines',
-    'Oncology', 'Rare Diseases', 'Market Access', 'Lifecycle Management',
-    'Business Development', 'Product Registration',
+    'Oncology', 'Rare Diseases', 'Market Access', 'Business Development',
   ];
-  const founderStats = [
-    { value: '25+', label: 'Years Experience' },
-    { value: 'GCC & Global', label: 'Market Expertise' },
-    { value: '100s', label: 'Regulatory Submissions' },
+  const farheenTags = [
+    'Business Development', 'Licensing', 'Out-Licensing',
+    'Operations Management', 'Strategic Partnerships', 'Project Management',
   ];
+
   return (
     <section className="founder" ref={ref}>
       <div className="container">
-        <div className="founder-inner">
+        {/* Section Header */}
+        <div className="fade-in" style={{ textAlign: 'center', marginBottom: '72px' }}>
+          <span className="section-label">Our Leadership</span>
+          <h2 className="section-title">Meet the Team</h2>
+          <p className="section-subtitle" style={{ maxWidth: '560px', margin: '0 auto' }}>
+            Decades of combined expertise driving regulatory excellence across GCC and global markets.
+          </p>
+        </div>
+
+        {/* Dr. Anwar Hussain */}
+        <div className="founder-inner" style={{ marginBottom: '80px' }}>
           <div className="founder-image-wrap fade-in">
             <div className="founder-image-frame">
               <img
                 src="/founder.jpg"
-                alt="Dr. Anwar Hussain Mohammed PhD - Founder"
+                alt="Dr. Anwar Hussain Mohammed PhD - Founder & CEO"
                 className="founder-image"
                 loading="lazy"
                 decoding="async"
-                onError={(e) => {
-                  e.target.style.background = 'linear-gradient(135deg,#0b5c5e,#127a7d)';
-                }}
+                onError={(e) => { e.target.style.background = 'linear-gradient(135deg,#0b5c5e,#127a7d)'; }}
               />
               <div className="founder-gold-accent" />
             </div>
           </div>
           <div className="founder-text fade-in">
-            <span className="section-label">Meet Our Founder</span>
+            <span className="section-label">Founder & CEO</span>
             <h2 className="section-title">Dr. Anwar Hussain Mohammed PhD</h2>
             <p className="section-subtitle" style={{ marginBottom: '20px' }}>
-              Dr. Anwar Hussain Mohammed PhD, is a Regulatory Affairs and Business Development
-              professional with over 25 years of experience in the pharmaceutical industry.
+              A Regulatory Affairs and Business Development professional with over{' '}
+              <strong>25 years of experience</strong> in the pharmaceutical industry.
             </p>
             <p className="founder-bio">
               He has extensive expertise in GCC and global regulatory submissions, product
@@ -233,20 +239,74 @@ function Founder() {
               oncology and rare diseases.
             </p>
             <div className="founder-expertise">
-              {tags.map((tag, i) => (
+              {founderTags.map((tag, i) => (
                 <span key={i} className="founder-tag">{tag}</span>
               ))}
             </div>
             <div className="founder-stats-row" style={{ marginBottom: '24px' }}>
-              {founderStats.map((s, i) => (
+              {[
+                { value: '25+', label: 'Years Experience' },
+                { value: 'GCC & Global', label: 'Market Expertise' },
+                { value: '100s', label: 'Regulatory Submissions' },
+              ].map((s, i) => (
                 <div key={i} className="founder-stat-card">
                   <div className="founder-stat-value">{s.value}</div>
                   <div className="founder-stat-label">{s.label}</div>
                 </div>
               ))}
             </div>
-            <button className="btn-primary" onClick={() => { window.location.href = '/consultation'; }}>
+            <button className="btn-primary" onClick={scrollToContact}>
               Book a Consultation <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
+
+        {/* Farheen Anjum */}
+        <div className="founder-inner" style={{ flexDirection: 'row-reverse' }}>
+          <div className="founder-image-wrap fade-in">
+            <div className="founder-image-frame">
+              <img
+                src="/farheen.jpg"
+                alt="Farheen Anjum MSc MBA - Operations Director"
+                className="founder-image"
+                loading="lazy"
+                decoding="async"
+                onError={(e) => { e.target.style.background = 'linear-gradient(135deg,#1a1a2e,#16213e)'; }}
+              />
+              <div className="founder-gold-accent" />
+            </div>
+          </div>
+          <div className="founder-text fade-in">
+            <span className="section-label">Operations Director</span>
+            <h2 className="section-title">Farheen Anjum MSc MBA</h2>
+            <p className="section-subtitle" style={{ marginBottom: '20px' }}>
+              A pharmaceutical business development specialist with over{' '}
+              <strong>10 years of experience</strong> in licensing, out-licensing and pharmaceutical business development services.
+            </p>
+            <p className="founder-bio">
+              With a strong foundation in both science and business administration, Farheen excels
+              at building strategic partnerships and managing end-to-end operational workflows for
+              clients across global markets.
+            </p>
+            <div className="founder-expertise">
+              {farheenTags.map((tag, i) => (
+                <span key={i} className="founder-tag">{tag}</span>
+              ))}
+            </div>
+            <div className="founder-stats-row" style={{ marginBottom: '24px' }}>
+              {[
+                { value: '10+', label: 'Years Experience' },
+                { value: 'Global', label: 'Market Reach' },
+                { value: 'BD & Ops', label: 'Core Expertise' },
+              ].map((s, i) => (
+                <div key={i} className="founder-stat-card">
+                  <div className="founder-stat-value">{s.value}</div>
+                  <div className="founder-stat-label">{s.label}</div>
+                </div>
+              ))}
+            </div>
+            <button className="btn-primary" onClick={scrollToContact}>
+              Get in Touch <ArrowRight size={16} />
             </button>
           </div>
         </div>
@@ -264,10 +324,9 @@ function StatsCounter() {
     { value: 100, suffix: '+', label: 'Professionals Trained', icon: <Users size={24} /> },
     { value: 10,  suffix: '+', label: 'Therapeutic Areas',     icon: <Microscope size={24} /> },
   ];
-  const refs = stats.map(() => useRef(null));
+  const refs = useRef([]);
   useEffect(() => {
-    refs.forEach((ref, idx) => {
-      const el = ref.current;
+    refs.current.forEach((el, idx) => {
       if (!el) return;
       const observer = new IntersectionObserver(([entry]) => {
         if (!entry.isIntersecting) return;
@@ -285,6 +344,7 @@ function StatsCounter() {
       }, { threshold: 0.4 });
       observer.observe(el);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <section className="stats-counter">
@@ -293,7 +353,7 @@ function StatsCounter() {
           {stats.map((s, i) => (
             <div key={i} className="stats-counter-card">
               <div className="stats-counter-icon">{s.icon}</div>
-              <div className="stats-counter-value" ref={refs[i]}>0{s.suffix}</div>
+              <div className="stats-counter-value" ref={(el) => (refs.current[i] = el)}>0{s.suffix}</div>
               <div className="stats-counter-label">{s.label}</div>
             </div>
           ))}
@@ -492,215 +552,6 @@ function FloatingContact() {
   );
 }
 
-// CONTACT
-function Contact() {
-  const ref = useFadeIn();
-  const [submitStatus, setSubmitStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
-  const [submitError, setSubmitError] = useState('');
-  const [form, setForm] = useState({
-    firstName: '', lastName: '', email: '', phone: '',
-    position: '', department: '', company: '', country: '', message: '',
-  });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmitError('');
-    setSubmitStatus('submitting');
-
-    const templateParams = {
-      // Standard EmailJS "Contact Us" template variables
-      name:        `${form.firstName} ${form.lastName}`,
-      email:       form.email,
-      message:     form.message,
-      // Additional custom variables
-      first_name:  form.firstName,
-      last_name:   form.lastName,
-      from_name:   `${form.firstName} ${form.lastName}`,
-      from_email:  form.email,
-      phone:       form.phone,
-      position:    form.position,
-      department:  form.department,
-      company:     form.company,
-      country:     form.country,
-      reply_to:    form.email,
-      to_name:     'Reg Excellence Team',
-    };
-
-    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
-      );
-      setSubmitStatus('success');
-      setForm({ firstName: '', lastName: '', email: '', phone: '', position: '', department: '', company: '', country: '', message: '' });
-    } catch (err) {
-      console.error('EmailJS error:', err);
-      setSubmitStatus('error');
-      setSubmitError('Something went wrong. Please try again or email admin@regexcellence.co.uk directly.');
-    }
-  };
-
-  const set = (field) => (e) => setForm({ ...form, [field]: e.target.value });
-
-  return (
-    <section className="contact" id="contact" ref={ref}>
-      <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '64px' }} className="fade-in">
-          <span className="section-label">Get In Touch</span>
-          <h2 className="section-title">Submit a Request</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            Ready to navigate GCC regulatory requirements with confidence?
-            Contact Dr. Anwar Hussain Mohammed PhD and the team today.
-          </p>
-        </div>
-        <div className="contact-inner">
-          <div className="fade-in">
-            <h3 className="contact-info-title">Contact Us</h3>
-            <p className="contact-info-sub">
-              Reach out directly or fill in the form and we will get back to you within 2 hours.
-            </p>
-            <div className="contact-detail">
-              <div className="contact-detail-icon"><Mail size={20} /></div>
-              <div>
-                <div className="contact-detail-label">Email</div>
-                <div className="contact-detail-value">
-                  <a href="mailto:admin@regexcellence.co.uk" style={{ color: 'var(--primary)', textDecoration: 'none' }}>
-                    admin@regexcellence.co.uk
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="contact-detail">
-              <div className="contact-detail-icon"><Phone size={20} /></div>
-              <div>
-                <div className="contact-detail-label">Mobile / WhatsApp</div>
-                <div className="contact-detail-value">
-                  <a href="tel:+447587570977" style={{ color: 'inherit', textDecoration: 'none' }}>
-                    +44 7587 570977
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="contact-detail">
-              <div className="contact-detail-icon"><MapPin size={20} /></div>
-              <div>
-                <div className="contact-detail-label">Office Location</div>
-                <div className="contact-detail-value">
-                  <a
-                    href="https://www.google.com/maps/place/3+Aimson+Rd+W,+Timperley,+Altrincham+WA15+7XP,+UK/@53.3978943,-2.3153038,17z"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: 'var(--primary)', textDecoration: 'none', lineHeight: 1.6, display: 'block' }}
-                  >
-                    3 Aimson Road West, Timperley<br />Altrincham, WA15 7XP<br />Manchester, United Kingdom
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div style={{ marginTop: '28px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--gray-200)' }}>
-              <iframe
-                title="Reg Excellence Office Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.0!2d-2.3175765!3d53.3978943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bace39fe31a95%3A0xbbc960b040961bdf!2s3%20Aimson%20Rd%20W%2C%20Timperley%2C%20Altrincham%20WA15%207XP%2C%20UK!5e0!3m2!1sen!2suk!4v1718300000000"
-                width="100%"
-                height="220"
-                style={{ border: 0, display: 'block' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
-          <div className="fade-in">
-            <div className="contact-form">
-              {submitStatus === 'success' ? (
-                <div style={{ textAlign: 'center', padding: '60px 20px' }}>
-                  <div style={{ fontSize: '56px', marginBottom: '16px' }}>&#10003;</div>
-                  <h3 style={{ color: 'var(--primary-dark)', marginBottom: '8px', fontFamily: 'Playfair Display', fontSize: '24px' }}>Request Sent!</h3>
-                  <p style={{ color: 'var(--text-secondary)' }}>
-                    Thank you for reaching out. We will respond within 2 hours.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <h3 style={{ fontFamily: 'Inter', fontSize: '20px', fontWeight: 700, color: 'var(--primary-dark)', marginBottom: '24px' }}>
-                    Submit a Request
-                  </h3>
-
-                  {submitStatus === 'error' && (
-                    <div style={{ background: '#fff0f0', border: '1px solid #C8382A', borderRadius: '8px', padding: '12px 16px', marginBottom: '20px', color: '#C8382A', fontSize: '14px' }}>
-                      {submitError}
-                    </div>
-                  )}
-
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>First Name *</label>
-                      <input type="text" placeholder="First Name" value={form.firstName} onChange={set('firstName')} required disabled={submitStatus === 'submitting'} />
-                    </div>
-                    <div className="form-group">
-                      <label>Last Name *</label>
-                      <input type="text" placeholder="Last Name" value={form.lastName} onChange={set('lastName')} required disabled={submitStatus === 'submitting'} />
-                    </div>
-                  </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Email *</label>
-                      <input type="email" placeholder="Email" value={form.email} onChange={set('email')} required disabled={submitStatus === 'submitting'} />
-                    </div>
-                    <div className="form-group">
-                      <label>Contact Number</label>
-                      <input type="tel" placeholder="Contact Number" value={form.phone} onChange={set('phone')} disabled={submitStatus === 'submitting'} />
-                    </div>
-                  </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Position</label>
-                      <input type="text" placeholder="Position" value={form.position} onChange={set('position')} disabled={submitStatus === 'submitting'} />
-                    </div>
-                    <div className="form-group">
-                      <label>Department</label>
-                      <input type="text" placeholder="Department" value={form.department} onChange={set('department')} disabled={submitStatus === 'submitting'} />
-                    </div>
-                  </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Company Name</label>
-                      <input type="text" placeholder="Company Name" value={form.company} onChange={set('company')} disabled={submitStatus === 'submitting'} />
-                    </div>
-                    <div className="form-group">
-                      <label>Country</label>
-                      <input type="text" placeholder="Country" value={form.country} onChange={set('country')} disabled={submitStatus === 'submitting'} />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label>Project Requirements *</label>
-                    <textarea
-                      placeholder="Tell us about your regulatory challenge or project requirements..."
-                      value={form.message}
-                      onChange={set('message')}
-                      required
-                      disabled={submitStatus === 'submitting'}
-                      style={{ minHeight: '120px' }}
-                    />
-                  </div>
-                  <button type="submit" className="btn-teal" style={{ width: '100%', justifyContent: 'center' }} disabled={submitStatus === 'submitting'}>
-                    {submitStatus === 'submitting' ? (
-                      <><Loader2 size={16} className="spinner" /> Sending...</>
-                    ) : (
-                      <>Send <ArrowRight size={16} /></>
-                    )}
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // HOME PAGE
 export default function HomePage() {

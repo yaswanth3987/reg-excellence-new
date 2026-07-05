@@ -119,10 +119,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Founder Spotlight */}
+      {/* Leadership Spotlight */}
       <section style={{ padding: '100px 0', background: 'linear-gradient(135deg, #111111 0%, #1e1e1e 50%, #2a2a2a 100%)' }}>
         <div className="container">
-          <div className="about-page-inner split-founder">
+          <div style={{ textAlign: 'center', marginBottom: '64px' }} className="fade-in">
+            <span className="section-label" style={{ color: '#FFB3AA' }}>Our Leadership</span>
+            <h2 className="section-title" style={{ color: '#fff' }}>Meet the Team</h2>
+          </div>
+
+          {/* Founder */}
+          <div className="about-page-inner split-founder" style={{ marginBottom: '80px' }}>
             <div className="fade-in" style={{ display: 'flex', justifyContent: 'center' }}>
               <div style={{ position: 'relative', width: '300px' }}>
                 <img
@@ -136,7 +142,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="fade-in">
-              <span className="section-label" style={{ color: '#FFB3AA' }}>Meet Our Founder</span>
+              <span className="section-label" style={{ color: '#FFB3AA' }}>Founder & CEO</span>
               <h2 className="section-title" style={{ color: '#fff', marginBottom: '20px' }}>
                 Dr. Anwar Hussain<br />Mohammed PhD
               </h2>
@@ -159,6 +165,45 @@ export default function AboutPage() {
               </div>
               <button className="btn-primary" onClick={goToContact}>
                 Book a Consultation <ArrowRight size={16} />
+              </button>
+            </div>
+          </div>
+
+          {/* Operations Director */}
+          <div className="about-page-inner split-founder" style={{ flexDirection: 'row-reverse' }}>
+            <div className="fade-in" style={{ display: 'flex', justifyContent: 'center' }}>
+              <div style={{ position: 'relative', width: '300px' }}>
+                <img
+                  src="/farheen.jpg"
+                  alt="Farheen Anjum MSc MBA"
+                  style={{ width: '100%', height: '360px', objectFit: 'cover', borderRadius: '16px', border: '3px solid rgba(200,56,42,0.4)', display: 'block' }}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div style={{ position: 'absolute', bottom: '-12px', right: '-12px', width: '100%', height: '100%', border: '2px solid rgba(200,56,42,0.3)', borderRadius: '16px', pointerEvents: 'none' }} />
+              </div>
+            </div>
+            <div className="fade-in">
+              <span className="section-label" style={{ color: '#FFB3AA' }}>Operations Director</span>
+              <h2 className="section-title" style={{ color: '#fff', marginBottom: '20px' }}>
+                Farheen Anjum<br />MSc MBA
+              </h2>
+              <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'rgba(255,255,255,0.82)', marginBottom: '20px' }}>
+                Farheen Anjum brings over <strong style={{ color: '#FFB3AA' }}>10 years of experience</strong> in 
+                pharmaceutical business development, licensing, and out-licensing services. 
+                Her strategic vision and operational excellence drive the successful execution of 
+                complex regulatory and commercial projects.
+              </p>
+              <p style={{ fontSize: '15px', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '28px' }}>
+                With a strong foundation in both science and business administration, Farheen excels at building strategic partnerships and managing end-to-end operational workflows for our clients across global markets.
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
+                {['Business Development', 'Licensing', 'Out-Licensing', 'Operations Management', 'Strategic Partnerships', 'Project Management'].map((t, i) => (
+                  <span key={i} style={{ background: 'rgba(200,56,42,0.2)', border: '1px solid rgba(200,56,42,0.4)', color: '#FFB3AA', fontSize: '12px', fontWeight: 600, padding: '5px 12px', borderRadius: '100px', letterSpacing: '0.5px' }}>{t}</span>
+                ))}
+              </div>
+              <button className="btn-primary" onClick={goToContact}>
+                Get in Touch <ArrowRight size={16} />
               </button>
             </div>
           </div>
