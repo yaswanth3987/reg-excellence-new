@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { X, Menu, Calendar, Home, User, Briefcase, GraduationCap, Users, FileText, Mail, Phone } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -37,7 +38,7 @@ export default function Navbar() {
         window.scrollTo({ top, behavior: 'smooth' });
       }
     } else {
-      window.location.href = '/#contact';
+      navigate('/consultation');
     }
   };
 
