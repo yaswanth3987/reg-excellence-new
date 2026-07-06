@@ -203,16 +203,16 @@ function Founder() {
     <section className="founder" ref={ref}>
       <div className="container">
         {/* Section Header */}
-        <div className="fade-in" style={{ textAlign: 'center', marginBottom: '72px' }}>
+        <div className="fade-in" style={{ textAlign: 'center', marginBottom: '40px' }}>
           <span className="section-label">Our Leadership</span>
-          <h2 className="section-title">Meet the Team</h2>
-          <p className="section-subtitle" style={{ maxWidth: '560px', margin: '0 auto' }}>
+          <h2 className="section-title" style={{ color: '#ffffff' }}>Meet the Team</h2>
+          <p className="section-subtitle" style={{ maxWidth: '560px', margin: '0 auto', color: 'rgba(255,255,255,0.65)' }}>
             Decades of combined expertise driving regulatory excellence across GCC and global markets.
           </p>
         </div>
 
         {/* Dr. Anwar Hussain */}
-        <div className="founder-inner" style={{ marginBottom: '80px' }}>
+        <div className="founder-inner" style={{ marginBottom: '56px' }}>
           <div className="founder-image-wrap fade-in">
             <div className="founder-image-frame">
               <img
