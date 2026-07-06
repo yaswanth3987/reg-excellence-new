@@ -5,8 +5,8 @@ import { Send, CheckCircle, AlertCircle, Loader2, Lock, ShieldCheck, Target, Clo
 // ─── EmailJS Configuration ────────────────────────────────────────────────────
 // Replace these three values with your own from https://emailjs.com
 const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'service_bqqdozw';
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || 'YOUR_PUBLIC_KEY';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_1pkjlt5';
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || 'hWMJVC_Y_wsqaO1NT';
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function ConsultationForm() {
