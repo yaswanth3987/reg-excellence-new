@@ -72,7 +72,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <div className="contact-icon-wrapper"><Mail size={16} /></div>
-                  <span>info@regexcellence.co.uk</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <a href="mailto:info@regexcellence.co.uk" style={{ color: '#333333', textDecoration: 'none' }}>info@regexcellence.co.uk</a>
+                    <a href="mailto:farheen@regexcellence.co.uk" style={{ color: '#333333', textDecoration: 'none' }}>farheen@regexcellence.co.uk</a>
+                  </div>
                 </li>
                 <li>
                   <div className="contact-icon-wrapper"><Phone size={16} /></div>

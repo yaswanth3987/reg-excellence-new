@@ -533,9 +533,14 @@ function FloatingContact() {
     >
       <div className={`floating-contact-tooltip${hovered ? ' visible' : ''}`}>
         <div className="fct-title">Contact Us</div>
-        <div className="fct-row">
-          <Mail size={13} />
-          <a href="mailto:admin@regexcellence.co.uk">admin@regexcellence.co.uk</a>
+        <div className="fct-row" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '4px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Mail size={13} />
+            <a href="mailto:admin@regexcellence.co.uk">admin@regexcellence.co.uk</a>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingLeft: '21px' }}>
+            <a href="mailto:farheen@regexcellence.co.uk">farheen@regexcellence.co.uk</a>
+          </div>
         </div>
         <div className="fct-row">
           <Phone size={13} />
