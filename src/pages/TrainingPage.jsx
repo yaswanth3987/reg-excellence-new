@@ -20,8 +20,8 @@ function useFadeIn() {
 const programs = [
   {
     icon: <GraduationCap size={28} />,
-    title: 'GCC Regulatory Affairs Masterclass',
-    desc: 'Learn regulatory pathways, submissions, approvals and lifecycle management across global and GCC markets.',
+    title: 'Global Regulatory Affairs Masterclass',
+    desc: 'Learn regulatory pathways, submissions, approvals and lifecycle management across global markets.',
     features: [
       'US FDA, EMA, PMDA & HA regulatory frameworks',
       'ANVISA (Brazil) submission requirements',
@@ -36,14 +36,14 @@ const programs = [
   {
     icon: <Users size={28} />,
     title: 'Career Mentoring',
-    desc: 'One-to-one career guidance for pharmacists and regulatory professionals looking to advance in the GCC market.',
+    desc: 'One-to-one career guidance for pharmacists and regulatory professionals looking to advance in global markets.',
     features: [
       'Personalised career roadmap',
       'Interview coaching & preparation',
       'Industry networking guidance',
       'Role transitions & promotions',
       'Building regulatory expertise',
-      'GCC job market insights',
+      'Global job market insights',
     ],
     tag: 'One-to-One',
     tagColor: 'var(--primary)',
@@ -51,7 +51,7 @@ const programs = [
   {
     icon: <FileCheck size={28} />,
     title: 'CV & LinkedIn Review',
-    desc: 'Professional review and career advice to make your profile stand out in the competitive GCC pharmaceutical job market.',
+    desc: 'Professional review and career advice to make your profile stand out in the competitive global pharmaceutical job market.',
     features: [
       'ATS-optimised CV review',
       'LinkedIn profile optimisation',
@@ -66,9 +66,9 @@ const programs = [
   {
     icon: <TrendingUp size={28} />,
     title: 'Business Development Training',
-    desc: 'Market access and commercial strategy for pharmaceutical companies entering or expanding in GCC markets.',
+    desc: 'Market access and commercial strategy for pharmaceutical companies entering or expanding in global markets.',
     features: [
-      'GCC pharmaceutical market overview',
+      'Global pharmaceutical market overview',
       'Pricing & reimbursement strategies',
       'Licensing & partnership frameworks',
       'Stakeholder engagement & KOLs',
@@ -84,8 +84,8 @@ export default function TrainingPage() {
   const ref = useFadeIn();
   const navigate = useNavigate();
   useSEO({
-    title: 'Regulatory Affairs Training & Mentoring | GCC Masterclass | Reg Excellence UK',
-    description: 'GCC regulatory affairs training, career mentoring, CV review and business development programs for pharmacists and pharmaceutical professionals. Expert-led courses.',
+    title: 'Regulatory Affairs Training & Mentoring | Global Masterclass | Reg Excellence UK',
+    description: 'Global regulatory affairs training, career mentoring, CV review and business development programs for pharmacists and pharmaceutical professionals. Expert-led courses.',
   });
 
   return (
@@ -99,7 +99,7 @@ export default function TrainingPage() {
           </h1>
           <p className="section-subtitle">
             Expert-led training programs and one-to-one mentoring designed for
-            pharmacists and regulatory professionals across GCC markets.
+            pharmacists and regulatory professionals across global markets.
           </p>
         </div>
       </section>
@@ -158,7 +158,7 @@ export default function TrainingPage() {
                 Corporate Training Solutions
               </h2>
               <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '16px', maxWidth: '500px' }}>
-                Bespoke in-house training programs for pharmaceutical teams on GCC regulatory
+                Bespoke in-house training programs for pharmaceutical teams on global regulatory
                 affairs, CMC, GMP compliance and business development.
               </p>
             </div>

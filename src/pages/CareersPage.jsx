@@ -20,22 +20,22 @@ const opportunities = [
   {
     tag: 'Consulting',
     title: 'Senior Regulatory Affairs Consultant',
-    desc: 'Join our expert team providing GCC regulatory affairs consulting to multinational pharmaceutical companies. Must have 8+ years of GCC regulatory experience.',
+    desc: 'Join our expert team providing global regulatory affairs consulting to multinational pharmaceutical companies. Must have 8+ years of global regulatory experience.',
   },
   {
     tag: 'Training',
     title: 'Regulatory Affairs Trainer',
-    desc: 'Deliver high-quality training programmes on GCC regulatory submissions, dossier preparation and lifecycle management to pharma professionals.',
+    desc: 'Deliver high-quality training programmes on global regulatory submissions, dossier preparation and lifecycle management to pharma professionals.',
   },
   {
     tag: 'Business Dev',
     title: 'Business Development Manager',
-    desc: 'Drive business growth across GCC markets by building client relationships with pharmaceutical companies seeking regulatory and market access support.',
+    desc: 'Drive business growth across global markets by building client relationships with pharmaceutical companies seeking regulatory and market access support.',
   },
   {
     tag: 'Graduate',
     title: 'Regulatory Affairs Graduate Programme',
-    desc: 'An intensive mentoring and training programme for newly qualified pharmacists looking to build a career in GCC regulatory affairs.',
+    desc: 'An intensive mentoring and training programme for newly qualified pharmacists looking to build a career in global regulatory affairs.',
   },
 ];
 
@@ -49,8 +49,8 @@ const values = [
 export default function CareersPage() {
   const ref = useFadeIn();
   useSEO({
-    title: 'Pharmaceutical Careers | GCC Regulatory Affairs Jobs | Reg Excellence UK',
-    description: 'Join Reg Excellence — career opportunities in GCC regulatory affairs, pharmaceutical consulting and regulatory training. Work with a leading pharmaceutical regulatory expert.',
+    title: 'Pharmaceutical Careers | Global Regulatory Affairs Jobs | Reg Excellence UK',
+    description: 'Join Reg Excellence — career opportunities in global regulatory affairs, pharmaceutical consulting and regulatory training. Work with a leading pharmaceutical regulatory expert.',
   });
 
   return (
@@ -63,7 +63,7 @@ export default function CareersPage() {
             Join Reg Excellence
           </h1>
           <p className="section-subtitle">
-            Build your career alongside one of the GCC's leading regulatory affairs experts.
+            Build your career alongside one of the world's leading regulatory affairs experts.
             We're looking for passionate professionals who want to make a real impact.
           </p>
         </div>
@@ -75,16 +75,16 @@ export default function CareersPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
             <div className="fade-in">
               <span className="section-label">Why Join Us</span>
-              <h2 className="section-title">Work With the Best in GCC Regulatory</h2>
+              <h2 className="section-title">Work With the Best in Global Regulatory</h2>
               <p className="section-subtitle" style={{ marginBottom: '32px' }}>
                 At Reg Excellence, you'll work directly with Dr. Anwar Hussain Mohammed PhD and
-                gain unparalleled exposure to the full spectrum of GCC regulatory affairs and
+                gain unparalleled exposure to the full spectrum of global regulatory affairs and
                 pharmaceutical business development.
               </p>
               {[
                 'Mentorship from an experienced industry expert',
                 'Exposure to complex, high-value regulatory projects',
-                'Work across multiple GCC markets and therapeutic areas',
+                'Work across multiple global markets and therapeutic areas',
                 'Flexible and hybrid working arrangements',
                 'Continuous professional development & training',
                 'Competitive remuneration packages',

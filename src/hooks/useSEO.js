@@ -36,7 +36,7 @@ export default function useSEO({ title, description }) {
 
     // Cleanup: restore defaults on unmount
     return () => {
-      document.title = 'Reg Excellence | GCC & International Regulatory Affairs Consulting | UK';
+      document.title = 'Reg Excellence | Global Markets Regulatory Affairs Consulting | UK';
     };
   }, [title, description, location.pathname]);
 }

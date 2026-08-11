@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { CheckCircle, ArrowRight, Globe, Shield, Award, TrendingUp, Users, Microscope } from 'lucide-react';
+import { CheckCircle, ArrowRight, Globe, Shield, Award, TrendingUp, Users, Microscope, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 
@@ -20,15 +20,15 @@ function useFadeIn() {
 const values = [
   { icon: <Shield size={22} />, title: 'Integrity', desc: 'We uphold the highest standards of professional and regulatory integrity in everything we do.' },
   { icon: <Award size={22} />, title: 'Excellence', desc: 'We are committed to delivering outstanding results for every client, every time.' },
-  { icon: <Globe size={22} />, title: 'Global Perspective', desc: 'We bring international regulatory expertise to regional GCC challenges.' },
+  { icon: <Globe size={22} />, title: 'Global Perspective', desc: 'We bring international regulatory expertise to regional and global challenges.' },
   { icon: <Users size={22} />, title: 'Partnership', desc: 'We work as a true extension of your team, invested in your long-term success.' },
   { icon: <TrendingUp size={22} />, title: 'Innovation', desc: 'We apply cutting-edge regulatory strategies to accelerate approvals and market access.' },
   { icon: <Microscope size={22} />, title: 'Science-Led', desc: 'Our advice is always grounded in rigorous scientific and regulatory evidence.' },
 ];
 
 const milestones = [
-  { year: 'Foundation', title: 'Reg Excellence Established', desc: 'Founded to bridge the gap between scientific innovation and regulatory approval in GCC markets.' },
-  { year: 'Expertise', title: 'GCC Regulatory Mastery', desc: 'Built deep expertise across all six GCC markets — UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman.' },
+  { year: 'Foundation', title: 'Reg Excellence Established', desc: 'Founded to bridge the gap between scientific innovation and regulatory approval in global markets.' },
+  { year: 'Expertise', title: 'Global Markets Regulatory Mastery', desc: 'Built deep expertise across international regulatory frameworks and key pharmaceutical markets.' },
   { year: 'Training', title: 'Training & Mentoring Launch', desc: 'Launched structured training programmes and career mentoring for pharmaceutical professionals.' },
   { year: 'Global', title: 'International Expansion', desc: 'Extended services to MHRA, EMA and other international regulatory bodies for UK and global clients.' },
 ];
@@ -37,8 +37,8 @@ export default function AboutPage() {
   const ref = useFadeIn();
   const navigate = useNavigate();
   useSEO({
-    title: 'About Reg Excellence | UK-Based GCC Regulatory Affairs Consultancy',
-    description: 'Learn about Reg Excellence — a pharmaceutical regulatory affairs consultancy led by Dr. Anwar Hussain Mohammed PhD. Our mission, values, and expertise in GCC regulatory affairs.',
+    title: 'About Reg Excellence | UK-Based Global Markets Regulatory Affairs Consultancy',
+    description: 'Learn about Reg Excellence — a pharmaceutical regulatory affairs consultancy led by Dr. Anwar Hussain Mohammed PhD. Our mission, values, and expertise in global regulatory affairs.',
   });
 
   const goToContact = () => {
@@ -56,8 +56,8 @@ export default function AboutPage() {
           </h1>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
             A pharmaceutical regulatory affairs consultancy dedicated to helping
-            global pharmaceutical companies navigate GCC and international regulatory landscapes
-            with confidence, speed, and precision. Based in <strong style={{ color: '#FFB3AA' }}>Altrincham, United Kingdom</strong>.
+            global pharmaceutical companies navigate international regulatory landscapes
+            with confidence, speed, and precision. Based in <strong style={{ color: '#FFB3AA' }}>Altrincham, Manchester, United Kingdom</strong>.
           </p>
           <div style={{ marginTop: '36px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button className="btn-primary" onClick={goToContact}>
@@ -91,17 +91,17 @@ export default function AboutPage() {
               <p className="section-subtitle" style={{ marginBottom: '28px' }}>
                 Reg Excellence is a specialist pharmaceutical regulatory affairs consultancy
                 providing expert guidance to pharmaceutical companies seeking to register, commercialise,
-                and grow their products across GCC and global markets.
+                and grow their products across global markets.
               </p>
               <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '28px' }}>
                 Founded by Dr. Anwar Hussain Mohammed PhD, with over <strong>25 years of experience</strong> in
-                the pharmaceutical industry, Reg Excellence brings unparalleled expertise in GCC regulatory
+                the pharmaceutical industry, Reg Excellence brings unparalleled expertise in global regulatory
                 submissions, product registrations, CMC, biologics, oncology, rare diseases, and pharmaceutical
                 business development.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '32px' }}>
                 {[
-                  'GCC Regulatory Strategy', 'Product Registration',
+                  'Global Markets Regulatory Strategy', 'Product Registration',
                   'CMC Dossier Preparation', 'Market Access Planning',
                   'Biologics & Biosimilars', 'Lifecycle Management',
                   'Corporate Training', 'Career Mentoring',
@@ -134,11 +134,10 @@ export default function AboutPage() {
                 <img
                   src="/founder.jpg"
                   alt="Dr. Anwar Hussain Mohammed PhD"
-                  style={{ width: '100%', height: '360px', objectFit: 'cover', borderRadius: '16px', border: '3px solid rgba(200,56,42,0.4)', display: 'block' }}
+                  style={{ width: '100%', height: '360px', objectFit: 'cover', borderRadius: '16px', border: '2px solid var(--primary)', display: 'block', boxShadow: '0 12px 32px rgba(0,0,0,0.4)' }}
                   loading="lazy"
                   decoding="async"
                 />
-                <div style={{ position: 'absolute', bottom: '-12px', left: '-12px', width: '100%', height: '100%', border: '2px solid rgba(200,56,42,0.3)', borderRadius: '16px', pointerEvents: 'none' }} />
               </div>
             </div>
             <div className="fade-in">
@@ -149,17 +148,17 @@ export default function AboutPage() {
               <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'rgba(255,255,255,0.82)', marginBottom: '20px' }}>
                 Dr. Anwar Hussain Mohammed PhD is a Regulatory Affairs and Business Development
                 professional with over <strong style={{ color: '#FFB3AA' }}>25 years of experience</strong> in
-                the pharmaceutical industry. He has extensive expertise in GCC and global regulatory
+                the pharmaceutical industry. He has extensive expertise in global regulatory
                 submissions, product registrations, lifecycle management, market access, CMC,
                 biologics, vaccines, oncology, and rare diseases.
               </p>
               <p style={{ fontSize: '15px', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', marginBottom: '28px' }}>
                 His career spans leading multinational pharmaceutical companies where he has successfully
-                registered hundreds of products across GCC and international markets, building bridges
+                registered hundreds of products across global and international markets, building bridges
                 between regulatory science and commercial success.
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
-                {['GCC Regulatory Affairs', 'CMC', 'Biologics', 'Vaccines', 'Oncology', 'Rare Diseases', 'Market Access', 'Business Development'].map((t, i) => (
+                {['Global Regulatory Affairs', 'CMC', 'Biologics', 'Vaccines', 'Oncology', 'Rare Diseases', 'Market Access', 'Business Development'].map((t, i) => (
                   <span key={i} style={{ background: 'rgba(200,56,42,0.2)', border: '1px solid rgba(200,56,42,0.4)', color: '#FFB3AA', fontSize: '12px', fontWeight: 600, padding: '5px 12px', borderRadius: '100px', letterSpacing: '0.5px' }}>{t}</span>
                 ))}
               </div>
@@ -170,24 +169,37 @@ export default function AboutPage() {
           </div>
 
           {/* Operations Director */}
-          <div className="about-page-inner split-founder" style={{ flexDirection: 'row-reverse' }}>
-            <div className="fade-in" style={{ display: 'flex', justifyContent: 'center' }}>
-              <div style={{ position: 'relative', width: '300px' }}>
-                <img
-                  src="/farheen.jpg"
-                  alt="Farheen Anjum MSc MBA"
-                  style={{ width: '100%', height: '360px', objectFit: 'cover', borderRadius: '16px', border: '3px solid rgba(200,56,42,0.4)', display: 'block' }}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div style={{ position: 'absolute', bottom: '-12px', right: '-12px', width: '100%', height: '100%', border: '2px solid rgba(200,56,42,0.3)', borderRadius: '16px', pointerEvents: 'none' }} />
-              </div>
-            </div>
+          <div className="about-page-inner" style={{ display: 'block', background: 'rgba(255, 255, 255, 0.03)', padding: '40px', borderRadius: '24px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
             <div className="fade-in">
-              <span className="section-label" style={{ color: '#FFB3AA' }}>Operations Director</span>
-              <h2 className="section-title" style={{ color: '#fff', marginBottom: '20px' }}>
-                Farheen Anjum<br />MSc MBA
-              </h2>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', marginBottom: '20px' }}>
+                <div>
+                  <span className="section-label" style={{ color: '#FFB3AA' }}>Operations Director</span>
+                  <h2 className="section-title" style={{ color: '#fff', margin: 0 }}>
+                    Farheen Anjum MSc MBA
+                  </h2>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/farheen-anjum-99628a98?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Farheen Anjum LinkedIn Profile"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    background: '#0A66C2',
+                    color: '#ffffff',
+                    padding: '10px 20px',
+                    borderRadius: '100px',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 14px rgba(10, 102, 194, 0.4)',
+                  }}
+                >
+                  <ExternalLink size={18} /> Connect on LinkedIn
+                </a>
+              </div>
               <p style={{ fontSize: '16px', lineHeight: 1.8, color: 'rgba(255,255,255,0.82)', marginBottom: '20px' }}>
                 Farheen Anjum brings over <strong style={{ color: '#FFB3AA' }}>10 years of experience</strong> in 
                 pharmaceutical business development, licensing, and out-licensing services. 

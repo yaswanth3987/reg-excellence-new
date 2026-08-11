@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
   Globe, FileText, TrendingUp, Microscope, Building2,
   Shield, Award, CheckCircle, ArrowRight, Phone, Mail,
-  MapPin, Star, Users, FlaskConical, ClipboardCheck
+  MapPin, Star, Users, FlaskConical, ClipboardCheck, ExternalLink
 } from 'lucide-react';
 import ConsultationForm from '../components/ConsultationForm';
 
@@ -44,11 +44,11 @@ function Hero() {
           </div>
           <h1 className="hero-title">
             Navigating <span className="gold">Regulatory</span><br />
-            Excellence in GCC
+            Excellence in Global Markets
           </h1>
           <p className="hero-subtitle">
-            Pharmaceutical regulatory affairs consulting across GCC, MHRA, EMA
-            and global markets &mdash; expert guidance for product registration, market access and business development.
+            Pharmaceutical regulatory affairs consulting across Global Markets, MHRA, EMA
+            and international regions &mdash; expert guidance for product registration, market access and business development.
           </p>
           <div className="hero-cta-row">
             <button className="btn-primary" onClick={scrollToContact}>
@@ -69,7 +69,7 @@ function Hero() {
             </div>
             <div>
               <div className="hero-stat-value">10+</div>
-              <div className="hero-stat-label">GCC Markets</div>
+              <div className="hero-stat-label">Global Markets</div>
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ function Hero() {
           <div className="hero-card">
             <div className="hero-card-title">Core Expertise</div>
             {[
-              { icon: <Globe size={16} />, text: 'GCC Regulatory Submissions' },
+              { icon: <Globe size={16} />, text: 'Global Regulatory Submissions' },
               { icon: <FileText size={16} />, text: 'Product Registrations and Renewals' },
               { icon: <TrendingUp size={16} />, text: 'Market Access Strategy' },
               { icon: <Microscope size={16} />, text: 'Biologics, Vaccines and Oncology' },
@@ -114,7 +114,7 @@ function ClientsPartners() {
           <span className="section-label">Trusted By</span>
           <h2 className="section-title">Clients and Partners</h2>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            Proud to have supported leading pharmaceutical companies across GCC and global markets.
+            Proud to have supported leading pharmaceutical companies across global markets.
           </p>
         </div>
       </div>
@@ -153,15 +153,15 @@ function About() {
           </div>
           <div className="about-text fade-in">
             <span className="section-label">About Us</span>
-            <h2 className="section-title">Your Trusted GCC Regulatory Partner</h2>
+            <h2 className="section-title">Your Trusted Global Markets Regulatory Partner</h2>
             <p className="section-subtitle" style={{ marginBottom: '28px' }}>
               Reg Excellence provides specialized regulatory affairs consulting, helping
-              pharmaceutical companies navigate the complex GCC regulatory landscape with
+              pharmaceutical companies navigate complex global regulatory landscapes with
               confidence and precision.
             </p>
             <div className="about-features">
               {[
-                'GCC Regulatory Strategy',
+                'Global Markets Regulatory Strategy',
                 'NDA/ANDA Submissions',
                 'Product Registration',
                 'Post-Approval Changes',
@@ -191,7 +191,7 @@ function Founder() {
   const ref = useFadeIn();
 
   const founderTags = [
-    'GCC Regulatory Affairs', 'CMC', 'Biologics', 'Vaccines',
+    'Global Regulatory Affairs', 'CMC', 'Biologics', 'Vaccines',
     'Oncology', 'Rare Diseases', 'Market Access', 'Business Development',
   ];
   const farheenTags = [
@@ -207,7 +207,7 @@ function Founder() {
           <span className="section-label">Our Leadership</span>
           <h2 className="section-title" style={{ color: '#ffffff' }}>Meet the Team</h2>
           <p className="section-subtitle" style={{ maxWidth: '560px', margin: '0 auto', color: 'rgba(255,255,255,0.65)' }}>
-            Decades of combined expertise driving regulatory excellence across GCC and global markets.
+            Decades of combined expertise driving regulatory excellence across global markets.
           </p>
         </div>
 
@@ -223,7 +223,6 @@ function Founder() {
                 decoding="async"
                 onError={(e) => { e.target.style.background = 'linear-gradient(135deg,#0b5c5e,#127a7d)'; }}
               />
-              <div className="founder-gold-accent" />
             </div>
           </div>
           <div className="founder-text fade-in">
@@ -234,7 +233,7 @@ function Founder() {
               <strong>25 years of experience</strong> in the pharmaceutical industry.
             </p>
             <p className="founder-bio">
-              He has extensive expertise in GCC and global regulatory submissions, product
+              He has extensive expertise in global regulatory submissions, product
               registrations, lifecycle management, market access, CMC, biologics, vaccines,
               oncology and rare diseases.
             </p>
@@ -246,7 +245,7 @@ function Founder() {
             <div className="founder-stats-row" style={{ marginBottom: '24px' }}>
               {[
                 { value: '25+', label: 'Years Experience' },
-                { value: 'GCC & Global', label: 'Market Expertise' },
+                { value: 'Global', label: 'Market Expertise' },
                 { value: '100s', label: 'Regulatory Submissions' },
               ].map((s, i) => (
                 <div key={i} className="founder-stat-card">
@@ -262,23 +261,36 @@ function Founder() {
         </div>
 
         {/* Farheen Anjum */}
-        <div className="founder-inner" style={{ flexDirection: 'row-reverse' }}>
-          <div className="founder-image-wrap fade-in">
-            <div className="founder-image-frame">
-              <img
-                src="/farheen.jpg"
-                alt="Farheen Anjum MSc MBA - Operations Director"
-                className="founder-image"
-                loading="lazy"
-                decoding="async"
-                onError={(e) => { e.target.style.background = 'linear-gradient(135deg,#1a1a2e,#16213e)'; }}
-              />
-              <div className="founder-gold-accent" />
+        <div className="founder-inner" style={{ display: 'block', background: 'rgba(255, 255, 255, 0.03)', padding: '40px', borderRadius: '24px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <div className="founder-text fade-in" style={{ maxWidth: '100%' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', marginBottom: '16px' }}>
+              <div>
+                <span className="section-label">Operations Director</span>
+                <h2 className="section-title" style={{ margin: 0 }}>Farheen Anjum MSc MBA</h2>
+              </div>
+              <a
+                href="https://www.linkedin.com/in/farheen-anjum-99628a98?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Farheen Anjum LinkedIn Profile"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  background: '#0A66C2',
+                  color: '#ffffff',
+                  padding: '10px 20px',
+                  borderRadius: '100px',
+                  fontSize: '14px',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 14px rgba(10, 102, 194, 0.4)',
+                  transition: 'transform 0.2s ease',
+                }}
+              >
+                <ExternalLink size={18} /> Connect on LinkedIn
+              </a>
             </div>
-          </div>
-          <div className="founder-text fade-in">
-            <span className="section-label">Operations Director</span>
-            <h2 className="section-title">Farheen Anjum MSc MBA</h2>
             <p className="section-subtitle" style={{ marginBottom: '20px' }}>
               A pharmaceutical business development specialist with over{' '}
               <strong>10 years of experience</strong> in licensing, out-licensing and pharmaceutical business development services.
@@ -320,7 +332,7 @@ function StatsCounter() {
   const stats = [
     { value: 25,  suffix: '+', label: 'Years Experience',      icon: <Award size={24} /> },
     { value: 50,  suffix: '+', label: 'Products Registered',   icon: <FileText size={24} /> },
-    { value: 8,   suffix: '+', label: 'GCC & Global Markets',  icon: <Globe size={24} /> },
+    { value: 8,   suffix: '+', label: 'Global Markets',        icon: <Globe size={24} /> },
     { value: 100, suffix: '+', label: 'Professionals Trained', icon: <Users size={24} /> },
     { value: 10,  suffix: '+', label: 'Therapeutic Areas',     icon: <Microscope size={24} /> },
   ];
@@ -367,12 +379,12 @@ function StatsCounter() {
 function ServicesSection() {
   const ref = useFadeIn();
   const services = [
-    { icon: <Globe size={24} />, title: 'GCC Regulatory Submissions', desc: 'Expert preparation and submission of regulatory dossiers for GCC markets including UAE, Saudi Arabia, Kuwait, Qatar, Bahrain and Oman.' },
+    { icon: <Globe size={24} />, title: 'Global Regulatory Submissions', desc: 'Expert preparation and submission of regulatory dossiers for global markets including UAE, Saudi Arabia, UK, EU, US, and international regions.' },
     { icon: <FileText size={24} />, title: 'Product Registration', desc: 'End-to-end product registration management from initial filing through approval, covering all therapeutic categories.' },
-    { icon: <TrendingUp size={24} />, title: 'Market Access Strategy', desc: 'Comprehensive market access planning to accelerate product launches and optimize reimbursement outcomes in GCC markets.' },
+    { icon: <TrendingUp size={24} />, title: 'Market Access Strategy', desc: 'Comprehensive market access planning to accelerate product launches and optimize reimbursement outcomes in global markets.' },
     { icon: <Microscope size={24} />, title: 'CMC and Dossier Preparation', desc: 'Chemistry, Manufacturing and Controls documentation expertise for small molecules, biologics, vaccines and complex formulations.' },
     { icon: <Shield size={24} />, title: 'Lifecycle Management', desc: 'Post-approval variation management, renewals and line extensions to maximize product value throughout its commercial lifecycle.' },
-    { icon: <Building2 size={24} />, title: 'Business Development', desc: 'Strategic pharmaceutical business development including licensing, partnerships and market entry strategies for GCC expansion.' },
+    { icon: <Building2 size={24} />, title: 'Business Development', desc: 'Strategic pharmaceutical business development including licensing, partnerships and market entry strategies for global expansion.' },
     { icon: <FlaskConical size={24} />, title: 'Active Pharmaceutical Ingredients (API)', desc: 'Preparation of DMF, ASMF, CEP, AF, MF, and Accreditation of Foreign Manufacturer (AFM).' },
     { icon: <ClipboardCheck size={24} />, title: 'GMP Audits & QMS', desc: 'Comprehensive services for GMP audits, mock-inspections, QMS implementation and QMS training.' },
   ];
@@ -384,7 +396,7 @@ function ServicesSection() {
           <h2 className="section-title">Comprehensive Regulatory Services</h2>
           <p className="section-subtitle">
             From initial regulatory strategy to post-market surveillance, we cover the full
-            spectrum of pharmaceutical regulatory requirements in GCC and global markets.
+            spectrum of pharmaceutical regulatory requirements in global markets.
           </p>
         </div>
         <div className="services-grid">
@@ -475,7 +487,7 @@ function Testimonials() {
     {
       name: 'Dr. Sarah Al-Rashidi',
       role: 'Regulatory Director, Gulf Pharma',
-      text: "Reg Excellence transformed our GCC market entry strategy. Their expertise in UAE and Saudi Arabia regulatory requirements saved us months of delays.",
+      text: "Reg Excellence transformed our global market entry strategy. Their expertise in UAE and Saudi Arabia regulatory requirements saved us months of delays.",
       rating: 5,
     },
     {
@@ -487,7 +499,7 @@ function Testimonials() {
     {
       name: 'Dr. Fatima Hassan',
       role: 'Head of RA, Pan Gulf Medical',
-      text: "Professional, responsive and highly knowledgeable. They handled our product registration renewals seamlessly across 6 GCC markets.",
+      text: "Professional, responsive and highly knowledgeable. They handled our product registration renewals seamlessly across 6 Gulf markets.",
       rating: 5,
     },
   ];
@@ -544,11 +556,11 @@ function FloatingContact() {
         </div>
         <div className="fct-row">
           <Phone size={13} />
-          <a href="tel:+447587570977">+44 7587 570977</a>
+          <a href="tel:+447587570977">+44 758 757 0977</a>
         </div>
         <div className="fct-row">
           <MapPin size={13} />
-          <span>3 Aimson Rd W, Timperley<br />Altrincham, WA15 7XP, UK</span>
+          <span>3 Aimson Road West<br />Altrincham, Manchester<br />WA15 7XP, United Kingdom</span>
         </div>
       </div>
       <span className="floating-contact-label">Contact Us</span>

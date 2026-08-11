@@ -68,7 +68,7 @@ export default function Footer() {
               <ul>
                 <li>
                   <div className="contact-icon-wrapper"><MapPin size={16} /></div>
-                  <span>Reg Excellence Ltd.<br/>71-75, Shelton Street,<br/>Covent Garden, London,<br/>WC2H 9JQ, United Kingdom</span>
+                  <span>Reg Excellence Ltd.<br/>3 Aimson Road West,<br/>Altrincham, Manchester,<br/>WA15 7XP, United Kingdom</span>
                 </li>
                 <li>
                   <div className="contact-icon-wrapper"><Mail size={16} /></div>
@@ -79,7 +79,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <div className="contact-icon-wrapper"><Phone size={16} /></div>
-                  <span>+44 7506 775 997</span>
+                  <a href="tel:+447587570977" style={{ color: '#333333', textDecoration: 'none' }}>+44 758 757 0977</a>
                 </li>
                 <li>
                   <div className="contact-icon-wrapper"><Globe size={16} /></div>

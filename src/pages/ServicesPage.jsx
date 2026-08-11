@@ -19,7 +19,7 @@ function useFadeIn() {
 const services = [
   {
     icon: <Globe size={28} />, title: 'Global Regulatory Submissions',
-    desc: 'Expert preparation and management of regulatory dossiers for GCC and global markets.',
+    desc: 'Expert preparation and management of regulatory dossiers for global markets.',
     features: ['US FDA submissions', 'PMDA (Japan) & EMA (Europe)', 'HA & ANVISA (Brazil) dossiers', 'KSA (SFDA) & UAE (MOHAP) submissions'],
   },
   {
@@ -44,7 +44,7 @@ const services = [
   },
   {
     icon: <Building2 size={28} />, title: 'Business Development',
-    desc: 'Strategic partnerships, licensing and market entry for pharmaceutical companies expanding into GCC.',
+    desc: 'Strategic partnerships, licensing and market entry for pharmaceutical companies expanding globally.',
     features: ['Licensing & in-licensing', 'Partnership strategy', 'Due diligence', 'Market entry planning'],
   },
   {
@@ -54,7 +54,7 @@ const services = [
   },
   {
     icon: <Layers size={28} />, title: 'Regulatory Intelligence',
-    desc: 'Continuous monitoring of GCC regulatory changes and competitive landscape analysis.',
+    desc: 'Continuous monitoring of global regulatory changes and competitive landscape analysis.',
     features: ['Regulatory landscape mapping', 'Competitor tracking', 'Policy analysis', 'Strategic advisory'],
   },
   {
@@ -72,8 +72,8 @@ const services = [
 export default function ServicesPage() {
   const ref = useFadeIn();
   useSEO({
-    title: 'Regulatory Affairs Services | GCC Product Registration & Market Access | Reg Excellence UK',
-    description: 'Specialist GCC regulatory affairs services: product registration, MHRA, EMA, CMC dossier preparation, lifecycle management, market access and business development. Expert pharmaceutical consultancy.',
+    title: 'Regulatory Affairs Services | Global Product Registration & Market Access | Reg Excellence UK',
+    description: 'Specialist global regulatory affairs services: product registration, MHRA, EMA, CMC dossier preparation, lifecycle management, market access and business development. Expert pharmaceutical consultancy.',
   });
 
   return (
@@ -87,7 +87,7 @@ export default function ServicesPage() {
           </h1>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
             From regulatory strategy to post-market compliance — expert services for every stage
-            of your pharmaceutical product lifecycle in GCC and global markets.
+            of your pharmaceutical product lifecycle in global markets.
           </p>
         </div>
       </section>

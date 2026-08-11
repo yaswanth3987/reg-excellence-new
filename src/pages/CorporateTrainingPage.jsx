@@ -19,9 +19,9 @@ function useFadeIn() {
 const topics = [
   {
     icon: <Globe size={28} />,
-    title: 'GCC Regulatory Affairs',
-    desc: 'Comprehensive training on GCC regulatory frameworks, submission requirements, and approval processes across all Gulf markets.',
-    modules: ['GCC regulatory landscape overview', 'SFDA & MOHAP submission processes', 'CTD/eCTD dossier preparation', 'Post-approval variation management', 'Regulatory strategy & timelines'],
+    title: 'Global Regulatory Affairs',
+    desc: 'Comprehensive training on global regulatory frameworks, submission requirements, and approval processes across international markets.',
+    modules: ['Global regulatory landscape overview', 'SFDA & MOHAP submission processes', 'CTD/eCTD dossier preparation', 'Post-approval variation management', 'Regulatory strategy & timelines'],
   },
   {
     icon: <Microscope size={28} />,
@@ -32,26 +32,26 @@ const topics = [
   {
     icon: <Shield size={28} />,
     title: 'GMP & Compliance',
-    desc: 'Good Manufacturing Practice training tailored to GCC regulatory expectations and international standards.',
-    modules: ['GMP principles & guidelines', 'Quality management systems', 'GCC inspection preparation', 'Audit readiness & CAPA', 'Manufacturing site registration'],
+    desc: 'Good Manufacturing Practice training tailored to global regulatory expectations and international standards.',
+    modules: ['GMP principles & guidelines', 'Quality management systems', 'Global inspection preparation', 'Audit readiness & CAPA', 'Manufacturing site registration'],
   },
   {
     icon: <TrendingUp size={28} />,
     title: 'Regulatory Strategy',
     desc: 'Strategic training on building regulatory roadmaps, managing health authority interactions and accelerating approvals.',
-    modules: ['Regulatory pathway selection', 'Health authority meeting strategy', 'Risk-based regulatory planning', 'Global vs GCC submission strategy', 'Lifecycle management planning'],
+    modules: ['Regulatory pathway selection', 'Health authority meeting strategy', 'Risk-based regulatory planning', 'Global submission strategy', 'Lifecycle management planning'],
   },
   {
     icon: <Building2 size={28} />,
     title: 'Pharmaceutical Business Development',
-    desc: 'Commercial strategy training for pharmaceutical teams entering, growing or diversifying in GCC markets.',
-    modules: ['GCC pharmaceutical market overview', 'Licensing & in-licensing strategy', 'Pricing & market access fundamentals', 'Stakeholder mapping & KOL engagement', 'Commercial due diligence'],
+    desc: 'Commercial strategy training for pharmaceutical teams entering, growing or diversifying in global markets.',
+    modules: ['Global pharmaceutical market overview', 'Licensing & in-licensing strategy', 'Pricing & market access fundamentals', 'Stakeholder mapping & KOL engagement', 'Commercial due diligence'],
   },
 ];
 
 const stats = [
   { value: '100+', label: 'Professionals Trained' },
-  { value: '10+', label: 'GCC Markets Covered' },
+  { value: '10+', label: 'Global Markets Covered' },
   { value: '5', label: 'Training Modules Available' },
   { value: '100%', label: 'Bespoke Programmes' },
 ];
@@ -59,8 +59,8 @@ const stats = [
 export default function CorporateTrainingPage() {
   const ref = useFadeIn();
   useSEO({
-    title: 'Corporate Pharmaceutical Training | GCC Regulatory Affairs & GMP | Reg Excellence UK',
-    description: 'Bespoke corporate pharmaceutical training programmes: GCC regulatory affairs, CMC, GMP compliance, market access and business development. Expert trainers delivering across GCC.',
+    title: 'Corporate Pharmaceutical Training | Global Regulatory Affairs & GMP | Reg Excellence UK',
+    description: 'Bespoke corporate pharmaceutical training programmes: global regulatory affairs, CMC, GMP compliance, market access and business development. Expert trainers delivering globally.',
   });
 
   return (
@@ -74,7 +74,7 @@ export default function CorporateTrainingPage() {
           </h1>
           <p className="section-subtitle">
             Bespoke in-house training programs designed to upskill your pharmaceutical team
-            in GCC regulatory affairs, compliance, and business development.
+            in global regulatory affairs, compliance, and business development.
           </p>
           <div style={{ marginTop: '36px', display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <button className="btn-primary" onClick={() => { window.location.href = '/consultation'; }}>
@@ -108,13 +108,13 @@ export default function CorporateTrainingPage() {
               <h2 className="section-title">Training Built on Real-World Expertise</h2>
               <p className="section-subtitle" style={{ marginBottom: '32px' }}>
                 Our corporate training programs are developed and delivered by Dr. Anwar Hussain
-                Mohammed PhD — delivering hands-on GCC regulatory affairs and pharmaceutical
+                Mohammed PhD — delivering hands-on global regulatory affairs and pharmaceutical
                 business development training based on real-world experience.
               </p>
               {[
                 "Tailored to your team's specific needs and products",
-                'Delivered on-site or virtually across GCC',
-                'Practical case studies from real GCC submissions',
+                'Delivered on-site or virtually globally',
+                'Practical case studies from real global submissions',
                 'Interactive workshops and Q&A sessions',
                 'Post-training support and resources',
                 'Certificate of completion for all participants',
@@ -141,7 +141,7 @@ export default function CorporateTrainingPage() {
                 {[
                   'Regulatory Affairs Teams', 'Medical Affairs Departments', 'R&D and Clinical Teams',
                   'Commercial & BD Teams', 'Quality Assurance Teams', 'Senior Management & Directors',
-                  'New Entrants to GCC Markets', 'Pharmacovigilance Teams',
+                  'New Entrants to Global Markets', 'Pharmacovigilance Teams',
                 ].map((who, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', fontSize: '14px', color: 'rgba(255,255,255,0.8)' }}>
                     <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--gold)', flexShrink: 0 }} />

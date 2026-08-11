@@ -165,7 +165,7 @@ export default function Navbar() {
           </button>
           <div className="re-mobile-menu__contact">
             <a href="mailto:info@regexcellence.co.uk"><Mail size={16} /> info@regexcellence.co.uk</a>
-            <a href="tel:+447506775997"><Phone size={16} /> +44 7506 775 997</a>
+            <a href="tel:+447587570977"><Phone size={16} /> +44 758 757 0977</a>
           </div>
         </div>
       </aside>

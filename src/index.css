@@ -952,19 +952,12 @@ img {
   object-fit: cover;
   object-position: top center;
   border-radius: var(--radius-lg);
-  border: 3px solid rgba(200,56,42,0.45);
+  border: 2px solid var(--primary);
   display: block;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 .founder-gold-accent {
-  position: absolute;
-  bottom: -14px;
-  left: -14px;
-  width: 100%;
-  height: 100%;
-  border: 2px solid var(--primary);
-  border-radius: var(--radius-lg);
-  opacity: 0.45;
-  pointer-events: none;
+  display: none;
 }
 
 /* Experience Badge — overlapping bottom-right of image */

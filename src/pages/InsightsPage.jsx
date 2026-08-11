@@ -20,14 +20,14 @@ const categories = [
   {
     icon: <Globe size={22} />,
     category: 'Regulatory Updates',
-    title: 'GCC Regulatory Updates',
+    title: 'Global Markets Regulatory Updates',
     articles: [
       'SFDA 2025 Dossier Submission Requirements — What Has Changed',
       'UAE MOHAP New Product Registration Guidelines Explained',
       'Kuwait MOH: Updated Stability Data Requirements',
       'NHRA Bahrain Registration Fast Track Programme',
       'Oman MOH Revised Fees & Timelines for 2025',
-      'GCC Health Council: Mutual Recognition Agreement Updates',
+      'Gulf Health Council: Mutual Recognition Agreement Updates',
     ],
   },
   {
@@ -35,10 +35,10 @@ const categories = [
     category: 'Career Advice',
     title: 'Regulatory Affairs Career Advice',
     articles: [
-      'How to Break Into GCC Regulatory Affairs as a Pharmacist',
-      'Top Skills Every GCC Regulatory Affairs Professional Needs',
+      'How to Break Into Global Regulatory Affairs as a Pharmacist',
+      'Top Skills Every Global Regulatory Affairs Professional Needs',
       'Moving from Pharma Operations to Regulatory Affairs — A Roadmap',
-      'Negotiating Your Salary as a Regulatory Affairs Manager in GCC',
+      'Negotiating Your Salary as a Regulatory Affairs Manager in Global Markets',
       'Building a Strong LinkedIn Profile for Pharma Professionals',
       'How to Prepare for a Regulatory Affairs Interview',
     ],
@@ -48,12 +48,12 @@ const categories = [
     category: 'Business Strategy',
     title: 'Business Development Strategies',
     articles: [
-      'Entering the GCC Pharma Market: Licensing vs. Distribution',
-      'Key Success Factors for Pharmaceutical Market Access in GCC',
-      'How to Identify and Approach GCC Distribution Partners',
+      'Entering the Gulf Pharma Market: Licensing vs. Distribution',
+      'Key Success Factors for Pharmaceutical Market Access Globally',
+      'How to Identify and Approach Global Distribution Partners',
       'Understanding Price Referencing in Saudi Arabia & UAE',
       'Biosimilar Market Opportunities in the Gulf Region',
-      'Pharmaceutical Partnerships: What GCC Companies Look For',
+      'Pharmaceutical Partnerships: What Global Companies Look For',
     ],
   },
   {
@@ -61,12 +61,12 @@ const categories = [
     category: 'Market Access',
     title: 'Pharmaceutical Market Access',
     articles: [
-      'HTA in GCC: How to Prepare a Compelling Value Dossier',
+      'HTA in Global Markets: How to Prepare a Compelling Value Dossier',
       'Reimbursement Strategies for Specialty Medicines in UAE',
       'Oncology Drug Access in Saudi Arabia: A Practical Guide',
       'How to Navigate the SFDA Pricing Committee Process',
-      'Rare Disease Market Access: Opportunities in GCC',
-      'Early Access Programs Across GCC — A Country-by-Country Guide',
+      'Rare Disease Market Access: Opportunities in Global Markets',
+      'Early Access Programs Across Gulf States — A Country-by-Country Guide',
     ],
   },
 ];
@@ -78,8 +78,8 @@ export default function InsightsPage() {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState(ALL_CATS);
   useSEO({
-    title: 'GCC Regulatory Affairs Insights & Articles | Reg Excellence UK',
-    description: 'Expert GCC regulatory updates, pharmaceutical career advice, business development strategies and market access insights. Stay informed with Reg Excellence.',
+    title: 'Global Regulatory Affairs Insights & Articles | Reg Excellence UK',
+    description: 'Expert global regulatory updates, pharmaceutical career advice, business development strategies and market access insights. Stay informed with Reg Excellence.',
   });
 
   const tabs = [ALL_CATS, ...categories.map(c => c.category)];
@@ -104,7 +104,7 @@ export default function InsightsPage() {
             Expert Insights &amp; Articles
           </h1>
           <p className="section-subtitle">
-            Stay up to date with GCC regulatory news, career advice, and pharmaceutical
+            Stay up to date with global regulatory news, career advice, and pharmaceutical
             business development strategies from Dr. Anwar Hussain Mohammed PhD.
           </p>
           {/* Search Bar */}
@@ -208,7 +208,7 @@ export default function InsightsPage() {
               Never Miss an Update
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: '500px', margin: '0 auto 32px', fontSize: '16px' }}>
-              Subscribe to receive the latest GCC regulatory insights, career advice and
+              Subscribe to receive the latest global regulatory insights, career advice and
               industry updates directly to your inbox.
             </p>
             <div style={{ display: 'flex', gap: '12px', maxWidth: '480px', margin: '0 auto', flexWrap: 'wrap', justifyContent: 'center' }}>
