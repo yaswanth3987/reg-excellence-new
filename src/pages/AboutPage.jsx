@@ -37,8 +37,17 @@ export default function AboutPage() {
   const ref = useFadeIn();
   const navigate = useNavigate();
   useSEO({
-    title: 'About Reg Excellence | UK-Based Global Markets Regulatory Affairs Consultancy',
-    description: 'Learn about Reg Excellence — a pharmaceutical regulatory affairs consultancy led by Dr. Anwar Hussain Mohammed PhD. Our mission, values, and expertise in global regulatory affairs.',
+    title: 'About Reg Excellence | GCC & Global Pharmaceutical Regulatory Consultants',
+    description: 'Learn about Reg Excellence — a leading UK-based pharmaceutical regulatory affairs & business development consultancy led by Dr. Anwar Hussain Mohammed PhD. 25+ years experience.',
+    keywords: 'Dr. Anwar Hussain Mohammed PhD, Reg Excellence about, GCC regulatory affairs consultancy UK, pharmaceutical regulatory experts Manchester, SFDA MOHAP regulatory consultant',
+    schema: {
+      '@type': 'AboutPage',
+      'mainEntity': {
+        '@type': 'Person',
+        'name': 'Dr. Anwar Hussain Mohammed, PhD',
+        '@id': 'https://regexcellence.co.uk/#founder'
+      }
+    }
   });
 
   const goToContact = () => {

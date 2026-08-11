@@ -11,6 +11,29 @@ import CorporateTrainingPage from './pages/CorporateTrainingPage';
 import CareersPage from './pages/CareersPage';
 import ConsultationPage from './pages/ConsultationPage';
 
+// Service Subpages
+import GCCRegulatoryAffairs from './pages/services/GCCRegulatoryAffairs';
+import RegulatoryStrategy from './pages/services/RegulatoryStrategy';
+import ProductRegistration from './pages/services/ProductRegistration';
+import RegulatorySubmissions from './pages/services/RegulatorySubmissions';
+import DossierPreparation from './pages/services/DossierPreparation';
+import CMCSupport from './pages/services/CMCSupport';
+import MarketAccess from './pages/services/MarketAccess';
+
+// Training Subpages
+import GCCMasterclass from './pages/training/GCCMasterclass';
+import CareerMentoring from './pages/training/CareerMentoring';
+import CVLinkedInReview from './pages/training/CVLinkedInReview';
+import BusinessDevelopmentTraining from './pages/training/BusinessDevelopmentTraining';
+
+// Insights Subpages
+import GCCRegulatoryUpdatesArticle from './pages/insights/GCCRegulatoryUpdatesArticle';
+import RACareerArticle from './pages/insights/RACareerArticle';
+import MarketAccessArticle from './pages/insights/MarketAccessArticle';
+import BusinessDevelopmentArticle from './pages/insights/BusinessDevelopmentArticle';
+
+import GoToTop from './components/GoToTop';
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -30,8 +53,6 @@ function NotFound() {
   );
 }
 
-import GoToTop from './components/GoToTop';
-
 function AppInner() {
   return (
     <>
@@ -39,6 +60,7 @@ function AppInner() {
       <Navbar />
       <main>
         <Routes>
+          {/* Main Pages */}
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
@@ -47,6 +69,28 @@ function AppInner() {
           <Route path="/corporate-training" element={<CorporateTrainingPage />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/consultation" element={<ConsultationPage />} />
+
+          {/* Service Subpages */}
+          <Route path="/services/gcc-regulatory-affairs" element={<GCCRegulatoryAffairs />} />
+          <Route path="/services/regulatory-strategy" element={<RegulatoryStrategy />} />
+          <Route path="/services/product-registration" element={<ProductRegistration />} />
+          <Route path="/services/regulatory-submissions" element={<RegulatorySubmissions />} />
+          <Route path="/services/dossier-preparation" element={<DossierPreparation />} />
+          <Route path="/services/cmc-regulatory-support" element={<CMCSupport />} />
+          <Route path="/services/pharmaceutical-market-access" element={<MarketAccess />} />
+
+          {/* Training & Mentoring Subpages */}
+          <Route path="/training/gcc-regulatory-affairs-masterclass" element={<GCCMasterclass />} />
+          <Route path="/training/career-mentoring" element={<CareerMentoring />} />
+          <Route path="/training/cv-linkedin-review" element={<CVLinkedInReview />} />
+          <Route path="/training/business-development-training" element={<BusinessDevelopmentTraining />} />
+
+          {/* Insights Subpages */}
+          <Route path="/insights/gcc-regulatory-updates" element={<GCCRegulatoryUpdatesArticle />} />
+          <Route path="/insights/regulatory-affairs-career" element={<RACareerArticle />} />
+          <Route path="/insights/pharmaceutical-market-access" element={<MarketAccessArticle />} />
+          <Route path="/insights/business-development" element={<BusinessDevelopmentArticle />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

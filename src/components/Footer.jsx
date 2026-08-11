@@ -10,15 +10,12 @@ export default function Footer() {
             {/* Col 1 */}
             <div className="footer-new-brand">
               <Link to="/" className="footer-new-logo">
-                <img src="/logo.png" alt="Reg Excellence" />
+                <img src="/logo.png" alt="Reg Excellence logo" />
               </Link>
-              <p>Expert regulatory affairs consulting and training solutions with 25+ years of global pharmaceutical industry experience.</p>
+              <p>Expert GCC and global pharmaceutical regulatory affairs consulting and corporate training led by Dr. Anwar Hussain Mohammed PhD.</p>
               <div className="footer-socials">
-                <a href="#" className="social-icon" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/regexcellence" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-                <a href="#" className="social-icon" aria-label="Twitter">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
                 </a>
                 <a href="mailto:info@regexcellence.co.uk" className="social-icon" aria-label="Email"><Mail size={16} /></a>
               </div>
@@ -28,7 +25,7 @@ export default function Footer() {
             <div className="footer-new-col">
               <h4>QUICK LINKS</h4>
               <ul>
-                <li><Link to="/"><ChevronRight size={14} className="chevron" /> About Us</Link></li>
+                <li><Link to="/about"><ChevronRight size={14} className="chevron" /> About Us</Link></li>
                 <li><Link to="/services"><ChevronRight size={14} className="chevron" /> Our Services</Link></li>
                 <li><Link to="/training"><ChevronRight size={14} className="chevron" /> Training & Mentoring</Link></li>
                 <li><Link to="/corporate-training"><ChevronRight size={14} className="chevron" /> Corporate Training</Link></li>
@@ -41,12 +38,13 @@ export default function Footer() {
             <div className="footer-new-col">
               <h4>OUR SERVICES</h4>
               <ul>
-                <li><Link to="/services"><ChevronRight size={14} className="chevron" /> Regulatory Strategy</Link></li>
-                <li><Link to="/services"><ChevronRight size={14} className="chevron" /> Dossier Writing & Publishing</Link></li>
-                <li><Link to="/services"><ChevronRight size={14} className="chevron" /> Submission Management</Link></li>
-                <li><Link to="/services"><ChevronRight size={14} className="chevron" /> CMC & Quality Support</Link></li>
-                <li><Link to="/services"><ChevronRight size={14} className="chevron" /> Gap Analysis & Compliance</Link></li>
-                <li><Link to="/services"><ChevronRight size={14} className="chevron" /> Audit & Inspection Support</Link></li>
+                <li><Link to="/services/gcc-regulatory-affairs"><ChevronRight size={14} className="chevron" /> GCC Regulatory Affairs</Link></li>
+                <li><Link to="/services/regulatory-strategy"><ChevronRight size={14} className="chevron" /> Regulatory Strategy</Link></li>
+                <li><Link to="/services/product-registration"><ChevronRight size={14} className="chevron" /> Product Registration</Link></li>
+                <li><Link to="/services/regulatory-submissions"><ChevronRight size={14} className="chevron" /> eCTD Submissions</Link></li>
+                <li><Link to="/services/dossier-preparation"><ChevronRight size={14} className="chevron" /> Dossier Gap Analysis</Link></li>
+                <li><Link to="/services/cmc-regulatory-support"><ChevronRight size={14} className="chevron" /> CMC & Quality Support</Link></li>
+                <li><Link to="/services/pharmaceutical-market-access"><ChevronRight size={14} className="chevron" /> Market Access & Pricing</Link></li>
               </ul>
             </div>
 
@@ -54,11 +52,11 @@ export default function Footer() {
             <div className="footer-new-col">
               <h4>TRAINING & MENTORING</h4>
               <ul>
-                <li><Link to="/training"><ChevronRight size={14} className="chevron" /> Regulatory Affairs Training</Link></li>
-                <li><Link to="/training"><ChevronRight size={14} className="chevron" /> IND/IMPD Training</Link></li>
-                <li><Link to="/training"><ChevronRight size={14} className="chevron" /> Mentoring Programs</Link></li>
-                <li><Link to="/training"><ChevronRight size={14} className="chevron" /> Workshops & Webinars</Link></li>
-                <li><Link to="/corporate-training"><ChevronRight size={14} className="chevron" /> Corporate Training Programs</Link></li>
+                <li><Link to="/training/gcc-regulatory-affairs-masterclass"><ChevronRight size={14} className="chevron" /> GCC Regulatory Masterclass</Link></li>
+                <li><Link to="/training/career-mentoring"><ChevronRight size={14} className="chevron" /> 1-on-1 Career Mentoring</Link></li>
+                <li><Link to="/training/cv-linkedin-review"><ChevronRight size={14} className="chevron" /> CV & LinkedIn Review</Link></li>
+                <li><Link to="/training/business-development-training"><ChevronRight size={14} className="chevron" /> Business Development</Link></li>
+                <li><Link to="/corporate-training"><ChevronRight size={14} className="chevron" /> In-House Corporate Training</Link></li>
               </ul>
             </div>
 
@@ -106,11 +104,11 @@ export default function Footer() {
           <div className="footer-new-bottom-inner">
             <p>© {new Date().getFullYear()} Reg Excellence Ltd. All Rights Reserved.</p>
             <div className="footer-new-bottom-links">
-              <Link to="#">Privacy Policy</Link>
+              <Link to="/services">Services</Link>
               <span className="separator">|</span>
-              <Link to="#">Terms & Conditions</Link>
+              <Link to="/training">Training</Link>
               <span className="separator">|</span>
-              <Link to="#">Sitemap</Link>
+              <a href="/sitemap.xml">Sitemap</a>
             </div>
           </div>
         </div>

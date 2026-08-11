@@ -1,43 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
   <url>
-    <loc>https://www.regexcellence.com/</loc>
+    <loc>https://regexcellence.co.uk/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.regexcellence.com/about</loc>
+    <loc>https://regexcellence.co.uk/about</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.regexcellence.com/services</loc>
+    <loc>https://regexcellence.co.uk/services</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.regexcellence.com/training</loc>
+    <loc>https://regexcellence.co.uk/training</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.regexcellence.com/corporate-training</loc>
+    <loc>https://regexcellence.co.uk/corporate-training</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.regexcellence.com/insights</loc>
-    <priority>0.7</priority>
+    <loc>https://regexcellence.co.uk/insights</loc>
+    <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://www.regexcellence.com/careers</loc>
+    <loc>https://regexcellence.co.uk/careers</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.regexcellence.com/consultation</loc>
+    <loc>https://regexcellence.co.uk/consultation</loc>
     <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Service Subpages -->
+  <url>
+    <loc>https://regexcellence.co.uk/services/gcc-regulatory-affairs</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/services/regulatory-strategy</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/services/product-registration</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/services/regulatory-submissions</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/services/dossier-preparation</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/services/cmc-regulatory-support</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/services/pharmaceutical-market-access</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Training & Mentoring Subpages -->
+  <url>
+    <loc>https://regexcellence.co.uk/training/gcc-regulatory-affairs-masterclass</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/training/career-mentoring</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/training/cv-linkedin-review</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/training/business-development-training</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Insights Pillar Articles -->
+  <url>
+    <loc>https://regexcellence.co.uk/insights/gcc-regulatory-updates</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/insights/regulatory-affairs-career</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/insights/pharmaceutical-market-access</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://regexcellence.co.uk/insights/business-development</loc>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>

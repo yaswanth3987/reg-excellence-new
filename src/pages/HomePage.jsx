@@ -5,6 +5,7 @@ import {
   MapPin, Star, Users, FlaskConical, ClipboardCheck, ExternalLink
 } from 'lucide-react';
 import ConsultationForm from '../components/ConsultationForm';
+import useSEO from '../hooks/useSEO';
 
 function useFadeIn() {
   const ref = useRef();
@@ -572,6 +573,22 @@ function FloatingContact() {
 
 // HOME PAGE
 export default function HomePage() {
+  useSEO({
+    title: 'GCC & Global Pharmaceutical Regulatory Affairs Consultant',
+    description: 'UK-based pharmaceutical regulatory affairs consultancy led by Dr. Anwar Hussain Mohammed PhD. Expert in GCC, SFDA, MOHAP, MHRA, EMA product registration, CMC, biologics, & market access.',
+    keywords: 'GCC regulatory affairs consultant, pharmaceutical regulatory consulting GCC, Saudi FDA regulatory consultant, SFDA pharmaceutical registration, UAE MOHAP registration, GCC product registration, pharmaceutical market access GCC',
+    schema: {
+      '@type': 'ProfessionalService',
+      'name': 'Reg Excellence',
+      'url': 'https://regexcellence.co.uk',
+      'founder': {
+        '@type': 'Person',
+        'name': 'Dr. Anwar Hussain Mohammed, PhD',
+        '@id': 'https://regexcellence.co.uk/#founder'
+      }
+    }
+  });
+
   return (
     <>
       <Hero />

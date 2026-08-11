@@ -1,5 +1,6 @@
 import { Globe, FileText, TrendingUp, Microscope, Building2, Shield, Award, CheckCircle, ArrowRight, Layers, FlaskConical, ClipboardCheck } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 
 function useFadeIn() {
@@ -18,62 +19,66 @@ function useFadeIn() {
 
 const services = [
   {
-    icon: <Globe size={28} />, title: 'Global Regulatory Submissions',
-    desc: 'Expert preparation and management of regulatory dossiers for global markets.',
-    features: ['US FDA submissions', 'PMDA (Japan) & EMA (Europe)', 'HA & ANVISA (Brazil) dossiers', 'KSA (SFDA) & UAE (MOHAP) submissions'],
+    icon: <Globe size={28} />, title: 'GCC Regulatory Affairs',
+    desc: 'Expert preparation and management of regulatory dossiers across SFDA, MOHAP, and GCC health ministries.',
+    link: '/services/gcc-regulatory-affairs',
+    features: ['SFDA Saudi Arabia eCTD submissions', 'MOHAP UAE fast-track registration', 'Kuwait, Qatar, Oman & Bahrain filings', 'GCC Health Council (GHC) support'],
+  },
+  {
+    icon: <TrendingUp size={28} />, title: 'Regulatory Strategy Roadmap',
+    desc: 'Strategic planning to mitigate regulatory risk and accelerate product approvals.',
+    link: '/services/regulatory-strategy',
+    features: ['Target Product Profile (TPP) alignment', 'Pre-submission scientific advice', 'Global vs GCC roadmap harmonization', 'Fast-track designation strategy'],
   },
   {
     icon: <FileText size={28} />, title: 'Product Registration',
-    desc: 'End-to-end management of new product registrations across all therapeutic areas.',
-    features: ['New Chemical Entities', 'Biologics & Biosimilars', 'Generic Drug Applications', 'OTC & Prescription Products'],
+    desc: 'End-to-end management of marketing authorizations across all therapeutic categories.',
+    link: '/services/product-registration',
+    features: ['New Chemical Entities & Biologics', 'Generics & Biosimilar Applications', 'MAH License Transfers & Renewals', 'Artwork & SmPC Compliance'],
   },
   {
-    icon: <TrendingUp size={28} />, title: 'Market Access Strategy',
-    desc: 'Comprehensive planning to accelerate market entry and optimize commercial outcomes.',
-    features: ['Reimbursement strategy', 'HTA submissions', 'Pricing & negotiations', 'Launch sequencing'],
+    icon: <Globe size={28} />, title: 'eCTD Submissions Management',
+    desc: 'Full compilation, hyperlinking, validation, and gateway publishing for electronic submissions.',
+    link: '/services/regulatory-submissions',
+    features: ['GCC eCTD Specification v1.5', 'EU & US FDA eCTD submissions', 'Variation management (Type IA, IB, II)', 'Health authority query mitigation'],
   },
   {
-    icon: <Microscope size={28} />, title: 'CMC & Dossier Preparation',
-    desc: 'Expert CMC documentation for complex molecules, biologics and novel formulations.',
-    features: ['Module 3 preparation', 'Biologics & vaccines CMC', 'Stability data review', 'Impurity qualification'],
+    icon: <Microscope size={28} />, title: 'Dossier Preparation & Gap Analysis',
+    desc: 'Rigorous authoring and auditing of Modules 1 to 5 prior to health authority filing.',
+    link: '/services/dossier-preparation',
+    features: ['Module 1-5 CTD authoring & review', 'Pre-submission gap assessment', 'Zone IVb stability compliance check', 'Legacy dossier remediation'],
   },
   {
-    icon: <Shield size={28} />, title: 'Lifecycle Management',
-    desc: 'Post-approval variation management and renewals to sustain and extend product value.',
-    features: ['Type I & II variations', 'Product renewals', 'Line extensions', 'Labelling updates'],
+    icon: <FlaskConical size={28} />, title: 'CMC & Quality Support',
+    desc: 'Specialized CMC documentation for complex molecules, biologics, and vaccines.',
+    link: '/services/cmc-regulatory-support',
+    features: ['Module 3 DS & DP authoring', 'Biologics & vaccine CMC support', 'Analytical method validation review', 'GMP audit & CAPA responses'],
+  },
+  {
+    icon: <TrendingUp size={28} />, title: 'Market Access & Pricing Strategy',
+    desc: 'Demonstrating value to secure pricing approvals and hospital formulary inclusions.',
+    link: '/services/pharmaceutical-market-access',
+    features: ['Saudi SFDA pricing dossier filing', 'UAE MOHAP reimbursement strategy', 'HTA Value Dossier compilation', 'External Price Referencing (EPR)'],
   },
   {
     icon: <Building2 size={28} />, title: 'Business Development',
-    desc: 'Strategic partnerships, licensing and market entry for pharmaceutical companies expanding globally.',
-    features: ['Licensing & in-licensing', 'Partnership strategy', 'Due diligence', 'Market entry planning'],
-  },
-  {
-    icon: <Award size={28} />, title: 'Oncology & Rare Diseases',
-    desc: 'Specialized regulatory pathways for oncology, orphan drugs and advanced therapies.',
-    features: ['Orphan designation', 'Accelerated approval', 'ATMPs regulatory strategy', 'Compassionate use'],
-  },
-  {
-    icon: <Layers size={28} />, title: 'Regulatory Intelligence',
-    desc: 'Continuous monitoring of global regulatory changes and competitive landscape analysis.',
-    features: ['Regulatory landscape mapping', 'Competitor tracking', 'Policy analysis', 'Strategic advisory'],
-  },
-  {
-    icon: <FlaskConical size={28} />, title: 'Active Pharmaceutical Ingredients (API)',
-    desc: 'Preparation and management of master files and foreign manufacturer accreditations.',
-    features: ['Preparation of Drug Master File (DMF)', 'ASMF, CEP, AF, Master File (MF)', 'AFM (Accreditation of Foreign Manufacturer)'],
-  },
-  {
-    icon: <ClipboardCheck size={28} />, title: 'GMP Audits & QMS',
-    desc: 'Comprehensive quality management services including site inspections and QMS training.',
-    features: ['GMP audits (site inspections)', 'Mock-Inspections', 'QMS implementation', 'QMS training'],
+    desc: 'Strategic partnerships, in-licensing, and market entry due diligence.',
+    link: '/training/business-development-training',
+    features: ['In-licensing & deal structuring', 'Distributor vetting & compliance', 'Commercial due diligence', 'GCC market entry planning'],
   },
 ];
 
 export default function ServicesPage() {
   const ref = useFadeIn();
   useSEO({
-    title: 'Regulatory Affairs Services | Global Product Registration & Market Access | Reg Excellence UK',
-    description: 'Specialist global regulatory affairs services: product registration, MHRA, EMA, CMC dossier preparation, lifecycle management, market access and business development. Expert pharmaceutical consultancy.',
+    title: 'GCC & Global Pharmaceutical Regulatory Affairs Services | Reg Excellence UK',
+    description: 'Comprehensive pharmaceutical regulatory services by Dr. Anwar Hussain Mohammed PhD: GCC regulatory affairs, SFDA, MOHAP, eCTD submissions, CMC, product registration, & market access.',
+    keywords: 'GCC regulatory affairs services, SFDA drug registration services, UAE MOHAP regulatory consultant, CMC dossier preparation, pharmaceutical market access GCC',
+    schema: {
+      '@type': 'Service',
+      'name': 'Pharmaceutical Regulatory Services',
+      'provider': { '@id': 'https://regexcellence.co.uk/#organization' }
+    }
   });
 
   return (
@@ -87,7 +92,7 @@ export default function ServicesPage() {
           </h1>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
             From regulatory strategy to post-market compliance — expert services for every stage
-            of your pharmaceutical product lifecycle in global markets.
+            of your pharmaceutical product lifecycle in GCC and global markets.
           </p>
         </div>
       </section>
@@ -97,17 +102,24 @@ export default function ServicesPage() {
         <div className="container">
           <div className="services-grid">
             {services.map((s, i) => (
-              <div key={i} className="service-card fade-in" style={{ padding: '40px' }}>
-                <div className="service-icon">{s.icon}</div>
-                <h3 className="service-title">{s.title}</h3>
-                <p className="service-desc" style={{ marginBottom: '20px' }}>{s.desc}</p>
-                <ul style={{ listStyle: 'none' }}>
-                  {s.features.map((f, j) => (
-                    <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: 'var(--text-secondary)', padding: '5px 0' }}>
-                      <CheckCircle size={14} style={{ color: 'var(--gold)', flexShrink: 0 }} /> {f}
-                    </li>
-                  ))}
-                </ul>
+              <div key={i} className="service-card fade-in" style={{ padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div className="service-icon">{s.icon}</div>
+                  <h3 className="service-title">{s.title}</h3>
+                  <p className="service-desc" style={{ marginBottom: '20px' }}>{s.desc}</p>
+                  <ul style={{ listStyle: 'none', marginBottom: '24px' }}>
+                    {s.features.map((f, j) => (
+                      <li key={j} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: 'var(--text-secondary)', padding: '5px 0' }}>
+                        <CheckCircle size={14} style={{ color: 'var(--gold)', flexShrink: 0 }} /> {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                {s.link && (
+                  <Link to={s.link} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: 'var(--gold)', fontWeight: 700, fontSize: '14px', textDecoration: 'none', marginTop: '12px' }}>
+                    Explore Details <ArrowRight size={14} />
+                  </Link>
+                )}
               </div>
             ))}
           </div>
@@ -122,9 +134,9 @@ export default function ServicesPage() {
               <h2>Ready to get started?</h2>
               <p>Book a consultation with Dr. Anwar Hussain Mohammed PhD today.</p>
             </div>
-            <button className="btn-teal" onClick={() => { window.location.href = '/consultation'; }}>
+            <a href="/consultation" className="btn-teal">
               Book a Consultation <ArrowRight size={16} />
-            </button>
+            </a>
           </div>
         </div>
       </div>

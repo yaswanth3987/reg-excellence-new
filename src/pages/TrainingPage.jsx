@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { GraduationCap, Users, FileCheck, TrendingUp, ArrowRight, Building2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
+import LeadMagnet from '../components/LeadMagnet';
 
 function useFadeIn() {
   const ref = useRef();
@@ -20,29 +21,31 @@ function useFadeIn() {
 const programs = [
   {
     icon: <GraduationCap size={28} />,
-    title: 'Global Regulatory Affairs Masterclass',
-    desc: 'Learn regulatory pathways, submissions, approvals and lifecycle management across global markets.',
+    title: 'GCC Regulatory Affairs Masterclass',
+    link: '/training/gcc-regulatory-affairs-masterclass',
+    desc: 'Learn regulatory pathways, SFDA eCTD submissions, MOHAP guidelines, and GCC approval workflows.',
     features: [
-      'US FDA, EMA, PMDA & HA regulatory frameworks',
-      'ANVISA (Brazil) submission requirements',
-      'KSA (SFDA) & UAE (MOHAP) dossier processes',
-      'CTD/eCTD dossier preparation & submission',
+      'SFDA Saudi Arabia eCTD submission processes',
+      'MOHAP UAE & Kuwait MOH regulatory frameworks',
+      'CTD/eCTD Module 1-5 dossier preparation',
+      'Climate Zone IVb stability testing compliance',
       'Post-approval variation management',
-      'Case studies & real-world examples',
+      'Real-world deficiency letter response strategies',
     ],
     tag: 'Most Popular',
     tagColor: 'var(--gold)',
   },
   {
     icon: <Users size={28} />,
-    title: 'Career Mentoring',
-    desc: 'One-to-one career guidance for pharmacists and regulatory professionals looking to advance in global markets.',
+    title: '1-on-1 Career Mentoring',
+    link: '/training/career-mentoring',
+    desc: 'One-to-one career coaching for pharmacists and regulatory professionals seeking rapid career growth.',
     features: [
-      'Personalised career roadmap',
-      'Interview coaching & preparation',
-      'Industry networking guidance',
-      'Role transitions & promotions',
-      'Building regulatory expertise',
+      'Personalised career roadmap with Dr. Anwar',
+      'Interview coaching & technical preparation',
+      'Transitioning from pharmacy to industry RA',
+      'Role transitions & promotional positioning',
+      'Salary negotiation strategy',
       'Global job market insights',
     ],
     tag: 'One-to-One',
@@ -51,14 +54,15 @@ const programs = [
   {
     icon: <FileCheck size={28} />,
     title: 'CV & LinkedIn Review',
-    desc: 'Professional review and career advice to make your profile stand out in the competitive global pharmaceutical job market.',
+    link: '/training/cv-linkedin-review',
+    desc: 'Professional review and career advice to make your profile stand out to global pharma recruiters.',
     features: [
-      'ATS-optimised CV review',
-      'LinkedIn profile optimisation',
-      'Achievement-driven bullet points',
-      'Industry-specific language',
+      'ATS-optimised CV rewrite & formatting',
+      'LinkedIn profile headline & summary overhaul',
+      'Integration of eCTD, SFDA & CMC keywords',
+      'Quantifiable achievement structuring',
       'Personal branding strategy',
-      'Application guidance & tips',
+      '30-minute career strategy feedback call',
     ],
     tag: 'Quick Start',
     tagColor: '#2d7a2e',
@@ -66,13 +70,14 @@ const programs = [
   {
     icon: <TrendingUp size={28} />,
     title: 'Business Development Training',
-    desc: 'Market access and commercial strategy for pharmaceutical companies entering or expanding in global markets.',
+    link: '/training/business-development-training',
+    desc: 'Market access and commercial strategy for pharmaceutical companies entering or expanding in GCC markets.',
     features: [
-      'Global pharmaceutical market overview',
-      'Pricing & reimbursement strategies',
-      'Licensing & partnership frameworks',
-      'Stakeholder engagement & KOLs',
-      'Commercial due diligence',
+      'GCC pharmaceutical market overview',
+      'Pricing & reimbursement strategies (SFDA/MOHAP)',
+      'In-licensing & partnership frameworks',
+      'Distributor vetting & commercial due diligence',
+      'Commercial negotiation strategy',
       'Launch sequencing & market entry',
     ],
     tag: 'Corporate',
@@ -84,8 +89,14 @@ export default function TrainingPage() {
   const ref = useFadeIn();
   const navigate = useNavigate();
   useSEO({
-    title: 'Regulatory Affairs Training & Mentoring | Global Masterclass | Reg Excellence UK',
-    description: 'Global regulatory affairs training, career mentoring, CV review and business development programs for pharmacists and pharmaceutical professionals. Expert-led courses.',
+    title: 'GCC & Global Regulatory Affairs Training & Career Mentoring | Reg Excellence',
+    description: 'GCC regulatory affairs training masterclass, 1-on-1 career mentoring, CV & LinkedIn review, and pharma business development courses led by Dr. Anwar Hussain Mohammed PhD.',
+    keywords: 'GCC regulatory affairs training, regulatory affairs career mentoring, pharmacist career coaching, CV review regulatory affairs, pharma business development course',
+    schema: {
+      '@type': 'Course',
+      'name': 'Regulatory Affairs & Mentoring Programs',
+      'provider': { '@id': 'https://regexcellence.co.uk/#organization' }
+    }
   });
 
   return (
@@ -93,13 +104,13 @@ export default function TrainingPage() {
       {/* Hero */}
       <section className="training-hero">
         <div className="container">
-          <span className="section-label">Training & Mentoring</span>
+          <span className="section-label">Training &amp; Mentoring</span>
           <h1 className="section-title" style={{ marginBottom: '16px' }}>
             Advance Your Regulatory Career
           </h1>
           <p className="section-subtitle">
             Expert-led training programs and one-to-one mentoring designed for
-            pharmacists and regulatory professionals across global markets.
+            pharmacists and regulatory professionals across GCC and global markets.
           </p>
         </div>
       </section>
@@ -117,28 +128,35 @@ export default function TrainingPage() {
           </div>
           <div className="training-grid">
             {programs.map((p, i) => (
-              <div key={i} className="training-card fade-in">
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '24px' }}>
-                  <div className="training-card-icon">{p.icon}</div>
-                  <span style={{
-                    background: p.tagColor, color: '#fff', fontSize: '11px', fontWeight: 700,
-                    letterSpacing: '1px', textTransform: 'uppercase', padding: '4px 12px',
-                    borderRadius: '100px', flexShrink: 0,
-                  }}>{p.tag}</span>
+              <div key={i} className="training-card fade-in" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '24px' }}>
+                    <div className="training-card-icon">{p.icon}</div>
+                    <span style={{
+                      background: p.tagColor, color: '#fff', fontSize: '11px', fontWeight: 700,
+                      letterSpacing: '1px', textTransform: 'uppercase', padding: '4px 12px',
+                      borderRadius: '100px', flexShrink: 0,
+                    }}>{p.tag}</span>
+                  </div>
+                  <h3 className="training-card-title">{p.title}</h3>
+                  <p className="training-card-desc">{p.desc}</p>
+                  <ul className="training-card-features">
+                    {p.features.map((f, j) => <li key={j}>{f}</li>)}
+                  </ul>
                 </div>
-                <h3 className="training-card-title">{p.title}</h3>
-                <p className="training-card-desc">{p.desc}</p>
-                <ul className="training-card-features">
-                  {p.features.map((f, j) => <li key={j}>{f}</li>)}
-                </ul>
-                <button className="btn-primary" onClick={() => { window.location.href = '/consultation'; }}>
-                  Enquire Now <ArrowRight size={16} />
-                </button>
+                <div style={{ marginTop: '24px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <Link to={p.link} className="btn-primary" style={{ textAlign: 'center', textDecoration: 'none' }}>
+                    View Program Details <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Lead Magnet Capture Component */}
+      <LeadMagnet />
 
       {/* Corporate link */}
       <section style={{ padding: '80px 0', background: 'var(--gray-50)' }}>
@@ -158,7 +176,7 @@ export default function TrainingPage() {
                 Corporate Training Solutions
               </h2>
               <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '16px', maxWidth: '500px' }}>
-                Bespoke in-house training programs for pharmaceutical teams on global regulatory
+                Bespoke in-house training programs for pharmaceutical teams on GCC regulatory
                 affairs, CMC, GMP compliance and business development.
               </p>
             </div>
@@ -177,9 +195,9 @@ export default function TrainingPage() {
               <h2>Ready to start your training journey?</h2>
               <p>Contact us to discuss which program is right for you.</p>
             </div>
-            <button className="btn-teal" onClick={() => { window.location.href = '/consultation'; }}>
+            <a href="/consultation" className="btn-teal">
               Book a Consultation <ArrowRight size={16} />
-            </button>
+            </a>
           </div>
         </div>
       </div>

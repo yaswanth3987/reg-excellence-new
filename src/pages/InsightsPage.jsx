@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { Globe, TrendingUp, Briefcase, BookOpen, ArrowRight, Rss, Search } from 'lucide-react';
+import { Globe, TrendingUp, Briefcase, BookOpen, ArrowRight, Rss, Search, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
+import LeadMagnet from '../components/LeadMagnet';
 
 function useFadeIn() {
   const ref = useRef();
@@ -20,53 +22,61 @@ const categories = [
   {
     icon: <Globe size={22} />,
     category: 'Regulatory Updates',
-    title: 'Global Markets Regulatory Updates',
+    title: 'GCC & Global Regulatory Updates',
+    pillarLink: '/insights/gcc-regulatory-updates',
+    pillarTitle: 'GCC Pharmaceutical Regulatory Affairs: A Practical Guide to SFDA & MOHAP Approvals',
     articles: [
       'SFDA 2025 Dossier Submission Requirements — What Has Changed',
       'UAE MOHAP New Product Registration Guidelines Explained',
-      'Kuwait MOH: Updated Stability Data Requirements',
+      'Kuwait MOH: Updated Stability Data Requirements (Zone IVb)',
       'NHRA Bahrain Registration Fast Track Programme',
       'Oman MOH Revised Fees & Timelines for 2025',
-      'Gulf Health Council: Mutual Recognition Agreement Updates',
+      'Gulf Health Council: Centralized Registration Updates',
     ],
   },
   {
     icon: <BookOpen size={22} />,
     category: 'Career Advice',
     title: 'Regulatory Affairs Career Advice',
+    pillarLink: '/insights/regulatory-affairs-career',
+    pillarTitle: 'How to Build a High-Growth Career in Regulatory Affairs: Roadmap for Pharmacists',
     articles: [
-      'How to Break Into Global Regulatory Affairs as a Pharmacist',
-      'Top Skills Every Global Regulatory Affairs Professional Needs',
-      'Moving from Pharma Operations to Regulatory Affairs — A Roadmap',
-      'Negotiating Your Salary as a Regulatory Affairs Manager in Global Markets',
-      'Building a Strong LinkedIn Profile for Pharma Professionals',
-      'How to Prepare for a Regulatory Affairs Interview',
+      'How to Break Into GCC & Global Regulatory Affairs as a Pharmacist',
+      'Top Skills Every Regulatory Affairs Professional Needs in 2026',
+      'Moving from Pharma Operations to Regulatory Affairs — Step-by-Step',
+      'Negotiating Your Salary as a Regulatory Affairs Manager',
+      'Building an ATS-Optimized LinkedIn Profile for Pharma Roles',
+      'Preparing for Technical Health Authority Interview Questions',
     ],
   },
   {
     icon: <TrendingUp size={22} />,
     category: 'Business Strategy',
     title: 'Business Development Strategies',
+    pillarLink: '/insights/business-development',
+    pillarTitle: 'GCC Pharmaceutical Business Development: In-Licensing vs. Distribution',
     articles: [
-      'Entering the Gulf Pharma Market: Licensing vs. Distribution',
+      'Entering the Gulf Pharma Market: In-Licensing vs. Local Distribution',
       'Key Success Factors for Pharmaceutical Market Access Globally',
-      'How to Identify and Approach Global Distribution Partners',
-      'Understanding Price Referencing in Saudi Arabia & UAE',
-      'Biosimilar Market Opportunities in the Gulf Region',
-      'Pharmaceutical Partnerships: What Global Companies Look For',
+      'Screening & Vetting Regional Pharma Distribution Partners',
+      'Understanding Price Referencing & Commercial Negotiations in Saudi & UAE',
+      'Biosimilar & Biologics Expansion Opportunities in Middle East',
+      'Commercial Due Diligence Checklist for Pharma Partnerships',
     ],
   },
   {
     icon: <Briefcase size={22} />,
     category: 'Market Access',
     title: 'Pharmaceutical Market Access',
+    pillarLink: '/insights/pharmaceutical-market-access',
+    pillarTitle: 'Pharmaceutical Market Access & Pricing Strategy in Saudi Arabia & UAE',
     articles: [
-      'HTA in Global Markets: How to Prepare a Compelling Value Dossier',
+      'HTA in GCC: How to Prepare a Compelling Value Dossier',
       'Reimbursement Strategies for Specialty Medicines in UAE',
-      'Oncology Drug Access in Saudi Arabia: A Practical Guide',
-      'How to Navigate the SFDA Pricing Committee Process',
-      'Rare Disease Market Access: Opportunities in Global Markets',
-      'Early Access Programs Across Gulf States — A Country-by-Country Guide',
+      'Oncology Drug Access & Hospital Formularies in Saudi Arabia',
+      'Navigating the SFDA Pricing Committee Approval Process',
+      'Rare Disease & Orphan Drug Market Access Opportunities',
+      'Early Access Programs Across Gulf States — Country Guide',
     ],
   },
 ];
@@ -78,8 +88,14 @@ export default function InsightsPage() {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState(ALL_CATS);
   useSEO({
-    title: 'Global Regulatory Affairs Insights & Articles | Reg Excellence UK',
-    description: 'Expert global regulatory updates, pharmaceutical career advice, business development strategies and market access insights. Stay informed with Reg Excellence.',
+    title: 'GCC & Global Pharmaceutical Regulatory Insights & Articles | Reg Excellence',
+    description: 'Expert regulatory updates, SFDA/MOHAP submission guides, pharmaceutical career advice, HTA market access, & business development insights by Dr. Anwar Hussain Mohammed PhD.',
+    keywords: 'GCC regulatory insights, SFDA submission guide, MOHAP registration article, regulatory affairs career advice, pharma market access GCC',
+    schema: {
+      '@type': 'CollectionPage',
+      'name': 'Pharmaceutical Regulatory Insights',
+      'provider': { '@id': 'https://regexcellence.co.uk/#organization' }
+    }
   });
 
   const tabs = [ALL_CATS, ...categories.map(c => c.category)];
@@ -101,10 +117,10 @@ export default function InsightsPage() {
         <div className="container">
           <span className="section-label">Insights</span>
           <h1 className="section-title" style={{ marginBottom: '16px' }}>
-            Expert Insights &amp; Articles
+            Expert Insights &amp; Technical Articles
           </h1>
           <p className="section-subtitle">
-            Stay up to date with global regulatory news, career advice, and pharmaceutical
+            Stay up to date with GCC and global regulatory updates, career advice, and pharmaceutical
             business development strategies from Dr. Anwar Hussain Mohammed PhD.
           </p>
           {/* Search Bar */}
@@ -114,7 +130,7 @@ export default function InsightsPage() {
               <input
                 id="insights-search"
                 type="text"
-                placeholder="Search articles..."
+                placeholder="Search articles & guides..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 className="insights-search-input"
@@ -160,33 +176,50 @@ export default function InsightsPage() {
           ) : (
             <div className="insights-grid">
               {filtered.map((cat, i) => (
-                <div key={i} className="insight-card fade-in">
-                  <div className="insight-card-header">
-                    <div className="insight-card-header-icon">{cat.icon}</div>
-                    <div>
-                      <div className="insight-card-category">{cat.category}</div>
-                      <div className="insight-card-header-title">{cat.title}</div>
+                <div key={i} className="insight-card fade-in" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <div className="insight-card-header">
+                      <div className="insight-card-header-icon">{cat.icon}</div>
+                      <div>
+                        <div className="insight-card-category">{cat.category}</div>
+                        <div className="insight-card-header-title">{cat.title}</div>
+                      </div>
+                    </div>
+
+                    <div className="insight-card-body">
+                      {/* Featured Pillar Guide Link */}
+                      {cat.pillarLink && (
+                        <div style={{ background: 'var(--gray-50)', padding: '14px', borderRadius: '8px', borderLeft: '3px solid var(--gold)', marginBottom: '16px' }}>
+                          <span style={{ fontSize: '11px', fontWeight: 700, color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Featured Guide</span>
+                          <Link to={cat.pillarLink} style={{ display: 'block', fontWeight: 600, fontSize: '14px', color: 'var(--primary-dark)', textDecoration: 'none', marginTop: '4px' }}>
+                            {cat.pillarTitle} <ChevronRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+                          </Link>
+                        </div>
+                      )}
+
+                      <ul className="insight-articles">
+                        {cat.articles.map((a, j) => (
+                          <li key={j}>
+                            <Link to={cat.pillarLink || '/insights'} style={{ color: 'inherit', textDecoration: 'none' }}>
+                              {search ? (
+                                <span dangerouslySetInnerHTML={{
+                                  __html: a.replace(
+                                    new RegExp(`(${search})`, 'gi'),
+                                    '<mark class="insight-highlight">$1</mark>'
+                                  )
+                                }} />
+                              ) : a}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                  <div className="insight-card-body">
-                    <ul className="insight-articles">
-                      {cat.articles.map((a, j) => (
-                        <li key={j} onClick={() => { window.location.href = '/consultation'; }}>
-                          {search ? (
-                            <span dangerouslySetInnerHTML={{
-                              __html: a.replace(
-                                new RegExp(`(${search})`, 'gi'),
-                                '<mark class="insight-highlight">$1</mark>'
-                              )
-                            }} />
-                          ) : a}
-                        </li>
-                      ))}
-                    </ul>
-                    <button className="btn-teal" style={{ marginTop: '16px', fontSize: '13px', padding: '10px 20px' }}
-                      onClick={() => { window.location.href = '/consultation'; }}>
-                      Get Notified of New Articles <ArrowRight size={14} />
-                    </button>
+
+                  <div style={{ padding: '0 24px 24px 24px' }}>
+                    <Link to={cat.pillarLink} className="btn-teal" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '13px', padding: '10px 18px', width: '100%', justifyContent: 'center', textDecoration: 'none' }}>
+                      Read Full Category Guide <ArrowRight size={14} />
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -195,50 +228,20 @@ export default function InsightsPage() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section style={{ padding: '80px 0', background: 'var(--gray-50)' }}>
-        <div className="container">
-          <div style={{
-            background: 'linear-gradient(135deg, var(--primary-dark), var(--primary))',
-            borderRadius: 'var(--radius-lg)', padding: '60px',
-            textAlign: 'center',
-          }} className="fade-in">
-            <Rss size={40} style={{ color: 'var(--gold)', margin: '0 auto 16px' }} />
-            <h2 className="section-title" style={{ color: '#fff', marginBottom: '12px' }}>
-              Never Miss an Update
-            </h2>
-            <p style={{ color: 'rgba(255,255,255,0.75)', maxWidth: '500px', margin: '0 auto 32px', fontSize: '16px' }}>
-              Subscribe to receive the latest global regulatory insights, career advice and
-              industry updates directly to your inbox.
-            </p>
-            <div style={{ display: 'flex', gap: '12px', maxWidth: '480px', margin: '0 auto', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                style={{
-                  flex: 1, minWidth: '240px', padding: '13px 18px',
-                  borderRadius: 'var(--radius-sm)', border: '1px solid rgba(255,255,255,0.2)',
-                  background: 'rgba(255,255,255,0.1)', color: '#fff',
-                  fontFamily: 'Inter', fontSize: '14px', outline: 'none',
-                }}
-              />
-              <button className="btn-primary">Subscribe</button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Lead Magnet Capture Component */}
+      <LeadMagnet />
 
       {/* CTA */}
       <div className="page-cta-strip">
         <div className="container">
           <div className="page-cta-strip-inner">
             <div>
-              <h2>Have a regulatory question?</h2>
-              <p>Book a consultation with our expert for personalised guidance.</p>
+              <h2>Have a specific regulatory query?</h2>
+              <p>Book a consultation with Dr. Anwar Hussain Mohammed PhD for expert guidance.</p>
             </div>
-            <button className="btn-teal" onClick={() => { window.location.href = '/consultation'; }}>
+            <a href="/consultation" className="btn-teal">
               Book a Consultation <ArrowRight size={16} />
-            </button>
+            </a>
           </div>
         </div>
       </div>
